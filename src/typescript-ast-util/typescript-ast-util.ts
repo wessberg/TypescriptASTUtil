@@ -1,5 +1,6 @@
-import {Expression, isArrowFunction, isBreakStatement, isCallExpression, isClassDeclaration, isClassLike, isComputedPropertyName, isConstructorDeclaration, isContinueStatement, isDecorator, isElementAccessExpression, isEnumDeclaration, isExportAssignment, isExportSpecifier, isExpressionWithTypeArguments, isExternalModuleReference, isFunctionDeclaration, isFunctionExpression, isIdentifier, isImportClause, isImportEqualsDeclaration, isImportSpecifier, isInterfaceDeclaration, isJSDocParameterTag, isJSDocPropertyTag, isJSDocTypedefTag, isJsxAttribute, isLabeledStatement, isMetaProperty, isMissingDeclaration, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNumericLiteral, isParenthesizedExpression, isParenthesizedTypeNode, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isShorthandPropertyAssignment, isStringLiteral, isThisTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeParameterDeclaration, isTypePredicateNode, isTypeReferenceNode, Node, Statement, SyntaxKind, NodeFlags} from "typescript";
+import {createNodeArray, Declaration, Expression, isArrayLiteralExpression, isArrowFunction, isAwaitExpression, isBinaryExpression, isBlock, isBreakStatement, isCallExpression, isCaseBlock, isCaseClause, isClassDeclaration, isClassExpression, isClassLike, isComputedPropertyName, isConditionalExpression, isConstructorDeclaration, isContinueStatement, isDecorator, isDefaultClause, isDoStatement, isElementAccessExpression, isEnumDeclaration, isExportAssignment, isExportDeclaration, isExportSpecifier, isExpressionStatement, isExpressionWithTypeArguments, isExternalModuleReference, isForInStatement, isForOfStatement, isForStatement, isFunctionDeclaration, isFunctionExpression, isGetAccessorDeclaration, isIdentifier, isIfStatement, isImportClause, isImportEqualsDeclaration, isImportSpecifier, isInterfaceDeclaration, isJSDocParameterTag, isJSDocPropertyTag, isJSDocTypedefTag, isJsxAttribute, isLabeledStatement, isMetaProperty, isMethodDeclaration, isMissingDeclaration, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNonNullExpression, isNumericLiteral, isObjectLiteralExpression, isParameter, isParenthesizedExpression, isParenthesizedTypeNode, isPostfixUnaryExpression, isPrefixUnaryExpression, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isReturnStatement, isSetAccessorDeclaration, isShorthandPropertyAssignment, isSpreadAssignment, isSpreadElement, isStringLiteral, isSwitchStatement, isTemplateExpression, isThisTypeNode, isTryStatement, isTypeAliasDeclaration, isTypeAssertion, isTypeOfExpression, isTypeParameterDeclaration, isTypePredicateNode, isTypeReferenceNode, isVariableDeclaration, isVariableDeclarationList, isVariableStatement, isWhileStatement, Node, NodeArray, NodeFlags, Statement, SyntaxKind} from "typescript";
 import {ITypescriptASTUtil} from "./i-typescript-ast-util";
+import {isFirstNode} from "../predicate/is-first-node";
 
 /**
  * A helper class for working with Typescript's AST
@@ -441,6 +442,252 @@ export class TypescriptASTUtil implements ITypescriptASTUtil {
 			default:
 				throw new TypeError(`${this.constructor.name} could not serialize a token of kind ${SyntaxKind[token]}`);
 		}
+	}
+
+	/**
+	 * Filters the provided Statements and only returns the requested kinds of Statements
+	 * @param {NodeArray<Statement | Expression | Node>} statements
+	 * @param {SyntaxKind | ReadonlyArray<SyntaxKind>} kinds
+	 * @param {boolean} recursive
+	 * @returns {NodeArray<T extends Statement | Expression | Node>}
+	 */
+	public filterStatements<T extends (Statement|Expression|Node)> (statements: NodeArray<Statement|Expression|Node>, kinds: SyntaxKind|ReadonlyArray<SyntaxKind>, recursive: boolean = false): NodeArray<T> {
+		const filteredStatements: T[] = [];
+		const normalizedKinds = Array.isArray(kinds) ? kinds : [kinds];
+		statements.forEach(statement => {
+			// Add it if the node has one of the requested kinds.
+			if (normalizedKinds.some(kind => statement.kind === kind)) filteredStatements.push(<T>statement);
+			if (recursive) {
+				filteredStatements.push(...<NodeArray<T>>this.filterStatements(this.findChildStatements(statement), kinds, recursive));
+			}
+		});
+		return createNodeArray(filteredStatements);
+	}
+
+	/**
+	 * Returns all child statements of the provided statement. This is useful for recursive traversal of an AST
+	 * @param {Statement | Expression | Node} statement
+	 * @returns {NodeArray<Statement | Expression | Node>}
+	 */
+	public findChildStatements (statement: Statement|Expression|Node): NodeArray<Statement|Expression|Node> {
+
+		if (isIfStatement(statement)) {
+
+			const thenChildren = statement.thenStatement == null ? [] : [statement.thenStatement];
+			const elseChildren = statement.elseStatement == null ? [] : [statement.elseStatement];
+			return createNodeArray([statement.expression, ...thenChildren, ...elseChildren]);
+		}
+
+		if (isShorthandPropertyAssignment(statement)) {
+			return createNodeArray(statement.objectAssignmentInitializer == null ? [] : [statement.objectAssignmentInitializer]);
+		}
+
+		if (isDefaultClause(statement) || isCaseClause(statement)) {
+			const statements: (Statement|Declaration|Expression|Node)[] = isCaseClause(statement) ? [statement.expression] : [];
+			statements.push(...statement.statements);
+			return createNodeArray(statements);
+		}
+
+		if (isWhileStatement(statement)) {
+			return createNodeArray([statement.expression, statement.statement]);
+		}
+
+		if (isLabeledStatement(statement)) {
+			return createNodeArray([statement.statement]);
+		}
+
+		if (isExportAssignment(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		if (isExportDeclaration(statement)) {
+			return createNodeArray(statement.moduleSpecifier == null ? [] : [statement.moduleSpecifier]);
+		}
+
+		if (isParenthesizedExpression(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		if (isCaseBlock(statement)) {
+			const statements: (Statement|Declaration|Expression|Node)[] = [];
+			statement.clauses.forEach(clause => statements.push(clause));
+			return createNodeArray(statement.clauses);
+		}
+
+		if (isAwaitExpression(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		if (isSwitchStatement(statement)) {
+			return createNodeArray([statement.expression, statement.caseBlock]);
+		}
+
+		if (isBlock(statement)) {
+			return statement.statements;
+		}
+
+		if (isReturnStatement(statement)) {
+			return createNodeArray(statement.expression == null ? [] : [statement.expression]);
+		}
+
+		if (isArrowFunction(statement)) {
+			return createNodeArray([...statement.parameters, ...(statement.body == null ? [] : [statement.body])]);
+		}
+
+		if (isLabeledStatement(statement)) {
+			return createNodeArray([statement.statement]);
+		}
+
+		if (isConditionalExpression(statement)) {
+			const whenTrue = statement.whenTrue == null ? [] : [statement.whenTrue];
+			const whenFalse = statement.whenFalse == null ? [] : [statement.whenFalse];
+			return createNodeArray([statement.condition, ...whenTrue, ...whenFalse]);
+		}
+
+		if (isBinaryExpression(statement) || isFirstNode(statement)) {
+			return createNodeArray([statement.left, statement.right]);
+		}
+
+		if (isFunctionDeclaration(statement)) {
+			return createNodeArray([...statement.parameters, ...(statement.body == null ? [] : [statement.body])]);
+		}
+
+		if (isExpressionStatement(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		if (isTryStatement(statement)) {
+
+			const catchClause = statement.catchClause == null ? [] : [statement.catchClause.block];
+			const finallyBlock = statement.finallyBlock == null ? [] : [statement.finallyBlock];
+
+			return createNodeArray([statement.tryBlock, ...catchClause, ...finallyBlock]);
+		}
+
+		if (isSpreadAssignment(statement) || isSpreadElement(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		if (isVariableStatement(statement)) {
+			return statement.declarationList.declarations;
+		}
+
+		if (isVariableDeclarationList(statement)) {
+			return statement.declarations;
+		}
+
+		if (isVariableDeclaration(statement)) {
+			return createNodeArray(statement.initializer == null ? [] : [statement.initializer]);
+		}
+
+		if (isElementAccessExpression(statement) || isPropertyAccessExpression(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		if (isPrefixUnaryExpression(statement)) {
+			return createNodeArray([statement.operand]);
+		}
+
+		if (isPostfixUnaryExpression(statement)) {
+			return createNodeArray([statement.operand]);
+		}
+
+		if (isFunctionExpression(statement)) {
+			return createNodeArray([...statement.parameters, ...(statement.body == null ? [] : [statement.body])]);
+		}
+
+		if (isTypeOfExpression(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		if (isMethodDeclaration(statement)) {
+			return createNodeArray([...statement.parameters, ...(statement.body == null ? [] : [statement.body])]);
+		}
+
+		if (isGetAccessorDeclaration(statement)) {
+			return createNodeArray([...statement.parameters, ...(statement.body == null ? [] : [statement.body])]);
+		}
+
+		if (isSetAccessorDeclaration(statement)) {
+			return createNodeArray([...statement.parameters, ...(statement.body == null ? [] : [statement.body])]);
+		}
+
+		if (isTemplateExpression(statement)) {
+			const statements: Expression[] = [];
+			if (statement.templateSpans == null) return createNodeArray();
+			statement.templateSpans.forEach(span => statements.push(span.expression));
+			return createNodeArray(statements);
+		}
+
+		if (isObjectLiteralExpression(statement)) {
+			return statement.properties;
+		}
+
+		if (isPropertyAssignment(statement)) {
+			return createNodeArray([statement.initializer]);
+		}
+
+		if (isConstructorDeclaration(statement)) {
+			return createNodeArray([...statement.parameters, ...(statement.body == null ? [] : [statement.body])]);
+		}
+
+		if (isArrayLiteralExpression(statement)) {
+			return statement.elements;
+		}
+
+		if (isPropertyDeclaration(statement)) {
+			return createNodeArray(statement.initializer == null ? [] : [statement.initializer]);
+		}
+
+		if (isClassExpression(statement) || isClassDeclaration(statement)) {
+			return statement.members;
+		}
+
+		if (isForStatement(statement)) {
+			const condition = statement.condition == null ? [] : [statement.condition];
+			const incrementor = statement.incrementor == null ? [] : [statement.incrementor];
+			const initializer = statement.initializer == null ? [] : [statement.initializer];
+			const body = statement.statement == null ? [] : [statement.statement];
+			return createNodeArray([...condition, ...incrementor, ...initializer, ...body]);
+		}
+
+		if (isForInStatement(statement)) {
+			const initializer = statement.initializer == null ? [] : [statement.initializer];
+			const expression = statement.expression == null ? [] : [statement.expression];
+			const body = statement.statement == null ? [] : [statement.statement];
+			return createNodeArray([...expression, ...initializer, ...body]);
+		}
+
+		if (isForOfStatement(statement)) {
+			const initializer = statement.initializer == null ? [] : [statement.initializer];
+			const expression = statement.expression == null ? [] : [statement.expression];
+			const body = statement.statement == null ? [] : [statement.statement];
+			return createNodeArray([...expression, ...initializer, ...body]);
+		}
+
+		if (isParameter(statement)) {
+			const initializer = statement.initializer == null ? [] : [statement.initializer];
+			return createNodeArray(initializer);
+		}
+
+		if (isTypeAssertion(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		if (isDoStatement(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		if (isCallExpression(statement)) {
+			return createNodeArray([...statement.arguments, statement.expression]);
+		}
+
+		if (isNonNullExpression(statement)) {
+			return createNodeArray([statement.expression]);
+		}
+
+		// Otherwise, return an empty NodeArray.
+		return createNodeArray();
 	}
 
 	/**

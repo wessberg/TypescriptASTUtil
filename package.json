@@ -39,7 +39,6 @@
 	"devDependencies": {
 		"@types/node": "^8.0.24",
 		"@wessberg/ts-config": "0.0.23",
-		"ava": "^0.22.0",
 		"conventional-changelog-cli": "latest",
 		"husky": "latest",
 		"tslint": "latest",
