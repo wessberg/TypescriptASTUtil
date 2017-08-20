@@ -1,3 +1,12 @@
+<a name="0.0.4"></a>
+## 0.0.4 (2017-08-20)
+
+* 0.0.4 ([25ecd98](https://github.com/wessberg/TypescriptASTUtil/commit/25ecd98))
+* Bumped version ([dbd729e](https://github.com/wessberg/TypescriptASTUtil/commit/dbd729e))
+* More helpers. ([2f5ace3](https://github.com/wessberg/TypescriptASTUtil/commit/2f5ace3))
+
+
+
 <a name="0.0.3"></a>
 ## 0.0.3 (2017-08-20)
 
