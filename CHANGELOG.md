@@ -1,3 +1,12 @@
+<a name="0.0.3"></a>
+## 0.0.3 (2017-08-20)
+
+* 0.0.3 ([ef12b4a](https://github.com/wessberg/TypescriptASTUtil/commit/ef12b4a))
+* Bumped version ([9f915ac](https://github.com/wessberg/TypescriptASTUtil/commit/9f915ac))
+* Upgraded to Typescript 2.5.1 ([59709c8](https://github.com/wessberg/TypescriptASTUtil/commit/59709c8))
+
+
+
 <a name="0.0.2"></a>
 ## 0.0.2 (2017-08-20)
 
