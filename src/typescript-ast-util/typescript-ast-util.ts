@@ -451,9 +451,9 @@ export class TypescriptASTUtil implements ITypescriptASTUtil {
 	 * @param {boolean} recursive
 	 * @returns {NodeArray<T extends Statement | Expression | Node>}
 	 */
-	public filterStatements<T extends (Statement|Expression|Node)> (statements: NodeArray<Statement|Expression|Node>, kinds: SyntaxKind|ReadonlyArray<SyntaxKind>, recursive: boolean = false): NodeArray<T> {
+	public filterStatements<T extends (Statement|Expression|Node)> (statements: NodeArray<Statement|Expression|Node>, kinds: SyntaxKind|Iterable<SyntaxKind>, recursive: boolean = false): NodeArray<T> {
 		const filteredStatements: (Statement|Expression|Node)[] = [];
-		const normalizedKinds = Array.isArray(kinds) ? kinds : [kinds];
+		const normalizedKinds = typeof kinds === "number" || typeof kinds === "string" ? [kinds] : [...kinds];
 		statements.forEach(statement => {
 			// Add it if the node has one of the requested kinds.
 			if (normalizedKinds.some(kind => statement.kind === kind)) filteredStatements.push(<T>statement);

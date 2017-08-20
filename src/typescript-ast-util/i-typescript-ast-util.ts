@@ -6,6 +6,6 @@ export interface ITypescriptASTUtil {
 	stringify (identifier: Statement|Node|Expression, compact?: boolean): string;
 	serializeFlag (flag: NodeFlags): string;
 	serializeToken (token: SyntaxKind): string;
-	filterStatements <T extends (Statement|Expression|Node)> (statements: NodeArray<Statement|Expression|Node>, kinds: SyntaxKind|ReadonlyArray<SyntaxKind>, recursive?: boolean): NodeArray<T>;
+	filterStatements <T extends (Statement|Expression|Node)> (statements: NodeArray<Statement|Expression|Node>, kinds: SyntaxKind|Iterable<SyntaxKind>, recursive?: boolean): NodeArray<T>;
 	findChildStatements (statement: Statement|Expression|Node): NodeArray<Statement|Expression|Node>;
 }
