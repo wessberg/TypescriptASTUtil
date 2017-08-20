@@ -1,3 +1,12 @@
+<a name="0.0.2"></a>
+## 0.0.2 (2017-08-20)
+
+* 0.0.2 ([7a705d1](https://github.com/wessberg/TypescriptASTUtil/commit/7a705d1))
+* Bumped version ([dd9ed67](https://github.com/wessberg/TypescriptASTUtil/commit/dd9ed67))
+* Fixed scripts ([a606804](https://github.com/wessberg/TypescriptASTUtil/commit/a606804))
+
+
+
 <a name="0.0.1"></a>
 ## 0.0.1 (2017-08-20)
 
