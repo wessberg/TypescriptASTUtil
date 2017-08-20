@@ -1,3 +1,12 @@
+<a name="0.0.6"></a>
+## 0.0.6 (2017-08-20)
+
+* 0.0.6 ([b54654d](https://github.com/wessberg/TypescriptASTUtil/commit/b54654d))
+* Bumped version ([cc0b24c](https://github.com/wessberg/TypescriptASTUtil/commit/cc0b24c))
+* Made 'filterStatements' take an Iterable instead ([8151cad](https://github.com/wessberg/TypescriptASTUtil/commit/8151cad))
+
+
+
 <a name="0.0.5"></a>
 ## 0.0.5 (2017-08-20)
 
