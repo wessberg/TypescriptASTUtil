@@ -1,3 +1,12 @@
+<a name="0.0.7"></a>
+## 0.0.7 (2017-08-21)
+
+* 0.0.7 ([e736343](https://github.com/wessberg/TypescriptASTUtil/commit/e736343))
+* Added a 'isBooleanLiteral' predicate function ([e132508](https://github.com/wessberg/TypescriptASTUtil/commit/e132508))
+* Bumped version ([af7a4c4](https://github.com/wessberg/TypescriptASTUtil/commit/af7a4c4))
+
+
+
 <a name="0.0.6"></a>
 ## 0.0.6 (2017-08-20)
 
