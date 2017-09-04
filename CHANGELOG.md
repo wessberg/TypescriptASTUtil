@@ -1,3 +1,12 @@
+<a name="0.0.8"></a>
+## 0.0.8 (2017-09-04)
+
+* 0.0.8 ([227ed9d](https://github.com/wessberg/TypescriptASTUtil/commit/227ed9d))
+* Bumped version ([debe4dd](https://github.com/wessberg/TypescriptASTUtil/commit/debe4dd))
+* Used built-in TS utils where possible ([a8b3a88](https://github.com/wessberg/TypescriptASTUtil/commit/a8b3a88))
+
+
+
 <a name="0.0.7"></a>
 ## 0.0.7 (2017-08-21)
 
