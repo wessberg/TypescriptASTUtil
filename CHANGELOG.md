@@ -1,3 +1,12 @@
+<a name="0.0.15"></a>
+## 0.0.15 (2017-10-01)
+
+* 0.0.15 ([88a6ca3](https://github.com/wessberg/TypescriptASTUtil/commit/88a6ca3))
+* Bumped version ([ad9200f](https://github.com/wessberg/TypescriptASTUtil/commit/ad9200f))
+* Made a private member protected ([32205e2](https://github.com/wessberg/TypescriptASTUtil/commit/32205e2))
+
+
+
 <a name="0.0.14"></a>
 ## 0.0.14 (2017-10-01)
 
