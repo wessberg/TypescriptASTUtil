@@ -1,3 +1,12 @@
+<a name="0.0.9"></a>
+## 0.0.9 (2017-10-01)
+
+* 0.0.9 ([53de4bb](https://github.com/wessberg/TypescriptASTUtil/commit/53de4bb))
+* Added helpers for printing, matching and updating nodes ([d942e46](https://github.com/wessberg/TypescriptASTUtil/commit/d942e46))
+* Bumped version ([245ca89](https://github.com/wessberg/TypescriptASTUtil/commit/245ca89))
+
+
+
 <a name="0.0.8"></a>
 ## 0.0.8 (2017-09-04)
 
