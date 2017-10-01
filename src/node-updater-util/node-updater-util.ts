@@ -23,6 +23,7 @@ import {hasIdentifierCount} from "../predicate/has-identifier-count";
 import {hasLineMap} from "../predicate/has-line-map";
 import {hasNextContainer} from "../predicate/has-next-container";
 import {hasLocals} from "../predicate/has-locals";
+import {isTypescriptNode} from "../predicate/is-node";
 
 /**
  * A class that helps with updating (mutating) nodes in-place
@@ -54,6 +55,11 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		/*tslint:disable:no-any*/
 		const mutableStatements = <Node[]><any>sourceFile.statements;
 		/*tslint:enable:no-any*/
+
+		// Make sure to mark the SourceFile as the parent of the new node.
+		if (newNode.parent == null && !isSourceFile(newNode)) {
+			newNode.parent = sourceFile;
+		}
 
 		// Add the new node to the top of the SourceFile if it is an import
 		if (isImportDeclaration(newNode) || isImportEqualsDeclaration(newNode)) {
@@ -113,6 +119,21 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	}
 
 	/**
+	 * Sets the provided parent on all top-level properties on the provided Node - if it is undefined
+	 * @param {T} node
+	 * @returns {T}
+	 */
+	private setTopLevelParent<T extends Node> (node: T): T {
+		Object.keys(node).forEach((key: keyof T) => {
+			const value = node[key];
+			if (isTypescriptNode(value) && value.parent == null) {
+				value.parent = node;
+			}
+		});
+		return node;
+	}
+
+	/**
 	 * Updates a Node
 	 * @param {T} newNode
 	 * @param {T} existing
@@ -121,13 +142,15 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	private update<T extends Node> (newNode: T, existing: T, options: INodeUpdaterUtilUpdateOptions): T {
 		/*tslint:disable:no-any*/
-		if (newNode.kind !== existing.kind) throw new TypeError(`${this.constructor.name} could not update a node of kind ${SyntaxKind[existing.kind]}: The new node was not of an identical kind: ${SyntaxKind[newNode.kind]}`);
 
 		// If the kinds are different, remove all properties from the existing node and all of the properties of the new Node
 		if (existing.kind !== newNode.kind) {
 			this.stripAllKeysOfNode(existing);
 			this.addAllKeysOfNode(newNode, existing);
-		} else {
+			return this.extraTransformStep(newNode, existing, options);
+		}
+
+		else {
 			if (isSourceFile(newNode) && isSourceFile(existing)) {
 				return <T><any> this.updateSourceFile(newNode, existing, options);
 			}
@@ -3780,6 +3803,8 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @returns {T}
 	 */
 	private extraTransformStep<T extends Node> (newNode: T, existing: T, options: INodeUpdaterUtilUpdateOptions): T {
+		// Make sure all nested parents are set
+		this.setTopLevelParent(existing);
 		/*tslint:disable:no-any*/
 		if (hasSymbol(newNode)) {
 			const parent = existing.getSourceFile();
