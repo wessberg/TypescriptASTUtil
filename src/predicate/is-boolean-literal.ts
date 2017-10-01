@@ -1,9 +1,9 @@
-import {Statement, Declaration, Expression, Node, BooleanLiteral, SyntaxKind} from "typescript";
+import {BooleanLiteral, Node, SyntaxKind} from "typescript";
 /**
  * A predicate function that returns true if the given Statement is a BooleanLiteral.
- * @param {Statement|Declaration|Expression|Node} statement
+ * @param {Node} statement
  * @returns {boolean}
  */
-export function isBooleanLiteral (statement: Statement|Declaration|Expression|Node): statement is BooleanLiteral {
-	return statement.kind === SyntaxKind.TrueKeyword || statement.kind === SyntaxKind.FalseKeyword;
+export function isBooleanLiteral (statement: Node): statement is BooleanLiteral {
+	return statement != null && (statement.kind === SyntaxKind.TrueKeyword || statement.kind === SyntaxKind.FalseKeyword);
 }
