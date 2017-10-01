@@ -1,24 +1,24 @@
 import {INodeMatcherUtil} from "./i-node-matcher-util";
 import {AccessorDeclaration, AmdDependency, ArrayBindingElement, ArrayBindingPattern, ArrayLiteralExpression, ArrayTypeNode, ArrowFunction, AsExpression, AwaitExpression, BinaryExpression, BindingElement, BindingName, BindingPattern, Block, BooleanLiteral, BreakStatement, CallExpression, CallSignatureDeclaration, CaseBlock, CaseClause, CaseOrDefaultClause, CatchClause, ClassDeclaration, ClassExpression, ComputedPropertyName, ConditionalExpression, ConstructorDeclaration, ConstructorTypeNode, ConstructSignatureDeclaration, ContinueStatement, DebuggerStatement, DeclarationName, Decorator, DefaultClause, DeleteExpression, DoStatement, ElementAccessExpression, EmptyStatement, EntityName, EnumDeclaration, EnumMember, ExportAssignment, ExportDeclaration, ExportSpecifier, ExpressionStatement, ExpressionWithTypeArguments, ExternalModuleReference, FileReference, ForInitializer, ForInStatement, ForOfStatement, ForStatement, FunctionDeclaration, FunctionExpression, FunctionOrConstructorTypeNode, FunctionTypeNode, GetAccessorDeclaration, HeritageClause, Identifier, IfStatement, ImportClause, ImportDeclaration, ImportEqualsDeclaration, ImportExpression, ImportSpecifier, IndexedAccessTypeNode, IndexSignatureDeclaration, InterfaceDeclaration, IntersectionTypeNode, isAccessor, isArrayBindingPattern, isArrayLiteralExpression, isArrayTypeNode, isArrowFunction, isAsExpression, isAwaitExpression, isBinaryExpression, isBindingElement, isBindingName, isBlock, isBreakStatement, isCallExpression, isCallSignatureDeclaration, isCaseBlock, isCaseClause, isCaseOrDefaultClause, isCatchClause, isClassDeclaration, isClassExpression, isComputedPropertyName, isConditionalExpression, isConstructorDeclaration, isConstructorTypeNode, isConstructSignatureDeclaration, isContinueStatement, isDebuggerStatement, isDecorator, isDefaultClause, isDeleteExpression, isDoStatement, isElementAccessExpression, isEmptyStatement, isEntityName, isEnumDeclaration, isEnumMember, isExportAssignment, isExportDeclaration, isExportSpecifier, isExpressionStatement, isExpressionWithTypeArguments, isExternalModuleReference, isForInStatement, isForOfStatement, isForStatement, isFunctionDeclaration, isFunctionExpression, isFunctionOrConstructorTypeNode, isFunctionTypeNode, isGetAccessorDeclaration, isHeritageClause, isIdentifier, isIfStatement, isImportClause, isImportDeclaration, isImportEqualsDeclaration, isImportSpecifier, isIndexedAccessTypeNode, isIndexSignatureDeclaration, isInterfaceDeclaration, isIntersectionTypeNode, isJsxAttribute, isJsxAttributes, isJsxClosingElement, isJsxElement, isJsxExpression, isJsxOpeningElement, isJsxSelfClosingElement, isJsxSpreadAttribute, isJsxText, isLabeledStatement, isLiteralTypeNode, isMappedTypeNode, isMetaProperty, isMethodDeclaration, isMethodSignature, isMissingDeclaration, isModuleBlock, isModuleDeclaration, isNamedExports, isNamedImports, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNonNullExpression, isNoSubstitutionTemplateLiteral, isNumericLiteral, isObjectBindingPattern, isObjectLiteralElementLike, isObjectLiteralExpression, isOmittedExpression, isParameter, isParenthesizedExpression, isParenthesizedTypeNode, isPostfixUnaryExpression, isPrefixUnaryExpression, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertyName, isPropertySignature, isQualifiedName, isRegularExpressionLiteral, isReturnStatement, isSemicolonClassElement, isSetAccessorDeclaration, isShorthandPropertyAssignment, isSpreadAssignment, isSpreadElement, isStringLiteral, isSwitchStatement, isTaggedTemplateExpression, isTemplateExpression, isTemplateHead, isTemplateMiddle, isTemplateSpan, isTemplateTail, isThisTypeNode, isThrowStatement, isToken, isTryStatement, isTupleTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeElement, isTypeLiteralNode, isTypeOfExpression, isTypeOperatorNode, isTypeParameterDeclaration, isTypePredicateNode, isTypeQueryNode, isTypeReferenceNode, isUnionTypeNode, isVariableDeclaration, isVariableDeclarationList, isVariableStatement, isVoidExpression, isWhileStatement, isWithStatement, isYieldExpression, JSDocNamespaceBody, JSDocNamespaceDeclaration, JsxAttribute, JsxAttributeLike, JsxAttributes, JsxClosingElement, JsxElement, JsxExpression, JsxOpeningElement, JsxSelfClosingElement, JsxSpreadAttribute, JsxTagNameExpression, JsxText, KeywordTypeNode, LabeledStatement, LiteralTypeNode, MappedTypeNode, MetaProperty, MethodDeclaration, MethodSignature, MissingDeclaration, Modifier, ModuleBlock, ModuleBody, ModuleDeclaration, ModuleName, ModuleReference, NamedExports, NamedImportBindings, NamedImports, NamespaceBody, NamespaceDeclaration, NamespaceExportDeclaration, NamespaceImport, NewExpression, Node, NodeArray, NonNullExpression, NoSubstitutionTemplateLiteral, NullLiteral, NumericLiteral, ObjectBindingPattern, ObjectLiteralElementLike, ObjectLiteralExpression, OmittedExpression, ParameterDeclaration, ParenthesizedExpression, ParenthesizedTypeNode, PartiallyEmittedExpression, PostfixUnaryExpression, PrefixUnaryExpression, PropertyAccessExpression, PropertyAssignment, PropertyDeclaration, PropertyName, PropertySignature, QualifiedName, RegularExpressionLiteral, ReturnStatement, SemicolonClassElement, SetAccessorDeclaration, ShorthandPropertyAssignment, SpreadAssignment, SpreadElement, Statement, StringLiteral, SuperExpression, SwitchStatement, SyntaxKind, TaggedTemplateExpression, TemplateExpression, TemplateHead, TemplateMiddle, TemplateSpan, TemplateTail, ThisExpression, ThisTypeNode, ThrowStatement, Token, TryStatement, TupleTypeNode, TypeAliasDeclaration, TypeAssertion, TypeElement, TypeLiteralNode, TypeOfExpression, TypeOperatorNode, TypeParameterDeclaration, TypePredicateNode, TypeQueryNode, TypeReferenceNode, UnionTypeNode, VariableDeclaration, VariableDeclarationList, VariableStatement, VoidExpression, WhileStatement, WithStatement, YieldExpression} from "typescript";
 import {NodeMatcherItem} from "./node-matcher-item";
-import {isAmdDependency} from "../../predicate/is-amd-dependency";
-import {isFileReference} from "../../predicate/is-file-reference";
-import {isTypescriptNode} from "../../predicate/is-node";
-import {isDeclarationName} from "../../predicate/is-declaration-name";
-import {isBindingPattern} from "../../predicate/is-binding-pattern";
-import {isArrayBindingElement} from "../../predicate/is-array-binding-element";
-import {isKeywordTypeNode} from "../../predicate/is-keyword-type-node";
-import {isPartiallyEmittedExpression} from "../../predicate/is-partially-emitted-expression";
-import {isNullLiteral} from "../../predicate/is-null-literal";
-import {isBooleanLiteral} from "../../predicate/is-boolean-literal";
-import {isThisExpression} from "../../predicate/is-this-expression";
-import {isSuperExpression} from "../../predicate/is-super-expression";
-import {isImportExpression} from "../../predicate/is-import-expression";
-import {isNamespaceDeclaration} from "../../predicate/is-namespace-declaration";
-import {isJSDocNamespaceDeclaration} from "../../predicate/is-jsdoc-namespace-declaration";
-import {isModuleBody} from "../../predicate/is-module-body";
-import {isNamespaceBody} from "../../predicate/is-namespace-body";
-import {isJSDocNamespaceBody} from "../../predicate/is-jsdoc-namespace-body";
+import {isAmdDependency} from "../predicate/is-amd-dependency";
+import {isFileReference} from "../predicate/is-file-reference";
+import {isTypescriptNode} from "../predicate/is-node";
+import {isDeclarationName} from "../predicate/is-declaration-name";
+import {isBindingPattern} from "../predicate/is-binding-pattern";
+import {isArrayBindingElement} from "../predicate/is-array-binding-element";
+import {isKeywordTypeNode} from "../predicate/is-keyword-type-node";
+import {isPartiallyEmittedExpression} from "../predicate/is-partially-emitted-expression";
+import {isNullLiteral} from "../predicate/is-null-literal";
+import {isBooleanLiteral} from "../predicate/is-boolean-literal";
+import {isThisExpression} from "../predicate/is-this-expression";
+import {isSuperExpression} from "../predicate/is-super-expression";
+import {isImportExpression} from "../predicate/is-import-expression";
+import {isNamespaceDeclaration} from "../predicate/is-namespace-declaration";
+import {isJSDocNamespaceDeclaration} from "../predicate/is-jsdoc-namespace-declaration";
+import {isModuleBody} from "../predicate/is-module-body";
+import {isNamespaceBody} from "../predicate/is-namespace-body";
+import {isJSDocNamespaceBody} from "../predicate/is-jsdoc-namespace-body";
 
 /**
  * A class that helps with matching nodes
@@ -963,7 +963,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		if (!(isMappedTypeNode(node))) return false;
 
 		const baseMatch = this.matchNodeWithBaseNode(node, matchNode);
-		const typeParameterMatch = this.propIsNotGiven(node, matchNode, "typeParameter") || (this.propIsGiven(node, matchNode, "typeParameter") && this.matchNodeWithTypeParameterDeclaration(node.typeParameter!, matchNode.typeParameter!));
+		const typeParameterMatch = this.propIsNotGiven(node, matchNode, "typeParameter") || (this.propIsGiven(node, matchNode, "typeParameter") && this.matchNodeWithTypeParameterDeclaration(node.typeParameter, matchNode.typeParameter));
 		const typeMatch = this.propIsNotGiven(node, matchNode, "type") || (this.propIsGiven(node, matchNode, "type") && this.matchNodeWithNode(node.type!, matchNode.type!));
 		const questionTokenMatch = this.propIsNotGiven(node, matchNode, "questionToken") || (this.propIsGiven(node, matchNode, "questionToken") && this.matchNodeWithToken(node.questionToken!, matchNode.questionToken!));
 		const readonlyTokenMatch = this.propIsNotGiven(node, matchNode, "readonlyToken") || (this.propIsGiven(node, matchNode, "readonlyToken") && this.matchNodeWithToken(node.readonlyToken!, matchNode.readonlyToken!));
@@ -1325,7 +1325,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		const nameMatch = this.propIsNotGiven(node, matchNode, "name") || (this.propIsGiven(node, matchNode, "name") && this.matchNodeWithPropertyName(node.name!, matchNode.name!));
 		const typeMatch = this.propIsNotGiven(node, matchNode, "type") || (this.propIsGiven(node, matchNode, "type") && this.matchNodeWithNode(node.type!, matchNode.type!));
 		const typeParametersMatch = this.propIsNotGiven(node, matchNode, "typeParameters") || (this.propIsGiven(node, matchNode, "typeParameters") && this.matchNodeWithTypeParameterDeclarations(node.typeParameters!, matchNode.typeParameters!));
-		const parametersMatch = this.propIsNotGiven(node, matchNode, "parameters") || (this.propIsGiven(node, matchNode, "parameters") && this.matchNodeWithParameterDeclarations(node.parameters!, matchNode.parameters!));
+		const parametersMatch = this.propIsNotGiven(node, matchNode, "parameters") || (this.propIsGiven(node, matchNode, "parameters") && this.matchNodeWithParameterDeclarations(node.parameters, matchNode.parameters));
 		return baseMatch && nameMatch && typeMatch && typeParametersMatch && parametersMatch;
 	}
 
@@ -1477,7 +1477,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		const baseMatch = this.matchNodeWithBaseNode(node, matchNode);
 		const nameMatch = this.propIsNotGiven(node, matchNode, "name") || (this.propIsGiven(node, matchNode, "name") && this.matchNodeWithPropertyName(node.name!, matchNode.name!));
 		const bodyMatch = (isBlock(node.body) && !isBlock(matchNode.body) || !isBlock(node.body) && isBlock(matchNode.body)) ? false : isBlock(node.body) && isBlock(matchNode.body) ? this.matchNodeWithBlock(node.body, matchNode.body) : this.matchNodeWithNode(node.body, matchNode.body);
-		const equalsGreaterThanTokenMatch = this.propIsNotGiven(node, matchNode, "equalsGreaterThanToken") || (this.propIsGiven(node, matchNode, "equalsGreaterThanToken") && this.matchNodeWithToken(node.equalsGreaterThanToken!, matchNode.equalsGreaterThanToken!));
+		const equalsGreaterThanTokenMatch = this.propIsNotGiven(node, matchNode, "equalsGreaterThanToken") || (this.propIsGiven(node, matchNode, "equalsGreaterThanToken") && this.matchNodeWithToken(node.equalsGreaterThanToken, matchNode.equalsGreaterThanToken));
 		const asteriskTokenMatch = this.propIsNotGiven(node, matchNode, "asteriskToken") || (this.propIsGiven(node, matchNode, "asteriskToken") && this.matchNodeWithToken(node.asteriskToken!, matchNode.asteriskToken!));
 		const questionTokenMatch = this.propIsNotGiven(node, matchNode, "questionToken") || (this.propIsGiven(node, matchNode, "questionToken") && this.matchNodeWithToken(node.questionToken!, matchNode.questionToken!));
 		const typeParametersMatch = this.propIsNotGiven(node, matchNode, "typeParameters") || (this.propIsGiven(node, matchNode, "typeParameters") && this.matchNodeWithTypeParameterDeclarations(node.typeParameters!, matchNode.typeParameters!));
@@ -1658,7 +1658,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		const nameMatch = this.propIsNotGiven(node, matchNode, "name") || (this.propIsGiven(node, matchNode, "name") && this.matchNodeWithPropertyName(node.name!, matchNode.name!));
 		const typeMatch = this.propIsNotGiven(node, matchNode, "type") || (this.propIsGiven(node, matchNode, "type") && this.matchNodeWithNode(node.type!, matchNode.type!));
 		const typeParametersMatch = this.propIsNotGiven(node, matchNode, "typeParameters") || (this.propIsGiven(node, matchNode, "typeParameters") && this.matchNodeWithTypeParameterDeclarations(node.typeParameters!, matchNode.typeParameters!));
-		const parametersMatch = this.propIsNotGiven(node, matchNode, "parameters") || (this.propIsGiven(node, matchNode, "parameters") && this.matchNodeWithParameterDeclarations(node.parameters!, matchNode.parameters!));
+		const parametersMatch = this.propIsNotGiven(node, matchNode, "parameters") || (this.propIsGiven(node, matchNode, "parameters") && this.matchNodeWithParameterDeclarations(node.parameters, matchNode.parameters));
 		return baseMatch && nameMatch && typeMatch && typeParametersMatch && parametersMatch;
 	}
 
@@ -1958,7 +1958,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		const baseMatch = this.matchNodeWithBaseNode(node, matchNode);
 		const nameMatch = this.matchNodeWithPropertyName(node.name, matchNode.name);
 		const questionTokenMatch = this.propIsNotGiven(node, matchNode, "questionToken") || (this.propIsGiven(node, matchNode, "questionToken") && this.matchNodeWithToken(node.questionToken!, matchNode.questionToken!));
-		const initializerMatch = this.propIsNotGiven(node, matchNode, "initializer") || (this.propIsGiven(node, matchNode, "initializer") && this.matchNodeWithNode(node.initializer!, matchNode.initializer!));
+		const initializerMatch = this.propIsNotGiven(node, matchNode, "initializer") || (this.propIsGiven(node, matchNode, "initializer") && this.matchNodeWithNode(node.initializer, matchNode.initializer));
 
 		return baseMatch && nameMatch && questionTokenMatch && initializerMatch;
 	}
@@ -2009,7 +2009,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		const baseMatch = this.matchNodeWithBaseNode(node, matchNode);
 		const typeArgumentsMatch = this.propIsNotGiven(node, matchNode, "typeArguments") || (this.propIsGiven(node, matchNode, "typeArguments") && this.matchNodeWithNodes(node.typeArguments!, matchNode.typeArguments!));
-		const argumentsMatch = this.propIsNotGiven(node, matchNode, "arguments") || (this.propIsGiven(node, matchNode, "arguments") && this.matchNodeWithNodes(node.arguments!, matchNode.arguments!));
+		const argumentsMatch = this.propIsNotGiven(node, matchNode, "arguments") || (this.propIsGiven(node, matchNode, "arguments") && this.matchNodeWithNodes(node.arguments, matchNode.arguments));
 		const expressionMatch = this.matchNodeWithNode(node.expression, matchNode.expression);
 
 		return baseMatch && typeArgumentsMatch && expressionMatch && argumentsMatch;
@@ -2725,7 +2725,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		const baseMatch = this.matchNodeWithBaseNode(node, matchNode);
 		const nameMatch = this.propIsNotGiven(node, matchNode, "name") || (this.propIsGiven(node, matchNode, "name") && this.matchNodeWithPropertyName(node.name!, matchNode.name!));
-		const expressionMatch = this.propIsNotGiven(node, matchNode, "expression") || (this.propIsGiven(node, matchNode, "expression") && this.matchNodeWithNode(node.expression!, matchNode.expression!));
+		const expressionMatch = this.propIsNotGiven(node, matchNode, "expression") || (this.propIsGiven(node, matchNode, "expression") && this.matchNodeWithNode(node.expression, matchNode.expression));
 		return baseMatch && nameMatch && expressionMatch;
 	}
 
@@ -2860,7 +2860,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		if (!isExportAssignment(node)) return false;
 
 		const baseMatch = this.matchNodeWithBaseNode(node, matchNode);
-		const exportClauseMatch = this.matchNodeWithNode(node.expression!, matchNode.expression);
+		const exportClauseMatch = this.matchNodeWithNode(node.expression, matchNode.expression);
 		const isExportEqualsMatch = node.isExportEquals === matchNode.isExportEquals;
 		const nameMatch = this.propIsNotGiven(node, matchNode, "name") || (this.propIsGiven(node, matchNode, "name") && this.matchNodeWithIdentifierOrStringLiteralOrNumericLiteral(node.name!, matchNode.name!));
 

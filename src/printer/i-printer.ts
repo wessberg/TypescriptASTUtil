@@ -1,4 +1,4 @@
-import {SourceFile, Node, NodeArray} from "typescript";
+import {Node, NodeArray, SourceFile} from "typescript";
 
 export interface IPrinter {
 	print (sourceFile: SourceFile): string;

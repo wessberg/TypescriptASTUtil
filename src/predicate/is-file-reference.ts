@@ -1,4 +1,4 @@
-import {NodeMatcherItem} from "../util/node-matcher-util/node-matcher-item";
+import {NodeMatcherItem} from "../node-matcher-util/node-matcher-item";
 import {FileReference} from "typescript";
 
 /**

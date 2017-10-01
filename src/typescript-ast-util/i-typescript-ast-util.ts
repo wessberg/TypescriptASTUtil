@@ -1,7 +1,7 @@
 import {Node, NodeArray, NodeFlags, SyntaxKind} from "typescript/lib/typescript";
-import {INodeMatcherUtil} from "../util/node-matcher-util/i-node-matcher-util";
-import {IPrinter} from "../util/printer/i-printer";
-import {INodeUpdaterUtil} from "../util/node-updater-util/i-node-updater-util";
+import {INodeMatcherUtil} from "../node-matcher-util/i-node-matcher-util";
+import {IPrinter} from "../printer/i-printer";
+import {INodeUpdaterUtil} from "../node-updater-util/i-node-updater-util";
 
 export interface ITypescriptASTUtil extends INodeMatcherUtil, INodeUpdaterUtil, IPrinter {
 	takeName (identifier: Node|undefined): string;

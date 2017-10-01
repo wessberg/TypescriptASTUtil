@@ -6,28 +6,33 @@ import {INodeUpdaterUtilUpdateOptions} from "./i-node-updater-util-update-option
 import {INodeUpdaterUtilUpdateOptionsDict} from "./i-node-updater-util-update-options-dict";
 import {INodeUpdaterLanguageServiceOption} from "./i-node-updater-language-service-option";
 import {IPrinter} from "../printer/i-printer";
-import {isPartiallyEmittedExpression} from "../../predicate/is-partially-emitted-expression";
-import {isNullLiteral} from "../../predicate/is-null-literal";
-import {isBooleanLiteral} from "../../predicate/is-boolean-literal";
-import {isThisExpression} from "../../predicate/is-this-expression";
-import {isSuperExpression} from "../../predicate/is-super-expression";
-import {isImportExpression} from "../../predicate/is-import-expression";
-import {isNamespaceDeclaration} from "../../predicate/is-namespace-declaration";
-import {isJSDocNamespaceDeclaration} from "../../predicate/is-jsdoc-namespace-declaration";
-import {hasSymbol} from "../../predicate/has-symbol";
-import {hasClassifiableNames} from "../../predicate/has-classifiable-names";
-import {hasIdentifiers} from "../../predicate/has-identifiers";
-import {hasSymbolCount} from "../../predicate/has-symbol-count";
-import {hasNodeCount} from "../../predicate/has-node-count";
-import {hasIdentifierCount} from "../../predicate/has-identifier-count";
-import {hasLineMap} from "../../predicate/has-line-map";
-import {hasNextContainer} from "../../predicate/has-next-container";
-import {hasLocals} from "../../predicate/has-locals";
+import {isPartiallyEmittedExpression} from "../predicate/is-partially-emitted-expression";
+import {isNullLiteral} from "../predicate/is-null-literal";
+import {isBooleanLiteral} from "../predicate/is-boolean-literal";
+import {isThisExpression} from "../predicate/is-this-expression";
+import {isSuperExpression} from "../predicate/is-super-expression";
+import {isImportExpression} from "../predicate/is-import-expression";
+import {isNamespaceDeclaration} from "../predicate/is-namespace-declaration";
+import {isJSDocNamespaceDeclaration} from "../predicate/is-jsdoc-namespace-declaration";
+import {hasSymbol} from "../predicate/has-symbol";
+import {hasClassifiableNames} from "../predicate/has-classifiable-names";
+import {hasIdentifiers} from "../predicate/has-identifiers";
+import {hasSymbolCount} from "../predicate/has-symbol-count";
+import {hasNodeCount} from "../predicate/has-node-count";
+import {hasIdentifierCount} from "../predicate/has-identifier-count";
+import {hasLineMap} from "../predicate/has-line-map";
+import {hasNextContainer} from "../predicate/has-next-container";
+import {hasLocals} from "../predicate/has-locals";
 
 /**
  * A class that helps with updating (mutating) nodes in-place
  */
 export class NodeUpdaterUtil implements INodeUpdaterUtil {
+
+	/**
+	 * A Set of keys that will be preserved when all keys are stripped
+	 * @type {Set<string>}
+	 */
 	private PRESERVE_KEYS_ON_STRIP: Set<string> = new Set(["parent"]);
 
 	constructor (private nodeMatcherUtil: INodeMatcherUtil,

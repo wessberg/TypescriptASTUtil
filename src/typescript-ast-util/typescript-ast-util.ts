@@ -1,10 +1,10 @@
 import {createNodeArray, Expression, tokenToString, forEachChild, isArrowFunction, isBreakStatement, isCallExpression, isClassDeclaration, isClassLike, isComputedPropertyName, isConstructorDeclaration, isContinueStatement, isDecorator, isElementAccessExpression, isEnumDeclaration, isExportAssignment, isExportSpecifier, isExpressionWithTypeArguments, isExternalModuleReference, isFunctionDeclaration, isFunctionExpression, isIdentifier, isImportClause, isImportEqualsDeclaration, isImportSpecifier, isInterfaceDeclaration, isJSDocParameterTag, isJSDocPropertyTag, isJSDocTypedefTag, isJsxAttribute, isLabeledStatement, isMetaProperty, isMissingDeclaration, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNumericLiteral, isParenthesizedExpression, isParenthesizedTypeNode, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isShorthandPropertyAssignment, isStringLiteral, isThisTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeParameterDeclaration, isTypePredicateNode, isTypeReferenceNode, Node, NodeArray, NodeFlags, Statement, SyntaxKind, FileReference, AmdDependency, SourceFile} from "typescript";
 import {ITypescriptASTUtil} from "./i-typescript-ast-util";
-import {NodeMatcherUtil} from "../util/node-matcher-util/node-matcher-util";
-import {NodeUpdaterUtil} from "../util/node-updater-util/node-updater-util";
-import {Printer} from "../util/printer/printer";
-import {INodeUpdaterLanguageServiceOption} from "../util/node-updater-util/i-node-updater-language-service-option";
-import {INodeUpdaterUtilUpdateOptionsDict} from "../util/node-updater-util/i-node-updater-util-update-options-dict";
+import {NodeMatcherUtil} from "../node-matcher-util/node-matcher-util";
+import {NodeUpdaterUtil} from "../node-updater-util/node-updater-util";
+import {Printer} from "../printer/printer";
+import {INodeUpdaterLanguageServiceOption} from "../node-updater-util/i-node-updater-language-service-option";
+import {INodeUpdaterUtilUpdateOptionsDict} from "../node-updater-util/i-node-updater-util-update-options-dict";
 
 const nodeMatcher = new NodeMatcherUtil();
 const printer = new Printer();

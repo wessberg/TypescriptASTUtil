@@ -1,4 +1,4 @@
-export {NodeMatcherItem} from "./util/node-matcher-util/node-matcher-item";
+export {NodeMatcherItem} from "./node-matcher-util/node-matcher-item";
 export {hasLocals} from "./predicate/has-locals";
 export {hasNextContainer} from "./predicate/has-next-container";
 export {hasLineMap} from "./predicate/has-line-map";
