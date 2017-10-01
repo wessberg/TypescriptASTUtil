@@ -1,3 +1,12 @@
+<a name="0.0.11"></a>
+## 0.0.11 (2017-10-01)
+
+* 0.0.11 ([61c6e15](https://github.com/wessberg/TypescriptASTUtil/commit/61c6e15))
+* Added an 'add' method to the node updater ([a826620](https://github.com/wessberg/TypescriptASTUtil/commit/a826620))
+* Bumped version ([edb9160](https://github.com/wessberg/TypescriptASTUtil/commit/edb9160))
+
+
+
 <a name="0.0.10"></a>
 ## 0.0.10 (2017-10-01)
 
