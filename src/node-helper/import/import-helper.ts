@@ -143,7 +143,7 @@ export class ImportHelper implements IImportHelper {
 	 * @param {ImportSpecifier} specifier
 	 * @returns {boolean}
 	 */
-	private matchesNamedImport (namedImport: { name: string; propertyName: string|null }, specifier: ImportSpecifier): boolean {
+	protected matchesNamedImport (namedImport: { name: string; propertyName: string|null }, specifier: ImportSpecifier): boolean {
 		return specifier.name.text === namedImport.name && (specifier.propertyName == null || specifier.propertyName.text === namedImport.propertyName);
 	}
 
