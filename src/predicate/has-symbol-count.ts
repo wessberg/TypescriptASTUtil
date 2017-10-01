@@ -3,6 +3,6 @@
  * @param item
  * @returns {boolean}
  */
-export function hasSymbolCount<T> (item: T): item is T & {symbolCount: number} {
+export function hasSymbolCount<T> (item: T): item is T&{ symbolCount: number } {
 	return item != null && "symbolCount" in item;
 }

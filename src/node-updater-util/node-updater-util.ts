@@ -37,7 +37,17 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @type {Set<string>}
 	 */
 	private PRESERVE_KEYS_ON_STRIP: Set<string> = new Set(["parent"]);
+
+	/**
+	 * The utility to use for matching Nodes
+	 * @type {NodeMatcherUtil}
+	 */
 	private nodeMatcherUtil: INodeMatcherUtil = new NodeMatcherUtil();
+
+	/**
+	 * The utility to use for printing Nodes
+	 * @type {Printer}
+	 */
 	private printer: IPrinter = new Printer();
 
 	/**

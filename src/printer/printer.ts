@@ -1,5 +1,5 @@
 import {IPrinter} from "./i-printer";
-import {createPrinter, NewLineKind, Node, NodeArray, Printer as TypescriptPrinter, SyntaxKind, isSourceFile, EmitHint} from "typescript";
+import {createPrinter, EmitHint, isSourceFile, NewLineKind, Node, NodeArray, Printer as TypescriptPrinter, SyntaxKind} from "typescript";
 
 /**
  * A class that can print a SourceFile

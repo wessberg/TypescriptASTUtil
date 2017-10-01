@@ -3,6 +3,6 @@
  * @param item
  * @returns {boolean}
  */
-export function hasIdentifiers<T> (item: T): item is T & {identifiers: Map<string, string>} {
+export function hasIdentifiers<T> (item: T): item is T&{ identifiers: Map<string, string> } {
 	return item != null && "identifiers" in item;
 }

@@ -32,7 +32,7 @@ export class ImportHelper implements IImportHelper {
 	 * @param {ImportDeclaration} importDeclaration
 	 * @returns {boolean}
 	 */
-	public hasNamedImport (namedImport: {name: string; propertyName: string|null}, importDeclaration: ImportDeclaration): boolean {
+	public hasNamedImport (namedImport: { name: string; propertyName: string|null }, importDeclaration: ImportDeclaration): boolean {
 		const namedImports = this.getNamedImportsForImportDeclaration(importDeclaration);
 		if (namedImports == null) return false;
 		return namedImports.elements.find(element => this.matchesNamedImport(namedImport, element)) != null;
@@ -143,7 +143,7 @@ export class ImportHelper implements IImportHelper {
 	 * @param {ImportSpecifier} specifier
 	 * @returns {boolean}
 	 */
-	private matchesNamedImport (namedImport: {name: string; propertyName: string|null}, specifier: ImportSpecifier): boolean {
+	private matchesNamedImport (namedImport: { name: string; propertyName: string|null }, specifier: ImportSpecifier): boolean {
 		return specifier.name.text === namedImport.name && (specifier.propertyName == null || specifier.propertyName.text === namedImport.propertyName);
 	}
 

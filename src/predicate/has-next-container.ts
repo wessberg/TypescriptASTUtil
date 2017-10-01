@@ -5,6 +5,6 @@ import {Node} from "typescript";
  * @param item
  * @returns {boolean}
  */
-export function hasNextContainer<T> (item: T): item is T & {nextContainer: Node} {
+export function hasNextContainer<T> (item: T): item is T&{ nextContainer: Node } {
 	return item != null && "nextContainer" in item;
 }

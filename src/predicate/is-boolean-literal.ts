@@ -1,4 +1,5 @@
 import {BooleanLiteral, Node, SyntaxKind} from "typescript";
+
 /**
  * A predicate function that returns true if the given Statement is a BooleanLiteral.
  * @param {Node} statement

@@ -1,4 +1,4 @@
-import {Node, KeywordTypeNode, SyntaxKind} from "typescript";
+import {KeywordTypeNode, Node, SyntaxKind} from "typescript";
 
 /**
  * Returns true if a node a KeywordTypeNode

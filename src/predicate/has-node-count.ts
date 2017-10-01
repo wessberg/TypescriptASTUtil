@@ -3,6 +3,6 @@
  * @param item
  * @returns {boolean}
  */
-export function hasNodeCount<T> (item: T): item is T & {nodeCount: number} {
+export function hasNodeCount<T> (item: T): item is T&{ nodeCount: number } {
 	return item != null && "nodeCount" in item;
 }

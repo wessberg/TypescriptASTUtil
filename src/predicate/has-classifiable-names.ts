@@ -3,6 +3,6 @@
  * @param item
  * @returns {boolean}
  */
-export function hasClassifiableNames<T> (item: T): item is T & {classifiableNames: Map<string, boolean>} {
+export function hasClassifiableNames<T> (item: T): item is T&{ classifiableNames: Map<string, boolean> } {
 	return item != null && "classifiableNames" in item;
 }

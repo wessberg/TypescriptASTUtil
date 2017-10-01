@@ -10,4 +10,5 @@ import {Node} from "typescript";
 export function isTypescriptNode (item: any): item is Node {
 	return isObject(item) && "kind" in item && "flags" in item;
 }
+
 /*tslint:enable:no-any*/

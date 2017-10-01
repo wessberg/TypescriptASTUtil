@@ -1,4 +1,5 @@
 import {Symbol} from "typescript";
+
 /**
  * Returns true if the provided item is an item with a Symbol property
  * @param item
