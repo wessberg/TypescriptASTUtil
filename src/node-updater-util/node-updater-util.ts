@@ -40,6 +40,42 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	}
 
 	/**
+	 * Adds a Node in-place
+	 * @param {T} newNode
+	 * @param {SourceFile} sourceFile
+	 * @param {INodeUpdaterLanguageServiceOption} languageService
+	 * @param {Partial<INodeUpdaterUtilUpdateOptionsDict>} [options={}]
+	 * @returns {T}
+	 */
+	public addInPlace<T extends Node> (newNode: T, sourceFile: SourceFile, languageService: INodeUpdaterLanguageServiceOption, options: Partial<INodeUpdaterUtilUpdateOptionsDict> = {}): T {
+
+		const normalizedOptions = this.getUpdateOptions(options);
+
+		/*tslint:disable:no-any*/
+		const mutableStatements = <Node[]><any>sourceFile.statements;
+		/*tslint:enable:no-any*/
+
+		// Add the new node to the top of the SourceFile if it is an import
+		if (isImportDeclaration(newNode) || isImportEqualsDeclaration(newNode)) {
+			mutableStatements.unshift(newNode);
+		}
+
+		// Otherwise, append it to the bottom of it
+		else {
+			mutableStatements.push(newNode);
+		}
+
+		// Generate a new SourceFile
+		const path = sourceFile.fileName;
+		const content = this.printer.print(sourceFile);
+		const newSourceFile = languageService.addFile({path, content});
+
+		// Update the existing SourceFile (primarily for positions)
+		this.update(newSourceFile, sourceFile, normalizedOptions);
+		return this.nodeMatcherUtil.match(newNode, sourceFile.statements)!;
+	}
+
+	/**
 	 * Updates a Node in-place. This means it will be deep-mutated
 	 * @param {T} newNode
 	 * @param {T} existing
@@ -3780,9 +3816,11 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		}
 
 		if (hasLocals(newNode)) {
-			const parent = existing.getSourceFile();
-			const mapped: Map<string, Symbol> = <any> Array.from(newNode.locals.entries()).map(entry => [entry[0], this.copySymbolWithParent(parent, entry[1], options)]);
-			(<any>existing).locals = new Map(mapped);
+			if (newNode.locals != null) {
+				const parent = existing.getSourceFile();
+				const mapped: Map<string, Symbol> = <any> Array.from(newNode.locals.entries()).map(entry => [entry[0], this.copySymbolWithParent(parent, entry[1], options)]);
+				(<any>existing).locals = new Map(mapped);
+			}
 		}
 
 		/*tslint:enable:no-any*/

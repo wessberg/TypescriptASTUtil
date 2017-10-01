@@ -16,6 +16,18 @@ const nodeUpdaterUtil = new NodeUpdaterUtil(nodeMatcher, printer);
 export class TypescriptASTUtil implements ITypescriptASTUtil {
 
 	/**
+	 * Adds a Node in-place
+	 * @param {T} newNode
+	 * @param {SourceFile} sourceFile
+	 * @param {INodeUpdaterLanguageServiceOption} languageService
+	 * @param {Partial<INodeUpdaterUtilUpdateOptionsDict>} [options={}]
+	 * @returns {T}
+	 */
+	public addInPlace<T extends Node> (newNode: T, sourceFile: SourceFile, languageService: INodeUpdaterLanguageServiceOption, options?: Partial<INodeUpdaterUtilUpdateOptionsDict>): T {
+		return nodeUpdaterUtil.addInPlace(newNode, sourceFile, languageService, options);
+	}
+
+	/**
 	 * Updates a Node in-place. This means it will be deep-mutated
 	 * @param {T} newNode
 	 * @param {T} existing
@@ -31,10 +43,10 @@ export class TypescriptASTUtil implements ITypescriptASTUtil {
 	 * Matches the provided node with any of the nodes within the provided Array
 	 * @template T
 	 * @param {T} node
-	 * @param {Iterable<T>} matchWithin
+	 * @param {Iterable<T>|NodeArray<Node>} matchWithin
 	 * @returns {T?}
 	 */
-	public match<T extends Node|AmdDependency|FileReference> (node: T, matchWithin: Iterable<T>): T|undefined {
+	public match<T extends Node|AmdDependency|FileReference> (node: T, matchWithin: Iterable<T>|NodeArray<Node>): T|undefined {
 		return nodeMatcher.match(node, matchWithin);
 	}
 
@@ -42,10 +54,10 @@ export class TypescriptASTUtil implements ITypescriptASTUtil {
 	 * Matches the provided node with any of the nodes within the provided Array and return its' index
 	 * @template T
 	 * @param {T} node
-	 * @param {Iterable<T>} matchWithin
+	 * @param {Iterable<T>|NodeArray<Node>} matchWithin
 	 * @returns {number}
 	 */
-	public matchIndex<T extends Node|AmdDependency|FileReference> (node: T, matchWithin: Iterable<T>): number {
+	public matchIndex<T extends Node|AmdDependency|FileReference> (node: T, matchWithin: Iterable<T>|NodeArray<Node>): number {
 		return nodeMatcher.matchIndex(node, matchWithin);
 	}
 

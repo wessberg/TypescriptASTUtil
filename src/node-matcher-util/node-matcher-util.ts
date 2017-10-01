@@ -29,26 +29,26 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 	 * Matches the provided node with any of the nodes within the provided Array
 	 * @template T
 	 * @param {T} node
-	 * @param {Iterable<T>} matchWithin
+	 * @param {Iterable<T>|NodeArray<Node>} matchWithin
 	 * @returns {T?}
 	 */
-	public match<T extends NodeMatcherItem> (node: T, matchWithin: Iterable<T>): T|undefined {
+	public match<T extends NodeMatcherItem> (node: T, matchWithin: Iterable<T>|NodeArray<Node>): T|undefined {
 		// If the array already includes the node, return it
 		const normalizedMatchWithin = [...matchWithin];
 		if (normalizedMatchWithin.includes(node)) return node;
 
 		// Find the closest match
-		return normalizedMatchWithin.find(matchNode => this.matchNodeMatcherItemWithNodeMatcherItem(node, matchNode));
+		return <T|undefined> normalizedMatchWithin.find(matchNode => this.matchNodeMatcherItemWithNodeMatcherItem(node, matchNode));
 	}
 
 	/**
 	 * Matches the provided node with any of the nodes within the provided Array and return its' index
 	 * @template T
 	 * @param {T} node
-	 * @param {Iterable<T>} matchWithin
+	 * @param {Iterable<T>|NodeArray<Node>} matchWithin
 	 * @returns {number}
 	 */
-	public matchIndex<T extends NodeMatcherItem> (node: T, matchWithin: Iterable<T>): number {
+	public matchIndex<T extends NodeMatcherItem> (node: T, matchWithin: Iterable<T>|NodeArray<Node>): number {
 		// If the array already includes the node, return its index
 		const normalizedMatchWithin = [...matchWithin];
 		const existingIndex = normalizedMatchWithin.indexOf(node);
@@ -64,7 +64,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 	 * @param {T} matchNode
 	 * @returns {boolean}
 	 */
-	private matchNodeMatcherItemWithNodeMatcherItem<T extends NodeMatcherItem> (node: T, matchNode: T): boolean {
+	private matchNodeMatcherItemWithNodeMatcherItem<T extends NodeMatcherItem> (node: T, matchNode: T|Node): boolean {
 		if (isAmdDependency(matchNode)) {
 			return this.matchNodeMatcherItemWithAmdDependency(node, matchNode);
 		}
