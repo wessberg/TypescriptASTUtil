@@ -1,5 +1,5 @@
 import {IPrinter} from "./i-printer";
-import {createPrinter, NewLineKind, Node, NodeArray, Printer as TypescriptPrinter, SourceFile, SyntaxKind} from "typescript";
+import {createPrinter, NewLineKind, Node, NodeArray, Printer as TypescriptPrinter, SyntaxKind, isSourceFile, EmitHint} from "typescript";
 
 /**
  * A class that can print a SourceFile
@@ -37,11 +37,16 @@ export class Printer implements IPrinter {
 	}
 
 	/**
-	 * Prints a SourceFile
-	 * @param {SourceFile} sourceFile
+	 * Prints a Node
+	 * @param {Node} node
 	 * @returns {string}
 	 */
-	public print (sourceFile: SourceFile): string {
-		return this.printer.printFile(sourceFile);
+	public print (node: Node): string {
+		if (isSourceFile(node)) {
+			return this.printer.printFile(node);
+		}
+		else {
+			return this.printer.printNode(EmitHint.Unspecified, node, node.getSourceFile());
+		}
 	}
 }

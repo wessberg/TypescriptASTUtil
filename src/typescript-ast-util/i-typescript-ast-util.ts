@@ -1,9 +1,6 @@
 import {Node, NodeArray, NodeFlags, SyntaxKind} from "typescript/lib/typescript";
-import {INodeMatcherUtil} from "../node-matcher-util/i-node-matcher-util";
-import {IPrinter} from "../printer/i-printer";
-import {INodeUpdaterUtil} from "../node-updater-util/i-node-updater-util";
 
-export interface ITypescriptASTUtil extends INodeMatcherUtil, INodeUpdaterUtil, IPrinter {
+export interface ITypescriptASTUtil {
 	takeName (identifier: Node|undefined): string;
 	getRawText (identifier: Node): string;
 	serializeFlag (flag: NodeFlags): string;

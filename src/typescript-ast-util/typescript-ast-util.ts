@@ -1,14 +1,5 @@
-import {createNodeArray, Expression, tokenToString, forEachChild, isArrowFunction, isBreakStatement, isCallExpression, isClassDeclaration, isClassLike, isComputedPropertyName, isConstructorDeclaration, isContinueStatement, isDecorator, isElementAccessExpression, isEnumDeclaration, isExportAssignment, isExportSpecifier, isExpressionWithTypeArguments, isExternalModuleReference, isFunctionDeclaration, isFunctionExpression, isIdentifier, isImportClause, isImportEqualsDeclaration, isImportSpecifier, isInterfaceDeclaration, isJSDocParameterTag, isJSDocPropertyTag, isJSDocTypedefTag, isJsxAttribute, isLabeledStatement, isMetaProperty, isMissingDeclaration, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNumericLiteral, isParenthesizedExpression, isParenthesizedTypeNode, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isShorthandPropertyAssignment, isStringLiteral, isThisTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeParameterDeclaration, isTypePredicateNode, isTypeReferenceNode, Node, NodeArray, NodeFlags, Statement, SyntaxKind, FileReference, AmdDependency, SourceFile} from "typescript";
+import {createNodeArray, forEachChild, isArrowFunction, isBreakStatement, isCallExpression, isClassDeclaration, isClassLike, isComputedPropertyName, isConstructorDeclaration, isContinueStatement, isDecorator, isElementAccessExpression, isEnumDeclaration, isExportAssignment, isExportSpecifier, isExpressionWithTypeArguments, isExternalModuleReference, isFunctionDeclaration, isFunctionExpression, isIdentifier, isImportClause, isImportEqualsDeclaration, isImportSpecifier, isInterfaceDeclaration, isJSDocParameterTag, isJSDocPropertyTag, isJSDocTypedefTag, isJsxAttribute, isLabeledStatement, isMetaProperty, isMissingDeclaration, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNumericLiteral, isParenthesizedExpression, isParenthesizedTypeNode, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isShorthandPropertyAssignment, isStringLiteral, isThisTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeParameterDeclaration, isTypePredicateNode, isTypeReferenceNode, Node, NodeArray, NodeFlags, SyntaxKind, tokenToString} from "typescript";
 import {ITypescriptASTUtil} from "./i-typescript-ast-util";
-import {NodeMatcherUtil} from "../node-matcher-util/node-matcher-util";
-import {NodeUpdaterUtil} from "../node-updater-util/node-updater-util";
-import {Printer} from "../printer/printer";
-import {INodeUpdaterLanguageServiceOption} from "../node-updater-util/i-node-updater-language-service-option";
-import {INodeUpdaterUtilUpdateOptionsDict} from "../node-updater-util/i-node-updater-util-update-options-dict";
-
-const nodeMatcher = new NodeMatcherUtil();
-const printer = new Printer();
-const nodeUpdaterUtil = new NodeUpdaterUtil(nodeMatcher, printer);
 
 /**
  * A helper class for working with Typescript's AST
@@ -16,78 +7,13 @@ const nodeUpdaterUtil = new NodeUpdaterUtil(nodeMatcher, printer);
 export class TypescriptASTUtil implements ITypescriptASTUtil {
 
 	/**
-	 * Adds a Node in-place
-	 * @param {T} newNode
-	 * @param {SourceFile} sourceFile
-	 * @param {INodeUpdaterLanguageServiceOption} languageService
-	 * @param {Partial<INodeUpdaterUtilUpdateOptionsDict>} [options={}]
-	 * @returns {T}
-	 */
-	public addInPlace<T extends Node> (newNode: T, sourceFile: SourceFile, languageService: INodeUpdaterLanguageServiceOption, options?: Partial<INodeUpdaterUtilUpdateOptionsDict>): T {
-		return nodeUpdaterUtil.addInPlace(newNode, sourceFile, languageService, options);
-	}
-
-	/**
-	 * Updates a Node in-place. This means it will be deep-mutated
-	 * @param {T} newNode
-	 * @param {T} existing
-	 * @param {INodeUpdaterLanguageServiceOption} languageService
-	 * @param {Partial<INodeUpdaterUtilUpdateOptionsDict>} [options={}]
-	 * @returns {T}
-	 */
-	public updateInPlace<T extends Node> (newNode: T, existing: T, languageService: INodeUpdaterLanguageServiceOption, options?: Partial<INodeUpdaterUtilUpdateOptionsDict>): T {
-		return nodeUpdaterUtil.updateInPlace(newNode, existing, languageService, options);
-	}
-
-	/**
-	 * Matches the provided node with any of the nodes within the provided Array
-	 * @template T
-	 * @param {T} node
-	 * @param {Iterable<T>|NodeArray<Node>} matchWithin
-	 * @returns {T?}
-	 */
-	public match<T extends Node|AmdDependency|FileReference> (node: T, matchWithin: Iterable<T>|NodeArray<Node>): T|undefined {
-		return nodeMatcher.match(node, matchWithin);
-	}
-
-	/**
-	 * Matches the provided node with any of the nodes within the provided Array and return its' index
-	 * @template T
-	 * @param {T} node
-	 * @param {Iterable<T>|NodeArray<Node>} matchWithin
-	 * @returns {number}
-	 */
-	public matchIndex<T extends Node|AmdDependency|FileReference> (node: T, matchWithin: Iterable<T>|NodeArray<Node>): number {
-		return nodeMatcher.matchIndex(node, matchWithin);
-	}
-
-	/**
-	 * Prints a SourceFile
-	 * @param {SourceFile} sourceFile
-	 * @returns {string}
-	 */
-	public print (sourceFile: SourceFile): string {
-		return printer.print(sourceFile);
-	}
-
-
-	/**
-	 * Stringifies a Node in a compact, readable representation
-	 * @param {Node|NodeArray<Node>} node
-	 * @returns {string}
-	 */
-	public stringify (node: Node|NodeArray<Node>): string {
-		return printer.stringify(node);
-	}
-
-	/**
 	 * Returns the raw contents of the given identifier
-	 * @param {Statement | Node | Expression} identifier
+	 * @param {Node} identifier
 	 * @returns {string}
 	 */
-	public getRawText (identifier: Statement|Node|Expression): string {
+	public getRawText (identifier: Node): string {
 		const sourceFile = identifier.getSourceFile();
-		if (sourceFile ==  null) return "";
+		if (sourceFile == null) return "";
 		return sourceFile.text.slice(identifier.pos, identifier.end);
 	}
 

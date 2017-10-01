@@ -24,6 +24,8 @@ import {hasLineMap} from "../predicate/has-line-map";
 import {hasNextContainer} from "../predicate/has-next-container";
 import {hasLocals} from "../predicate/has-locals";
 import {isTypescriptNode} from "../predicate/is-node";
+import {NodeMatcherUtil} from "../node-matcher-util/node-matcher-util";
+import {Printer} from "../printer/printer";
 
 /**
  * A class that helps with updating (mutating) nodes in-place
@@ -35,10 +37,8 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @type {Set<string>}
 	 */
 	private PRESERVE_KEYS_ON_STRIP: Set<string> = new Set(["parent"]);
-
-	constructor (private nodeMatcherUtil: INodeMatcherUtil,
-							 private printer: IPrinter) {
-	}
+	private nodeMatcherUtil: INodeMatcherUtil = new NodeMatcherUtil();
+	private printer: IPrinter = new Printer();
 
 	/**
 	 * Adds a Node in-place
