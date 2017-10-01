@@ -1,3 +1,12 @@
+<a name="0.0.12"></a>
+## 0.0.12 (2017-10-01)
+
+* 0.0.12 ([493b036](https://github.com/wessberg/TypescriptASTUtil/commit/493b036))
+* Bumped version ([6557bd5](https://github.com/wessberg/TypescriptASTUtil/commit/6557bd5))
+* Fixed some issues with parents not being set ([83baa3b](https://github.com/wessberg/TypescriptASTUtil/commit/83baa3b))
+
+
+
 <a name="0.0.11"></a>
 ## 0.0.11 (2017-10-01)
 
