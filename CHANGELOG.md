@@ -1,3 +1,12 @@
+<a name="0.0.17"></a>
+## 0.0.17 (2017-10-02)
+
+* 0.0.17 ([850aeaf](https://github.com/wessberg/TypescriptASTUtil/commit/850aeaf))
+* Bumped version ([1b262ed](https://github.com/wessberg/TypescriptASTUtil/commit/1b262ed))
+* Removed node helpers again ([045762b](https://github.com/wessberg/TypescriptASTUtil/commit/045762b))
+
+
+
 <a name="0.0.16"></a>
 ## 0.0.16 (2017-10-01)
 
