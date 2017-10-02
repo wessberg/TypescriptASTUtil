@@ -1,7 +1,3 @@
-export {ClassHelper} from "./node-helper/class/class-helper";
-export {IClassHelper} from "./node-helper/class/i-class-helper";
-export {ImportHelper} from "./node-helper/import/import-helper";
-export {IImportHelper} from "./node-helper/import/i-import-helper";
 export {NodeUpdaterUtil} from "./node-updater-util/node-updater-util";
 export {NodeMatcherUtil} from "./node-matcher-util/node-matcher-util";
 export {Printer} from "./printer/printer";
