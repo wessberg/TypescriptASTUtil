@@ -48,7 +48,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	public addInPlace<T extends Node> (newNode: T, sourceFile: SourceFile, languageService: INodeUpdaterLanguageServiceOption, options: Partial<INodeUpdaterUtilUpdateOptionsDict> = {}): T {
 
-		const normalizedOptions = this.getUpdateOptions(options);
+		const normalizedOptions = this.getUpdateOptions(options, sourceFile);
 
 		/*tslint:disable:no-any*/
 		const mutableStatements = <Node[]><any>sourceFile.statements;
@@ -89,31 +89,29 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	public updateInPlace<T extends Node> (newNode: T, existing: T, languageService: INodeUpdaterLanguageServiceOption, options: Partial<INodeUpdaterUtilUpdateOptionsDict> = {}): T {
 
-		const normalizedOptions = this.getUpdateOptions(options);
+		const normalizedOptions = this.getUpdateOptions(options, existing.getSourceFile());
 
 		// Perform an in-place update of the Node
 		this.update(newNode, existing, normalizedOptions);
 
-		// Take the SourceFile
-		const sourceFile = existing.getSourceFile();
-
 		// Generate a new SourceFile
-		const path = sourceFile.fileName;
-		const content = this.printer.print(sourceFile);
+		const path = normalizedOptions.sourceFile.fileName;
+		const content = this.printer.print(normalizedOptions.sourceFile);
 		const newSourceFile = languageService.addFile({path, content});
 
 		// Update the existing SourceFile (primarily for positions)
-		this.update(newSourceFile, sourceFile, normalizedOptions);
+		this.update(newSourceFile, normalizedOptions.sourceFile, normalizedOptions);
 		return existing;
 	}
 
 	/**
 	 * Gets normalized INodeUpdaterUtilUpdateOptions
 	 * @param {Partial<INodeUpdaterUtilUpdateOptions>} options
+	 * @param {SourceFile} sourceFile
 	 * @returns {INodeUpdaterUtilUpdateOptions}
 	 */
-	private getUpdateOptions ({}: Partial<INodeUpdaterUtilUpdateOptionsDict>): INodeUpdaterUtilUpdateOptions {
-		return {};
+	private getUpdateOptions ({}: Partial<INodeUpdaterUtilUpdateOptionsDict>, sourceFile: SourceFile): INodeUpdaterUtilUpdateOptions {
+		return {sourceFile};
 	}
 
 	/**
@@ -3805,8 +3803,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		this.setTopLevelParent(existing);
 		/*tslint:disable:no-any*/
 		if (hasSymbol(newNode)) {
-			const parent = existing.getSourceFile();
-			(<any>existing).symbol = this.copySymbolWithParent(parent, newNode.symbol, options);
+			(<any>existing).symbol = this.copySymbolWithParent(options.sourceFile, newNode.symbol, options);
 		}
 
 		if (hasClassifiableNames(newNode)) {
@@ -3834,14 +3831,12 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		}
 
 		if (hasNextContainer(newNode)) {
-			const parent = existing.getSourceFile();
-			(<any>existing).nextContainer = this.cloneWithParent(parent, newNode.nextContainer);
+			(<any>existing).nextContainer = this.cloneWithParent(options.sourceFile, newNode.nextContainer);
 		}
 
 		if (hasLocals(newNode)) {
 			if (newNode.locals != null) {
-				const parent = existing.getSourceFile();
-				const mapped: Map<string, Symbol> = <any> Array.from(newNode.locals.entries()).map(entry => [entry[0], this.copySymbolWithParent(parent, entry[1], options)]);
+				const mapped: Map<string, Symbol> = <any> Array.from(newNode.locals.entries()).map(entry => [entry[0], this.copySymbolWithParent(options.sourceFile, entry[1], options)]);
 				(<any>existing).locals = new Map(mapped);
 			}
 		}

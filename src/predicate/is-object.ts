@@ -1,4 +1,5 @@
 /*tslint:disable:no-any*/
+
 /**
  * Returns true if the provided item is an object
  * @param item

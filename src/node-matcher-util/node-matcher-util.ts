@@ -813,7 +813,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		const baseMatch = this.matchNodeWithBaseNode(node, matchNode);
 		const nameMatch = this.propIsNotGiven(node, matchNode, "name") || (this.propIsGiven(node, matchNode, "name") && this.matchNodeWithIdentifier(node.name!, matchNode.name!));
 		const typeParametersMatch = this.propIsNotGiven(node, matchNode, "typeParameters") || (this.propIsGiven(node, matchNode, "typeParameters") && this.matchNodeWithTypeParameterDeclarations(node.typeParameters!, matchNode.typeParameters!));
-		const heritageClausesMatch = this.propIsNotGiven(node, matchNode, "heritageClauses") || (this.propIsGiven(node, matchNode, "heritageClauses") && this.matchNodeWithHeritageClauses(node.heritageClauses!, matchNode.heritageClauses!));
+		const heritageClausesMatch = this.matchNodeWithHeritageClauses(node.heritageClauses, matchNode.heritageClauses);
 		const membersMatch = this.matchNodeWithNodes(node.members, matchNode.members);
 
 		return baseMatch && nameMatch && typeParametersMatch && heritageClausesMatch && membersMatch;
@@ -831,7 +831,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		const baseMatch = this.matchNodeWithBaseNode(node, matchNode);
 		const typeParametersMatch = this.propIsNotGiven(node, matchNode, "typeParameters") || (this.propIsGiven(node, matchNode, "typeParameters") && this.matchNodeWithTypeParameterDeclarations(node.typeParameters!, matchNode.typeParameters!));
-		const heritageClausesMatch = this.propIsNotGiven(node, matchNode, "heritageClauses") || (this.propIsGiven(node, matchNode, "heritageClauses") && this.matchNodeWithHeritageClauses(node.heritageClauses!, matchNode.heritageClauses!));
+		const heritageClausesMatch = this.matchNodeWithHeritageClauses(node.heritageClauses, matchNode.heritageClauses);
 		const membersMatch = this.matchNodeWithNodes(node.members, matchNode.members);
 
 		return baseMatch && typeParametersMatch && heritageClausesMatch && membersMatch;
@@ -864,7 +864,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		const baseMatch = this.matchNodeWithBaseNode(node, matchNode);
 		const nameMatch = this.matchNodeWithIdentifier(node.name, matchNode.name);
 		const typeParametersMatch = this.propIsNotGiven(node, matchNode, "typeParameters") || (this.propIsGiven(node, matchNode, "typeParameters") && this.matchNodeWithTypeParameterDeclarations(node.typeParameters!, matchNode.typeParameters!));
-		const heritageClausesMatch = this.propIsNotGiven(node, matchNode, "heritageClauses") || (this.propIsGiven(node, matchNode, "heritageClauses") && this.matchNodeWithHeritageClauses(node.heritageClauses!, matchNode.heritageClauses!));
+		const heritageClausesMatch = this.matchNodeWithHeritageClauses(node.heritageClauses, matchNode.heritageClauses);
 		const membersMatch = this.matchNodeWithNodes(node.members, matchNode.members);
 
 		return baseMatch && nameMatch && typeParametersMatch && heritageClausesMatch && membersMatch;
@@ -1806,7 +1806,14 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 	 * @param {NodeArray<HeritageClause>} matchNode
 	 * @returns {boolean}
 	 */
-	private matchNodeWithHeritageClauses (node: NodeArray<Node>, matchNode: NodeArray<HeritageClause>): boolean {
+	private matchNodeWithHeritageClauses (node: NodeArray<Node>|undefined, matchNode: NodeArray<HeritageClause>|undefined): boolean {
+		if (matchNode == null) {
+			return node == null || node.length === 0;
+		}
+		if (node == null) {
+			return matchNode == null || matchNode.length === 0;
+		}
+
 		return matchNode.every(element => node.some(nodeElement => this.matchNodeWithHeritageClause(nodeElement, element)));
 	}
 
