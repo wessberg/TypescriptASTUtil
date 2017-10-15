@@ -1,3 +1,12 @@
+<a name="0.0.19"></a>
+## 0.0.19 (2017-10-15)
+
+* 0.0.19 ([514fa12](https://github.com/wessberg/TypescriptASTUtil/commit/514fa12))
+* Bumped version ([5d79693](https://github.com/wessberg/TypescriptASTUtil/commit/5d79693))
+* Fixed an infinite loop ([d0ba770](https://github.com/wessberg/TypescriptASTUtil/commit/d0ba770))
+
+
+
 <a name="0.0.18"></a>
 ## 0.0.18 (2017-10-15)
 
