@@ -1,3 +1,12 @@
+<a name="0.0.20"></a>
+## 0.0.20 (2017-10-15)
+
+* 0.0.20 ([22335be](https://github.com/wessberg/TypescriptASTUtil/commit/22335be))
+* Bumped version ([0142399](https://github.com/wessberg/TypescriptASTUtil/commit/0142399))
+* More work on updating nodes where an array size has changed ([5de405b](https://github.com/wessberg/TypescriptASTUtil/commit/5de405b))
+
+
+
 <a name="0.0.19"></a>
 ## 0.0.19 (2017-10-15)
 
