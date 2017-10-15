@@ -1,3 +1,4 @@
+export {isNodeArray} from "./predicate/is-node-array";
 export {NodeUpdaterUtil} from "./node-updater-util/node-updater-util";
 export {NodeMatcherUtil} from "./node-matcher-util/node-matcher-util";
 export {Printer} from "./printer/printer";

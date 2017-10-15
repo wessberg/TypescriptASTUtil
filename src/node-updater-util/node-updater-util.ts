@@ -3744,11 +3744,15 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		removeIndexes.forEach(index => mutableExistingNodes.splice(index, 1));
 
 		// Update all of the existing ones
-		newNodes.forEach(newNode => {
+		newNodes.forEach((newNode, newNodeIndex) => {
+			// Check if the new node index exceeds the existing ones
+			const exceedsExisting = newNodeIndex >= mutableExistingNodes.length;
+
 			// Find the match within the existing ones
 			const match = this.nodeMatcherUtil.match(newNode, mutableExistingNodes);
+
 			// If it exists, update it
-			if (match != null) {
+			if (match != null && !exceedsExisting) {
 				boundHandler(newNode, match, options);
 			} else {
 				// Otherwise, push to the array, but do change the parent
