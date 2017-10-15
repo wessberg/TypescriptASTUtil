@@ -3801,6 +3801,11 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	private extraTransformStep<T extends Node> (newNode: T, existing: T, options: INodeUpdaterUtilUpdateOptions): T {
 		// Make sure all nested parents are set
 		this.setTopLevelParent(existing);
+
+		// Make sure that it has a parent
+		if (existing.parent == null && !isSourceFile(existing)) {
+			existing.parent = options.sourceFile;
+		}
 		/*tslint:disable:no-any*/
 		if (hasSymbol(newNode)) {
 			(<any>existing).symbol = this.copySymbolWithParent(options.sourceFile, newNode.symbol, options);
