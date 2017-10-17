@@ -33,6 +33,8 @@ export {isFileReference} from "./predicate/is-file-reference";
 export {isAmdDependency} from "./predicate/is-amd-dependency";
 export {isObject} from "./predicate/is-object";
 export {isTypescriptNode} from "./predicate/is-node";
+export {isJSDocUnknownTag} from "./predicate/is-jsdoc-unknown-tag";
+export {isJSDocClassTag} from "./predicate/is-jsdoc-class-tag";
 export {isIterable} from "./predicate/is-iterable";
 export {isBooleanLiteral} from "./predicate/is-boolean-literal";
 export {TypescriptASTUtil} from "./typescript-ast-util/typescript-ast-util";

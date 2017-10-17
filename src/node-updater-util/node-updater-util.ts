@@ -1,5 +1,5 @@
 import {INodeUpdaterUtil} from "./i-node-updater-util";
-import {AmdDependency, ArrayBindingElement, ArrayBindingPattern, ArrayLiteralExpression, ArrayTypeNode, ArrowFunction, AsExpression, AwaitExpression, BinaryExpression, BindingElement, BindingName, Block, BooleanLiteral, BreakStatement, CallExpression, CallSignatureDeclaration, CaseBlock, CaseClause, CatchClause, ClassDeclaration, ClassElement, ClassExpression, ClassLikeDeclaration, ComputedPropertyName, ConciseBody, ConditionalExpression, ConstructorDeclaration, ConstructorTypeNode, ConstructSignatureDeclaration, ContinueStatement, DebuggerStatement, Declaration, DeclarationName, DeclarationStatement, Decorator, DefaultClause, DeleteExpression, DoStatement, ElementAccessExpression, EmptyStatement, EntityName, EnumDeclaration, EnumMember, ExportAssignment, ExportDeclaration, ExportSpecifier, Expression, ExpressionStatement, ExpressionWithTypeArguments, ExternalModuleReference, FileReference, ForInStatement, ForOfStatement, ForStatement, FunctionBody, FunctionDeclaration, FunctionExpression, FunctionLikeDeclarationBase, FunctionTypeNode, GetAccessorDeclaration, HeritageClause, Identifier, IfStatement, ImportClause, ImportDeclaration, ImportEqualsDeclaration, ImportExpression, ImportSpecifier, IndexedAccessTypeNode, IndexSignatureDeclaration, InterfaceDeclaration, IntersectionTypeNode, isArrayBindingPattern, isArrayLiteralExpression, isArrayTypeNode, isArrowFunction, isAsExpression, isAwaitExpression, isBinaryExpression, isBindingElement, isBlock, isBreakStatement, isCallExpression, isCallSignatureDeclaration, isCaseBlock, isCaseClause, isCatchClause, isClassDeclaration, isClassExpression, isComputedPropertyName, isConditionalExpression, isConstructorDeclaration, isConstructorTypeNode, isConstructSignatureDeclaration, isContinueStatement, isDebuggerStatement, isDecorator, isDefaultClause, isDeleteExpression, isDoStatement, isElementAccessExpression, isEmptyStatement, isEnumDeclaration, isEnumMember, isExportAssignment, isExportDeclaration, isExportSpecifier, isExpressionStatement, isExpressionWithTypeArguments, isExternalModuleReference, isForInStatement, isForOfStatement, isForStatement, isFunctionDeclaration, isFunctionExpression, isFunctionTypeNode, isGetAccessorDeclaration, isHeritageClause, isIdentifier, isIfStatement, isImportClause, isImportDeclaration, isImportEqualsDeclaration, isImportSpecifier, isIndexedAccessTypeNode, isIndexSignatureDeclaration, isInterfaceDeclaration, isIntersectionTypeNode, isJsxAttribute, isJsxAttributes, isJsxClosingElement, isJsxElement, isJsxExpression, isJsxOpeningElement, isJsxSelfClosingElement, isJsxSpreadAttribute, isJsxText, isLabeledStatement, isLiteralTypeNode, isMappedTypeNode, isMetaProperty, isMethodDeclaration, isMethodSignature, isMissingDeclaration, isModifier, isModuleBlock, isModuleDeclaration, isNamedExports, isNamedImports, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNonNullExpression, isNoSubstitutionTemplateLiteral, isNumericLiteral, isObjectBindingPattern, isObjectLiteralExpression, isOmittedExpression, isParameter, isParenthesizedExpression, isParenthesizedTypeNode, isPostfixUnaryExpression, isPrefixUnaryExpression, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isRegularExpressionLiteral, isReturnStatement, isSemicolonClassElement, isSetAccessorDeclaration, isShorthandPropertyAssignment, isSourceFile, isSpreadAssignment, isSpreadElement, isStringLiteral, isSwitchStatement, isTaggedTemplateExpression, isTemplateExpression, isTemplateHead, isTemplateMiddle, isTemplateSpan, isTemplateTail, isThisTypeNode, isThrowStatement, isToken, isTryStatement, isTupleTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeLiteralNode, isTypeOfExpression, isTypeOperatorNode, isTypeParameterDeclaration, isTypePredicateNode, isTypeQueryNode, isTypeReferenceNode, isUnionTypeNode, isVariableDeclaration, isVariableDeclarationList, isVariableStatement, isVoidExpression, isWhileStatement, isWithStatement, isYieldExpression, IterationStatement, JSDocNamespaceDeclaration, JsxAttribute, JsxAttributes, JsxClosingElement, JsxElement, JsxExpression, JsxOpeningElement, JsxSelfClosingElement, JsxSpreadAttribute, JsxText, KeywordTypeNode, LabeledStatement, LeftHandSideExpression, LiteralExpression, LiteralLikeNode, LiteralTypeNode, MappedTypeNode, MemberExpression, MetaProperty, MethodDeclaration, MethodSignature, MissingDeclaration, Modifier, ModuleBlock, ModuleDeclaration, NamedDeclaration, NamedExports, NamedImports, NamespaceDeclaration, NamespaceExportDeclaration, NamespaceImport, NewExpression, Node, NodeArray, NonNullExpression, NoSubstitutionTemplateLiteral, NullLiteral, NumericLiteral, ObjectBindingPattern, ObjectLiteralElement, ObjectLiteralElementLike, ObjectLiteralExpression, ObjectLiteralExpressionBase, OmittedExpression, ParameterDeclaration, ParenthesizedExpression, ParenthesizedTypeNode, PartiallyEmittedExpression, PostfixUnaryExpression, PrefixUnaryExpression, PrimaryExpression, PropertyAccessExpression, PropertyAssignment, PropertyDeclaration, PropertyName, PropertySignature, QualifiedName, RegularExpressionLiteral, ReturnStatement, SemicolonClassElement, SetAccessorDeclaration, ShorthandPropertyAssignment, SignatureDeclaration, SourceFile, SpreadAssignment, SpreadElement, Statement, StringLiteral, SuperExpression, SwitchStatement, Symbol, SyntaxKind, TaggedTemplateExpression, TemplateExpression, TemplateHead, TemplateMiddle, TemplateSpan, TemplateTail, TextRange, ThisExpression, ThisTypeNode, ThrowStatement, Token, TryStatement, TupleTypeNode, TypeAliasDeclaration, TypeAssertion, TypeElement, TypeLiteralNode, TypeNode, TypeOfExpression, TypeOperatorNode, TypeParameterDeclaration, TypePredicateNode, TypeQueryNode, TypeReferenceNode, UnaryExpression, UnionTypeNode, UpdateExpression, VariableDeclaration, VariableDeclarationList, VariableStatement, VoidExpression, WhileStatement, WithStatement, YieldExpression} from "typescript";
+import {AmdDependency, ArrayBindingElement, ArrayBindingPattern, ArrayLiteralExpression, ArrayTypeNode, ArrowFunction, AsExpression, AwaitExpression, BinaryExpression, BindingElement, BindingName, Block, BooleanLiteral, BreakStatement, CallExpression, CallSignatureDeclaration, CaseBlock, CaseClause, CatchClause, ClassDeclaration, ClassElement, ClassExpression, ClassLikeDeclaration, ComputedPropertyName, ConciseBody, ConditionalExpression, ConstructorDeclaration, ConstructorTypeNode, ConstructSignatureDeclaration, ContinueStatement, DebuggerStatement, Declaration, DeclarationName, DeclarationStatement, Decorator, DefaultClause, DeleteExpression, DoStatement, ElementAccessExpression, EmptyStatement, EntityName, EnumDeclaration, EnumMember, ExportAssignment, ExportDeclaration, ExportSpecifier, Expression, ExpressionStatement, ExpressionWithTypeArguments, ExternalModuleReference, FileReference, ForInStatement, ForOfStatement, ForStatement, FunctionBody, FunctionDeclaration, FunctionExpression, FunctionLikeDeclarationBase, FunctionTypeNode, GetAccessorDeclaration, HeritageClause, Identifier, IfStatement, ImportClause, ImportDeclaration, ImportEqualsDeclaration, ImportExpression, ImportSpecifier, IndexedAccessTypeNode, IndexSignatureDeclaration, InterfaceDeclaration, IntersectionTypeNode, isArrayBindingPattern, isArrayLiteralExpression, isArrayTypeNode, isArrowFunction, isAsExpression, isAwaitExpression, isBinaryExpression, isBindingElement, isBlock, isBreakStatement, isCallExpression, isCallSignatureDeclaration, isCaseBlock, isCaseClause, isCatchClause, isClassDeclaration, isClassExpression, isComputedPropertyName, isConditionalExpression, isConstructorDeclaration, isConstructorTypeNode, isConstructSignatureDeclaration, isContinueStatement, isDebuggerStatement, isDecorator, isDefaultClause, isDeleteExpression, isDoStatement, isElementAccessExpression, isEmptyStatement, isEnumDeclaration, isEnumMember, isExportAssignment, isExportDeclaration, isExportSpecifier, isExpressionStatement, isExpressionWithTypeArguments, isExternalModuleReference, isForInStatement, isForOfStatement, isForStatement, isFunctionDeclaration, isFunctionExpression, isFunctionTypeNode, isGetAccessorDeclaration, isHeritageClause, isIdentifier, isIfStatement, isImportClause, isImportDeclaration, isImportEqualsDeclaration, isImportSpecifier, isIndexedAccessTypeNode, isIndexSignatureDeclaration, isInterfaceDeclaration, isIntersectionTypeNode, isJSDoc, isJSDocAllType, isJSDocAugmentsTag, isJSDocFunctionType, isJSDocNonNullableType, isJSDocNullableType, isJSDocOptionalType, isJSDocParameterTag, isJSDocPropertyTag, isJSDocReturnTag, isJSDocTemplateTag, isJSDocTypedefTag, isJSDocTypeExpression, isJSDocTypeLiteral, isJSDocTypeTag, isJSDocUnknownType, isJSDocVariadicType, isJsxAttribute, isJsxAttributes, isJsxClosingElement, isJsxElement, isJsxExpression, isJsxOpeningElement, isJsxSelfClosingElement, isJsxSpreadAttribute, isJsxText, isLabeledStatement, isLiteralTypeNode, isMappedTypeNode, isMetaProperty, isMethodDeclaration, isMethodSignature, isMissingDeclaration, isModifier, isModuleBlock, isModuleDeclaration, isNamedExports, isNamedImports, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNonNullExpression, isNoSubstitutionTemplateLiteral, isNumericLiteral, isObjectBindingPattern, isObjectLiteralExpression, isOmittedExpression, isParameter, isParenthesizedExpression, isParenthesizedTypeNode, isPostfixUnaryExpression, isPrefixUnaryExpression, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isRegularExpressionLiteral, isReturnStatement, isSemicolonClassElement, isSetAccessorDeclaration, isShorthandPropertyAssignment, isSourceFile, isSpreadAssignment, isSpreadElement, isStringLiteral, isSwitchStatement, isTaggedTemplateExpression, isTemplateExpression, isTemplateHead, isTemplateMiddle, isTemplateSpan, isTemplateTail, isThisTypeNode, isThrowStatement, isToken, isTryStatement, isTupleTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeLiteralNode, isTypeOfExpression, isTypeOperatorNode, isTypeParameterDeclaration, isTypePredicateNode, isTypeQueryNode, isTypeReferenceNode, isUnionTypeNode, isVariableDeclaration, isVariableDeclarationList, isVariableStatement, isVoidExpression, isWhileStatement, isWithStatement, isYieldExpression, IterationStatement, JSDoc, JSDocAllType, JSDocAugmentsTag, JSDocClassTag, JSDocFunctionType, JSDocNamespaceDeclaration, JSDocNonNullableType, JSDocNullableType, JSDocOptionalType, JSDocParameterTag, JSDocPropertyLikeTag, JSDocPropertyTag, JSDocReturnTag, JSDocTag, JSDocTemplateTag, JSDocType, JSDocTypedefTag, JSDocTypeExpression, JSDocTypeLiteral, JSDocTypeTag, JSDocUnknownTag, JSDocUnknownType, JSDocVariadicType, JsxAttribute, JsxAttributes, JsxClosingElement, JsxElement, JsxExpression, JsxOpeningElement, JsxSelfClosingElement, JsxSpreadAttribute, JsxText, KeywordTypeNode, LabeledStatement, LeftHandSideExpression, LiteralExpression, LiteralLikeNode, LiteralTypeNode, MappedTypeNode, MemberExpression, MetaProperty, MethodDeclaration, MethodSignature, MissingDeclaration, Modifier, ModuleBlock, ModuleDeclaration, NamedDeclaration, NamedExports, NamedImports, NamespaceDeclaration, NamespaceExportDeclaration, NamespaceImport, NewExpression, Node, NodeArray, NonNullExpression, NoSubstitutionTemplateLiteral, NullLiteral, NumericLiteral, ObjectBindingPattern, ObjectLiteralElement, ObjectLiteralElementLike, ObjectLiteralExpression, ObjectLiteralExpressionBase, OmittedExpression, ParameterDeclaration, ParenthesizedExpression, ParenthesizedTypeNode, PartiallyEmittedExpression, PostfixUnaryExpression, PrefixUnaryExpression, PrimaryExpression, PropertyAccessExpression, PropertyAssignment, PropertyDeclaration, PropertyName, PropertySignature, QualifiedName, RegularExpressionLiteral, ReturnStatement, SemicolonClassElement, SetAccessorDeclaration, ShorthandPropertyAssignment, SignatureDeclaration, SourceFile, SpreadAssignment, SpreadElement, Statement, StringLiteral, SuperExpression, SwitchStatement, Symbol, SyntaxKind, TaggedTemplateExpression, TemplateExpression, TemplateHead, TemplateMiddle, TemplateSpan, TemplateTail, TextRange, ThisExpression, ThisTypeNode, ThrowStatement, Token, TryStatement, TupleTypeNode, TypeAliasDeclaration, TypeAssertion, TypeElement, TypeLiteralNode, TypeNode, TypeOfExpression, TypeOperatorNode, TypeParameterDeclaration, TypePredicateNode, TypeQueryNode, TypeReferenceNode, UnaryExpression, UnionTypeNode, UpdateExpression, VariableDeclaration, VariableDeclarationList, VariableStatement, VoidExpression, WhileStatement, WithStatement, YieldExpression} from "typescript";
 import {NodeMatcherItem} from "../node-matcher-util/node-matcher-item";
 import {INodeUpdaterUtilUpdateOptions} from "./i-node-updater-util-update-options";
 import {INodeUpdaterUtilUpdateOptionsDict} from "./i-node-updater-util-update-options-dict";
@@ -24,6 +24,7 @@ import {hasLocals} from "../predicate/has-locals";
 import {isTypescriptNode} from "../predicate/is-node";
 import {INodeMatcherUtil} from "../node-matcher-util/i-node-matcher-util";
 import {IPrinter} from "../printer/i-printer";
+import {isJSDocClassTag, isJSDocUnknownTag} from "../";
 
 /**
  * A class that helps with updating (mutating) nodes in-place
@@ -37,47 +38,6 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @type {Set<string>}
 	 */
 	private PRESERVE_KEYS_ON_STRIP: Set<string> = new Set(["parent"]);
-
-	/**
-	 * Adds a Node in-place
-	 * @param {T} newNode
-	 * @param {SourceFile} sourceFile
-	 * @param {INodeUpdaterLanguageServiceOption} languageService
-	 * @param {Partial<INodeUpdaterUtilUpdateOptionsDict>} [options={}]
-	 * @returns {T}
-	 */
-	public addInPlace<T extends Node> (newNode: T, sourceFile: SourceFile, languageService: INodeUpdaterLanguageServiceOption, options: Partial<INodeUpdaterUtilUpdateOptionsDict> = {}): T {
-
-		const normalizedOptions = this.getUpdateOptions(options, sourceFile);
-
-		/*tslint:disable:no-any*/
-		const mutableStatements = <Node[]><any>sourceFile.statements;
-		/*tslint:enable:no-any*/
-
-		// Make sure to mark the SourceFile as the parent of the new node.
-		if (newNode.parent == null && !isSourceFile(newNode)) {
-			newNode.parent = sourceFile;
-		}
-
-		// Add the new node to the top of the SourceFile if it is an import
-		if (isImportDeclaration(newNode) || isImportEqualsDeclaration(newNode)) {
-			mutableStatements.unshift(newNode);
-		}
-
-		// Otherwise, append it to the bottom of it
-		else {
-			mutableStatements.push(newNode);
-		}
-
-		// Generate a new SourceFile
-		const path = sourceFile.fileName;
-		const content = this.printer.print(sourceFile);
-		const newSourceFile = languageService.addFile({path, content});
-
-		// Update the existing SourceFile (primarily for positions)
-		this.update(newSourceFile, sourceFile, normalizedOptions);
-		return this.nodeMatcherUtil.match(newNode, sourceFile.statements)!;
-	}
 
 	/**
 	 * Updates a Node in-place. This means it will be deep-mutated
@@ -712,12 +672,415 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 			}
 
 			else if (isExportAssignment(newNode) && isExportAssignment(existing)) {
-					return <T><any> this.updateExportAssignment(newNode, existing, options);
-				}
+				return <T><any> this.updateExportAssignment(newNode, existing, options);
+			}
+
+			else if (isJSDocTypeExpression(newNode) && isJSDocTypeExpression(existing)) {
+				return <T><any> this.updateJSDocTypeExpression(newNode, existing, options);
+			}
+
+			else if (isJSDocUnknownType(newNode) && isJSDocUnknownType(existing)) {
+				return <T><any> this.updateJSDocUnknownType(newNode, existing, options);
+			}
+
+			else if (isJSDocNonNullableType(newNode) && isJSDocNonNullableType(existing)) {
+				return <T><any> this.updateJSDocNonNullableType(newNode, existing, options);
+			}
+
+			else if (isJSDocNullableType(newNode) && isJSDocNullableType(existing)) {
+				return <T><any> this.updateJSDocNullableType(newNode, existing, options);
+			}
+
+			else if (isJSDocOptionalType(newNode) && isJSDocOptionalType(existing)) {
+				return <T><any> this.updateJSDocOptionalType(newNode, existing, options);
+			}
+
+			else if (isJSDocFunctionType(newNode) && isJSDocFunctionType(existing)) {
+				return <T><any> this.updateJSDocFunctionType(newNode, existing, options);
+			}
+
+			else if (isJSDocVariadicType(newNode) && isJSDocVariadicType(existing)) {
+				return <T><any> this.updateJSDocVariadicType(newNode, existing, options);
+			}
+
+			else if (isJSDoc(newNode) && isJSDoc(existing)) {
+				return <T><any> this.updateJSDoc(newNode, existing, options);
+			}
+
+			else if (isJSDocUnknownTag(newNode) && isJSDocUnknownTag(existing)) {
+				return <T><any> this.updateJSDocUnknownTag(newNode, existing, options);
+			}
+
+			else if (isJSDocAugmentsTag(newNode) && isJSDocAugmentsTag(existing)) {
+				return <T><any> this.updateJSDocAugmentsTag(newNode, existing, options);
+			}
+
+			else if (isJSDocClassTag(newNode) && isJSDocClassTag(existing)) {
+				return <T><any> this.updateJSDocClassTag(newNode, existing, options);
+			}
+
+			else if (isJSDocTemplateTag(newNode) && isJSDocTemplateTag(existing)) {
+				return <T><any> this.updateJSDocTemplateTag(newNode, existing, options);
+			}
+
+			else if (isJSDocReturnTag(newNode) && isJSDocReturnTag(existing)) {
+				return <T><any> this.updateJSDocReturnTag(newNode, existing, options);
+			}
+
+			else if (isJSDocTypeTag(newNode) && isJSDocTypeTag(existing)) {
+				return <T><any> this.updateJSDocTypeTag(newNode, existing, options);
+			}
+
+			else if (isJSDocTypedefTag(newNode) && isJSDocTypedefTag(existing)) {
+				return <T><any> this.updateJSDocTypedefTag(newNode, existing, options);
+			}
+
+			else if (isJSDocPropertyTag(newNode) && isJSDocPropertyTag(existing)) {
+				return <T><any> this.updateJSDocPropertyTag(newNode, existing, options);
+			}
+
+			else if (isJSDocParameterTag(newNode) && isJSDocParameterTag(existing)) {
+				return <T><any> this.updateJSDocParameterTag(newNode, existing, options);
+			}
+
+			else if (isJSDocTypeLiteral(newNode) && isJSDocTypeLiteral(existing)) {
+				return <T><any> this.updateJSDocTypeLiteral(newNode, existing, options);
+			}
+
+			else if (isJSDocAllType(<JSDocAllType><any>newNode) && isJSDocAllType(<JSDocAllType><any>existing)) {
+				return <T><any>this.updateJSDocAllType(<JSDocAllType><any>newNode, <JSDocAllType><any>existing, options);
+			}
 		}
 
 		throw new TypeError(`${this.constructor.name} could not update a Node of kind ${SyntaxKind[existing.kind]}: It wasn't handled!`);
 		/*tslint:enable:no-any*/
+	}
+
+	/**
+	 * Updates a JSDocTypeLiteral
+	 * @param {JSDocTypeLiteral} newNode
+	 * @param {JSDocTypeLiteral} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocTypeLiteral}
+	 */
+	private updateJSDocTypeLiteral (newNode: JSDocTypeLiteral, existing: JSDocTypeLiteral, options: INodeUpdaterUtilUpdateOptions): JSDocTypeLiteral {
+		this.updateJSDocType(newNode, existing, options);
+
+		existing.jsDocPropertyTags = this.updateNodesIfGiven(existing, newNode.jsDocPropertyTags, existing.jsDocPropertyTags, options, this.updateAll);
+		existing.isArrayType = newNode.isArrayType;
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocParameterTag
+	 * @param {JSDocParameterTag} newNode
+	 * @param {JSDocParameterTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocParameterTag}
+	 */
+	private updateJSDocParameterTag (newNode: JSDocParameterTag, existing: JSDocParameterTag, options: INodeUpdaterUtilUpdateOptions): JSDocParameterTag {
+		this.updateJSDocPropertyLikeTag(newNode, existing, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocPropertyTag
+	 * @param {JSDocPropertyTag} newNode
+	 * @param {JSDocPropertyTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocPropertyTag}
+	 */
+	private updateJSDocPropertyTag (newNode: JSDocPropertyTag, existing: JSDocPropertyTag, options: INodeUpdaterUtilUpdateOptions): JSDocPropertyTag {
+		this.updateJSDocPropertyLikeTag(newNode, existing, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocTypeTag
+	 * @param {JSDocTypeTag} newNode
+	 * @param {JSDocTypeTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocTypeTag}
+	 */
+	private updateJSDocTypeTag (newNode: JSDocTypeTag, existing: JSDocTypeTag, options: INodeUpdaterUtilUpdateOptions): JSDocTypeTag {
+		this.updateJSDocTag(newNode, existing, options);
+
+		existing.typeExpression = this.updateJSDocTypeExpression(newNode.typeExpression, existing.typeExpression, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocReturnTag
+	 * @param {JSDocReturnTag} newNode
+	 * @param {JSDocReturnTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocReturnTag}
+	 */
+	private updateJSDocReturnTag (newNode: JSDocReturnTag, existing: JSDocReturnTag, options: INodeUpdaterUtilUpdateOptions): JSDocReturnTag {
+		this.updateJSDocTag(newNode, existing, options);
+
+		existing.typeExpression = this.updateJSDocTypeExpression(newNode.typeExpression, existing.typeExpression, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocTemplateTag
+	 * @param {JSDocTemplateTag} newNode
+	 * @param {JSDocTemplateTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocTemplateTag}
+	 */
+	private updateJSDocTemplateTag (newNode: JSDocTemplateTag, existing: JSDocTemplateTag, options: INodeUpdaterUtilUpdateOptions): JSDocTemplateTag {
+		this.updateJSDocTag(newNode, existing, options);
+
+		existing.typeParameters = this.updateTypeParameterDeclarations(existing, newNode.typeParameters, existing.typeParameters, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocClassTag
+	 * @param {JSDocClassTag} newNode
+	 * @param {JSDocClassTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocClassTag}
+	 */
+	private updateJSDocClassTag (newNode: JSDocClassTag, existing: JSDocClassTag, options: INodeUpdaterUtilUpdateOptions): JSDocClassTag {
+		this.updateJSDocTag(newNode, existing, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocAugmentsTag
+	 * @param {JSDocAugmentsTag} newNode
+	 * @param {JSDocAugmentsTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocAugmentsTag}
+	 */
+	private updateJSDocAugmentsTag (newNode: JSDocAugmentsTag, existing: JSDocAugmentsTag, options: INodeUpdaterUtilUpdateOptions): JSDocAugmentsTag {
+		this.updateJSDocTag(newNode, existing, options);
+
+		existing.typeExpression = this.updateJSDocTypeExpression(newNode.typeExpression, existing.typeExpression, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocUnknownTag
+	 * @param {JSDocUnknownTag} newNode
+	 * @param {JSDocUnknownTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocUnknownTag}
+	 */
+	private updateJSDocUnknownTag (newNode: JSDocUnknownTag, existing: JSDocUnknownTag, options: INodeUpdaterUtilUpdateOptions): JSDocUnknownTag {
+		this.updateJSDocTag(newNode, existing, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocTag
+	 * @param {JSDocTag} newNode
+	 * @param {JSDocTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocTag}
+	 */
+	private updateJSDocTag (newNode: JSDocTag, existing: JSDocTag, options: INodeUpdaterUtilUpdateOptions): JSDocTag {
+		this.updateNode(newNode, existing, options);
+
+		existing.atToken = this.updateToken(newNode.atToken, existing.atToken, options);
+		existing.tagName = this.updateIdentifier(newNode.tagName, existing.tagName, options);
+		existing.comment = newNode.comment;
+
+		return existing;
+	}
+
+	/**
+	 * Updates a JSDocTypedefTag
+	 * @param {JSDocTypedefTag} newNode
+	 * @param {JSDocTypedefTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocTypedefTag}
+	 */
+	private updateJSDocTypedefTag (newNode: JSDocTypedefTag, existing: JSDocTypedefTag, options: INodeUpdaterUtilUpdateOptions): JSDocTypedefTag {
+		this.updateJSDocTag(newNode, existing, options);
+		this.updateNamedDeclaration(newNode, existing, options);
+
+		existing.fullName = this.updateNodeIfGiven(newNode.fullName, existing.fullName, options, this.update);
+		existing.name = this.updateNodeIfGiven(newNode.name, existing.name, options, this.updateIdentifier);
+		existing.typeExpression = this.updateNodeIfGiven(newNode.typeExpression, existing.typeExpression, options, this.update);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocPropertyLikeTag
+	 * @param {JSDocPropertyLikeTag} newNode
+	 * @param {JSDocPropertyLikeTag} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocPropertyLikeTag}
+	 */
+	private updateJSDocPropertyLikeTag (newNode: JSDocPropertyLikeTag, existing: JSDocPropertyLikeTag, options: INodeUpdaterUtilUpdateOptions): JSDocPropertyLikeTag {
+		this.updateJSDocTag(newNode, existing, options);
+		this.updateDeclaration(newNode, existing, options);
+
+		existing.name = this.updateEntityName(newNode.name, existing.name, options);
+		existing.typeExpression = this.updateJSDocTypeExpression(newNode.typeExpression, existing.typeExpression, options);
+		existing.isNameFirst = newNode.isNameFirst;
+		existing.isBracketed = newNode.isBracketed;
+
+		return existing;
+	}
+
+	/**
+	 * Updates a JSDoc
+	 * @param {JSDoc} newNode
+	 * @param {JSDoc} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDoc}
+	 */
+	private updateJSDoc (newNode: JSDoc, existing: JSDoc, options: INodeUpdaterUtilUpdateOptions): JSDoc {
+		this.updateNode(newNode, existing, options);
+
+		existing.comment = newNode.comment;
+		existing.tags = this.updateNodesIfGiven(existing, newNode.tags, existing.tags, options, this.updateAll);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocVariadicType
+	 * @param {JSDocVariadicType} newNode
+	 * @param {JSDocVariadicType} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocVariadicType}
+	 */
+	private updateJSDocVariadicType (newNode: JSDocVariadicType, existing: JSDocVariadicType, options: INodeUpdaterUtilUpdateOptions): JSDocVariadicType {
+		this.updateJSDocType(newNode, existing, options);
+
+		existing.type = this.update(newNode.type, existing.type, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocFunctionType
+	 * @param {JSDocFunctionType} newNode
+	 * @param {JSDocFunctionType} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocFunctionType}
+	 */
+	private updateJSDocFunctionType (newNode: JSDocFunctionType, existing: JSDocFunctionType, options: INodeUpdaterUtilUpdateOptions): JSDocFunctionType {
+		this.updateJSDocType(newNode, existing, options);
+		this.updateSignatureDeclaration(newNode, existing, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocOptionalType
+	 * @param {JSDocOptionalType} newNode
+	 * @param {JSDocOptionalType} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocOptionalType}
+	 */
+	private updateJSDocOptionalType (newNode: JSDocOptionalType, existing: JSDocOptionalType, options: INodeUpdaterUtilUpdateOptions): JSDocOptionalType {
+		this.updateJSDocType(newNode, existing, options);
+
+		existing.type = this.update(newNode.type, existing.type, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocNullableType
+	 * @param {JSDocNullableType} newNode
+	 * @param {JSDocNullableType} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocNullableType}
+	 */
+	private updateJSDocNullableType (newNode: JSDocNullableType, existing: JSDocNullableType, options: INodeUpdaterUtilUpdateOptions): JSDocNullableType {
+		this.updateJSDocType(newNode, existing, options);
+
+		existing.type = this.update(newNode.type, existing.type, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocTypeExpression
+	 * @param {JSDocTypeExpression} newNode
+	 * @param {JSDocTypeExpression} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocTypeExpression}
+	 */
+	private updateJSDocTypeExpression (newNode: JSDocTypeExpression, existing: JSDocTypeExpression, options: INodeUpdaterUtilUpdateOptions): JSDocTypeExpression {
+		this.updateTypeNode(newNode, existing, options);
+
+		existing.type = this.update(newNode.type, existing.type, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocAllType
+	 * @param {JSDocAllType} newNode
+	 * @param {JSDocAllType} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocAllType}
+	 */
+	private updateJSDocAllType (newNode: JSDocAllType, existing: JSDocAllType, options: INodeUpdaterUtilUpdateOptions): JSDocAllType {
+		this.updateJSDocType(newNode, existing, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocNonNullableType
+	 * @param {JSDocNonNullableType} newNode
+	 * @param {JSDocNonNullableType} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocNonNullableType}
+	 */
+	private updateJSDocNonNullableType (newNode: JSDocNonNullableType, existing: JSDocNonNullableType, options: INodeUpdaterUtilUpdateOptions): JSDocNonNullableType {
+		this.updateJSDocType(newNode, existing, options);
+
+		existing.type = this.update(newNode.type, existing.type, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocUnknownType
+	 * @param {JSDocUnknownType} newNode
+	 * @param {JSDocUnknownType} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocUnknownType}
+	 */
+	private updateJSDocUnknownType (newNode: JSDocUnknownType, existing: JSDocUnknownType, options: INodeUpdaterUtilUpdateOptions): JSDocUnknownType {
+		this.updateJSDocType(newNode, existing, options);
+
+		return this.extraTransformStep(newNode, existing, options);
+	}
+
+	/**
+	 * Updates a JSDocType
+	 * @param {JSDocType} newNode
+	 * @param {JSDocType} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {JSDocType}
+	 */
+	private updateJSDocType (newNode: JSDocType, existing: JSDocType, options: INodeUpdaterUtilUpdateOptions): JSDocType {
+		this.updateTypeNode(newNode, existing, options);
+
+		existing._jsDocTypeBrand = newNode._jsDocTypeBrand;
+		return existing;
 	}
 
 	/**
@@ -2216,7 +2579,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @param {(newNode: NodeArray<T extends Node>, existing: NodeArray<T extends Node>, options: INodeUpdaterUtilUpdateOptions) => NodeArray<T extends Node>} handler
 	 * @returns {NodeArray<T extends Node>}
 	 */
-	private updateNodesIfGiven<T extends Node> (parent: Node, newNode: NodeArray<T>|undefined, existing: NodeArray<T>|undefined, options: INodeUpdaterUtilUpdateOptions, handler: (parent: Node, newNode: NodeArray<T>, existing: NodeArray<T>, options: INodeUpdaterUtilUpdateOptions) => NodeArray<T>): NodeArray<T>|undefined {
+	private updateNodesIfGiven<T extends Node> (parent: Node, newNode: NodeArray<T>|ReadonlyArray<T>|undefined, existing: NodeArray<T>|ReadonlyArray<T>|undefined, options: INodeUpdaterUtilUpdateOptions, handler: (parent: Node, newNode: NodeArray<T>, existing: NodeArray<T>, options: INodeUpdaterUtilUpdateOptions) => NodeArray<T>): NodeArray<T>|undefined {
 		const boundHandler = handler.bind(this);
 		return existing == null ? newNode : newNode == null ? undefined : boundHandler(parent, newNode, existing, options);
 	}
