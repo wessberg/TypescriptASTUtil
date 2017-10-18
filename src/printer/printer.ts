@@ -30,13 +30,16 @@ export class Printer implements IPrinter {
 	 * @returns {string}
 	 */
 	public stringify (node: Node|NodeArray<Node>, stripKeys?: Iterable<string>): string {
+		// Generate the set of additional keys to strip
+		const additionalStripKeys = stripKeys == null ? null : new Set(stripKeys);
+
 		return JSON.stringify(node, (key, value) => {
 
 			// Replace a SyntaxKind value with its name for better readability
 			if (key === "kind" || key === "token") return SyntaxKind[value];
 
 			// If any keys are provided to 'stripKeys', check if they have the key and filter it out if it matches
-			if (stripKeys != null && new Set(stripKeys).has(key)) {
+			if (additionalStripKeys != null && additionalStripKeys.has(key)) {
 				return undefined;
 			}
 
