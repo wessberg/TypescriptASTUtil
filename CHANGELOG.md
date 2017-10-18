@@ -1,3 +1,12 @@
+<a name="0.0.22"></a>
+## 0.0.22 (2017-10-18)
+
+* 0.0.22 ([78d11f5](https://github.com/wessberg/TypescriptASTUtil/commit/78d11f5))
+* Added a tslint ignore comment ([8401853](https://github.com/wessberg/TypescriptASTUtil/commit/8401853))
+* Bumped version ([79d6968](https://github.com/wessberg/TypescriptASTUtil/commit/79d6968))
+
+
+
 <a name="0.0.21"></a>
 ## 0.0.21 (2017-10-18)
 
