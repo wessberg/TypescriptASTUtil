@@ -1,3 +1,12 @@
+<a name="0.0.23"></a>
+## 0.0.23 (2017-10-18)
+
+* 0.0.23 ([3d4d064](https://github.com/wessberg/TypescriptASTUtil/commit/3d4d064))
+* Bumped version ([7b48089](https://github.com/wessberg/TypescriptASTUtil/commit/7b48089))
+* Removed 'text property' from excluded properties on the printer ([56d6e75](https://github.com/wessberg/TypescriptASTUtil/commit/56d6e75))
+
+
+
 <a name="0.0.22"></a>
 ## 0.0.22 (2017-10-18)
 
