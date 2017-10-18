@@ -24,13 +24,14 @@ import {hasLocals} from "../predicate/has-locals";
 import {isTypescriptNode} from "../predicate/is-node";
 import {INodeMatcherUtil} from "../node-matcher-util/i-node-matcher-util";
 import {IPrinter} from "../printer/i-printer";
-import {isJSDocClassTag, isJSDocUnknownTag} from "../";
+import {hasJsDoc, isJSDocClassTag, isJSDocUnknownTag, ITypescriptASTUtil} from "../";
 
 /**
  * A class that helps with updating (mutating) nodes in-place
  */
 export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	constructor (private nodeMatcherUtil: INodeMatcherUtil,
+							 private astUtil: ITypescriptASTUtil,
 							 private printer: IPrinter) {}
 
 	/**
@@ -53,6 +54,9 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 
 		// Perform an in-place update of the Node
 		this.update(newNode, existing, normalizedOptions);
+
+		// Replace all positions with -1
+		this.astUtil.clearPositions(existing);
 
 		// Generate a new SourceFile
 		const path = normalizedOptions.sourceFile.fileName;
@@ -2581,6 +2585,11 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	private updateNodesIfGiven<T extends Node> (parent: Node, newNode: NodeArray<T>|ReadonlyArray<T>|undefined, existing: NodeArray<T>|ReadonlyArray<T>|undefined, options: INodeUpdaterUtilUpdateOptions, handler: (parent: Node, newNode: NodeArray<T>, existing: NodeArray<T>, options: INodeUpdaterUtilUpdateOptions) => NodeArray<T>): NodeArray<T>|undefined {
 		const boundHandler = handler.bind(this);
+
+		// Replace all parents
+		if (existing == null && newNode != null) {
+			newNode.forEach(part => part.parent = parent);
+		}
 		return existing == null ? newNode : newNode == null ? undefined : boundHandler(parent, newNode, existing, options);
 	}
 
@@ -3017,6 +3026,19 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	private updateAll<T extends Node> (parent: Node, newNode: NodeArray<T>, existing: NodeArray<T>, options: INodeUpdaterUtilUpdateOptions): NodeArray<T> {
 		return this.updateNodeArray(parent, newNode, existing, options, this.update);
+	}
+
+	/**
+	 * Like 'updateAll', but does so in a mutable array
+	 * @template T
+	 * @param {Node} parent
+	 * @param {NodeArray<T>} newNode
+	 * @param {NodeArray<T>} existing
+	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {NodeArray<T>}
+	 */
+	private updateAllInMutableArray<T extends Node> (parent: Node, newNode: NodeArray<T>, existing: NodeArray<T>, options: INodeUpdaterUtilUpdateOptions): NodeArray<T> {
+		return this.updateNodeArray(parent, newNode, existing, options, this.update, false);
 	}
 
 	/**
@@ -4083,11 +4105,14 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @param {NodeArray<T extends Node>} existingNodes
 	 * @param {INodeUpdaterUtilUpdateOptions} options
 	 * @param {(newNode: T, existing: T, options: INodeUpdaterUtilUpdateOptions) => T} handler
+	 * @param {boolean} [updateTextRange=true]
 	 * @returns {NodeArray<T extends Node>}
 	 */
-	private updateNodeArray<T extends Node> (parent: Node, newNodes: NodeArray<T>, existingNodes: NodeArray<T>, options: INodeUpdaterUtilUpdateOptions, handler: (newNode: T, existing: T, options: INodeUpdaterUtilUpdateOptions) => T): NodeArray<T> {
+	private updateNodeArray<T extends Node> (parent: Node, newNodes: NodeArray<T>, existingNodes: NodeArray<T>, options: INodeUpdaterUtilUpdateOptions, handler: (newNode: T, existing: T, options: INodeUpdaterUtilUpdateOptions) => T, updateTextRange: boolean = true): NodeArray<T> {
 		const boundHandler = handler.bind(this);
-		this.updateTextRange(newNodes, existingNodes, options);
+		if (updateTextRange) {
+			this.updateTextRange(newNodes, existingNodes, options);
+		}
 
 		// Force-cast to a mutable array
 		/*tslint:disable:no-any*/
@@ -4173,47 +4198,54 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		if (existing.parent == null && !isSourceFile(existing)) {
 			existing.parent = options.sourceFile;
 		}
+
 		/*tslint:disable:no-any*/
+		const anyCastExisting = <any>existing;
+		/*tslint:enable:no-any*/
+
+		if (hasJsDoc(newNode)) {
+			anyCastExisting.jsDoc = this.updateNodesIfGiven(anyCastExisting, newNode.jsDoc, anyCastExisting.jsDoc, options, this.updateAllInMutableArray);
+		}
+
 		if (hasSymbol(newNode)) {
-			(<any>existing).symbol = this.copySymbolWithParent(options.sourceFile, newNode.symbol, options);
+			anyCastExisting.symbol = this.copySymbolWithParent(options.sourceFile, newNode.symbol, options);
 		}
 
 		if (hasClassifiableNames(newNode)) {
-			(<any>existing).classifiableNames = newNode.classifiableNames;
+			anyCastExisting.classifiableNames = newNode.classifiableNames;
 		}
 
 		if (hasIdentifiers(newNode)) {
-			(<any>existing).identifiers = newNode.identifiers;
+			anyCastExisting.identifiers = newNode.identifiers;
 		}
 
 		if (hasSymbolCount(newNode)) {
-			(<any>existing).symbolCount = newNode.symbolCount;
+			anyCastExisting.symbolCount = newNode.symbolCount;
 		}
 
 		if (hasNodeCount(newNode)) {
-			(<any>existing).nodeCount = newNode.nodeCount;
+			anyCastExisting.nodeCount = newNode.nodeCount;
 		}
 
 		if (hasIdentifierCount(newNode)) {
-			(<any>existing).identifierCount = newNode.identifierCount;
+			anyCastExisting.identifierCount = newNode.identifierCount;
 		}
 
 		if (hasLineMap(newNode)) {
-			(<any>existing).lineMap = newNode.lineMap;
+			anyCastExisting.lineMap = newNode.lineMap;
 		}
 
 		if (hasNextContainer(newNode)) {
-			(<any>existing).nextContainer = this.cloneWithParent(options.sourceFile, newNode.nextContainer);
+			anyCastExisting.nextContainer = this.cloneWithParent(options.sourceFile, newNode.nextContainer);
 		}
 
 		if (hasLocals(newNode)) {
 			if (newNode.locals != null) {
 				const mapped: Map<string, Symbol> = <any> Array.from(newNode.locals.entries()).map(entry => [entry[0], this.copySymbolWithParent(options.sourceFile, entry[1], options)]);
-				(<any>existing).locals = new Map(mapped);
+				anyCastExisting.locals = new Map(mapped);
 			}
 		}
 
-		/*tslint:enable:no-any*/
 		return existing;
 	}
 }

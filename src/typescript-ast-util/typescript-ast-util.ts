@@ -1,5 +1,6 @@
 import {createNodeArray, forEachChild, isArrowFunction, isBreakStatement, isCallExpression, isClassDeclaration, isClassLike, isComputedPropertyName, isConstructorDeclaration, isContinueStatement, isDecorator, isElementAccessExpression, isEnumDeclaration, isExportAssignment, isExportSpecifier, isExpressionWithTypeArguments, isExternalModuleReference, isFunctionDeclaration, isFunctionExpression, isIdentifier, isImportClause, isImportEqualsDeclaration, isImportSpecifier, isInterfaceDeclaration, isJSDocParameterTag, isJSDocPropertyTag, isJSDocTypedefTag, isJsxAttribute, isLabeledStatement, isMetaProperty, isMissingDeclaration, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNumericLiteral, isParenthesizedExpression, isParenthesizedTypeNode, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isShorthandPropertyAssignment, isStringLiteral, isThisTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeParameterDeclaration, isTypePredicateNode, isTypeReferenceNode, Node, NodeArray, NodeFlags, SyntaxKind, tokenToString} from "typescript";
 import {ITypescriptASTUtil} from "./i-typescript-ast-util";
+import {hasTextRange, isNodeArrayOrMutableArrayOfNodes, isTypescriptNode} from "../";
 
 /**
  * A helper class for working with Typescript's AST
@@ -15,6 +16,39 @@ export class TypescriptASTUtil implements ITypescriptASTUtil {
 		const sourceFile = identifier.getSourceFile();
 		if (sourceFile == null) return "";
 		return sourceFile.text.slice(identifier.pos, identifier.end);
+	}
+
+	/**
+	 * Replaces all positions recursively with -1.
+	 * @param {NodeArray<T extends Node> | T} node
+	 * @param {Set<Node | NodeArray<T extends Node>>} seenNodes
+	 * @returns {T}
+	 */
+	public clearPositions<T extends Node> (node: T|NodeArray<T>|T[], seenNodes: Set<Node|NodeArray<T>|T[]> = new Set()): T {
+		if (seenNodes.has(node)) return <T> node;
+		seenNodes.add(node);
+
+		if (hasTextRange(node)) {
+			node.pos = node.end = -1;
+		}
+
+		if (isNodeArrayOrMutableArrayOfNodes(node)) {
+			(<NodeArray<T>>node).forEach(part => {
+				if (isTypescriptNode(part) || isNodeArrayOrMutableArrayOfNodes(part)) {
+					this.clearPositions(part, seenNodes);
+				}
+			});
+		}
+		else {
+			Object.keys(node).forEach((key: keyof T) => {
+				const value = node[key];
+				if (isTypescriptNode(value) || isNodeArrayOrMutableArrayOfNodes(value)) {
+					this.clearPositions(value, seenNodes);
+				}
+			});
+		}
+
+		return <T> node;
 	}
 
 	/**
