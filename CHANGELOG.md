@@ -1,3 +1,12 @@
+<a name="0.0.25"></a>
+## 0.0.25 (2017-10-18)
+
+* 0.0.25 ([2657d99](https://github.com/wessberg/TypescriptASTUtil/commit/2657d99))
+* Bumped version ([5e2e10e](https://github.com/wessberg/TypescriptASTUtil/commit/5e2e10e))
+* Optimized stringify ([982e3ae](https://github.com/wessberg/TypescriptASTUtil/commit/982e3ae))
+
+
+
 <a name="0.0.24"></a>
 ## 0.0.24 (2017-10-18)
 
