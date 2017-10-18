@@ -4241,7 +4241,9 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 
 		if (hasLocals(newNode)) {
 			if (newNode.locals != null) {
+				/*tslint:disable:no-any*/
 				const mapped: Map<string, Symbol> = <any> Array.from(newNode.locals.entries()).map(entry => [entry[0], this.copySymbolWithParent(options.sourceFile, entry[1], options)]);
+				/*tslint:enable:no-any*/
 				anyCastExisting.locals = new Map(mapped);
 			}
 		}
