@@ -9,7 +9,7 @@ export class Printer implements IPrinter {
 	 * Keys to discard when stringifying a Node
 	 * @type {Set<string>}
 	 */
-	private static readonly DISCARD_KEYS = new Set(["parent", "flags", "transformFlags", "symbol", "identifiers", "classifiableNames", "lineMap", "modifierFlagsCache", "imports", "moduleAugmentations", "ambientModuleNames", "nextContainer", "locals", "scriptSnapshot", "symbolCount", "bindDiagnostics", "languageVersion", "fileName", "languageVariant", "isDeclarationFile", "scriptKind", "referencedFiles", "typeReferenceDirectives", "amdDependencies", "path", "version", "parseDiagnostics", "nodeCount", "identifierCount", "endOfFileToken", "autoGenerateKind", "autoGenerateId", "original", "localSymbol"]);
+	private static readonly DISCARD_KEYS = new Set(["parent", "flags", "transformFlags", "symbol", "identifiers", "classifiableNames", "lineMap", "modifierFlagsCache", "imports", "moduleAugmentations", "ambientModuleNames", "nextContainer", "locals", "scriptSnapshot", "symbolCount", "flowNode", "bindDiagnostics", "languageVersion", "fileName", "languageVariant", "isDeclarationFile", "scriptKind", "referencedFiles", "typeReferenceDirectives", "amdDependencies", "path", "version", "parseDiagnostics", "nodeCount", "identifierCount", "endOfFileToken", "autoGenerateKind", "autoGenerateId", "original", "localSymbol"]);
 
 	/**
 	 * The spacing to use when stringifying a Node
@@ -26,12 +26,26 @@ export class Printer implements IPrinter {
 	/**
 	 * Stringifies a Node in a compact, readable representation
 	 * @param {Node|NodeArray<Node>} node
+	 * @param {Iterable<string>} [stripKeys]
 	 * @returns {string}
 	 */
-	public stringify (node: Node|NodeArray<Node>): string {
+	public stringify (node: Node|NodeArray<Node>, stripKeys?: Iterable<string>): string {
 		return JSON.stringify(node, (key, value) => {
+
+			// Replace a SyntaxKind value with its name for better readability
 			if (key === "kind" || key === "token") return SyntaxKind[value];
-			if (Printer.DISCARD_KEYS.has(key)) return undefined;
+
+			// If any keys are provided to 'stripKeys', check if they have the key and filter it out if it matches
+			if (stripKeys != null && new Set(stripKeys).has(key)) {
+				return undefined;
+			}
+
+			// If any of the default discarded keys matches the current key, filter it out
+			if (Printer.DISCARD_KEYS.has(key)) {
+				return undefined;
+			}
+
+			// Otherwise, return the value
 			return value;
 		}, Printer.SPACING);
 	}
