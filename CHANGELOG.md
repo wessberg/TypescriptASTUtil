@@ -1,3 +1,14 @@
+<a name="0.0.21"></a>
+## 0.0.21 (2017-10-18)
+
+* 0.0.21 ([6312e6b](https://github.com/wessberg/TypescriptASTUtil/commit/6312e6b))
+* Added update handlers for all JSDoc types ([aa11acd](https://github.com/wessberg/TypescriptASTUtil/commit/aa11acd))
+* Bug fixes with comments after manipulation ([83a3beb](https://github.com/wessberg/TypescriptASTUtil/commit/83a3beb))
+* Bumped version ([abd4f60](https://github.com/wessberg/TypescriptASTUtil/commit/abd4f60))
+* Refactoring of node matcher which now supports JSDoc nodes ([125ccb8](https://github.com/wessberg/TypescriptASTUtil/commit/125ccb8))
+
+
+
 <a name="0.0.20"></a>
 ## 0.0.20 (2017-10-15)
 
