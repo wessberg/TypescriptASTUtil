@@ -1,3 +1,12 @@
+<a name="0.0.24"></a>
+## 0.0.24 (2017-10-18)
+
+* 0.0.24 ([4fe762d](https://github.com/wessberg/TypescriptASTUtil/commit/4fe762d))
+* Bumped version ([7102a57](https://github.com/wessberg/TypescriptASTUtil/commit/7102a57))
+* Removed flowNode from stringified nodes ([06f92bf](https://github.com/wessberg/TypescriptASTUtil/commit/06f92bf))
+
+
+
 <a name="0.0.23"></a>
 ## 0.0.23 (2017-10-18)
 
