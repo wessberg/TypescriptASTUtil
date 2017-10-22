@@ -4131,22 +4131,32 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		// Remove all of the unmatched items
 		removeIndexes.forEach(index => mutableExistingNodes.splice(index, 1));
 
-		// Update all of the existing ones
 		newNodes.forEach((newNode, newNodeIndex) => {
-			// Check if the new node index exceeds the existing ones
-			const exceedsExisting = newNodeIndex >= mutableExistingNodes.length;
-
 			// Find the match within the existing ones
-			const match = this.nodeMatcherUtil.match(newNode, mutableExistingNodes);
+			const matchIndex = this.nodeMatcherUtil.matchIndex(newNode, mutableExistingNodes);
+			if (matchIndex < 0) {
+				// We're having a new node here. Set in within the mutable nodes on the new position. Change its parent
+				mutableExistingNodes.splice(newNodeIndex, 0, this.cloneWithParent(parent, newNode));
+			}
 
-			// If it exists, update it
-			if (match != null && !exceedsExisting) {
-				boundHandler(newNode, match, options);
-			} else {
-				// Otherwise, push to the array, but do change the parent
-				mutableExistingNodes.push(this.cloneWithParent(parent, newNode));
+			// We're having an existing node that hasn't changed position. Simply update it in-place
+			else if (matchIndex === newNodeIndex) {
+				boundHandler(newNode, mutableExistingNodes[matchIndex], options);
+			}
+
+			// We're having an existing node, but it has since changed position. Update it in-place, but also reposition it
+			else {
+				const existingNode = mutableExistingNodes[matchIndex];
+				boundHandler(newNode, existingNode, options);
+
+				// Remove the node from its current position
+				mutableExistingNodes.splice(matchIndex, 1);
+
+				// Insert the node on its new position
+				mutableExistingNodes.splice(newNodeIndex, 0, existingNode);
 			}
 		});
+
 		return existingNodes;
 	}
 
