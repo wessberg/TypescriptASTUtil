@@ -1,3 +1,12 @@
+<a name="0.0.26"></a>
+## 0.0.26 (2017-10-22)
+
+* 0.0.26 ([46bfa9f](https://github.com/wessberg/TypescriptASTUtil/commit/46bfa9f))
+* Bumped version ([2a0a8be](https://github.com/wessberg/TypescriptASTUtil/commit/2a0a8be))
+* Fixed an issue where rearranging a NodeArray of Nodes would not update node order. ([157d0e2](https://github.com/wessberg/TypescriptASTUtil/commit/157d0e2))
+
+
+
 <a name="0.0.25"></a>
 ## 0.0.25 (2017-10-18)
 
