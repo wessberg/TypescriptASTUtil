@@ -1,3 +1,12 @@
+<a name="0.0.27"></a>
+## 0.0.27 (2017-10-29)
+
+* 0.0.27 ([6007197](https://github.com/wessberg/TypescriptASTUtil/commit/6007197))
+* Bumped version ([a15ce55](https://github.com/wessberg/TypescriptASTUtil/commit/a15ce55))
+* Fixed an issue where different names would be falsely determined as equal ([51f46c5](https://github.com/wessberg/TypescriptASTUtil/commit/51f46c5))
+
+
+
 <a name="0.0.26"></a>
 ## 0.0.26 (2017-10-22)
 
