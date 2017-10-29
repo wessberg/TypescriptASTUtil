@@ -4144,9 +4144,15 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 				boundHandler(newNode, mutableExistingNodes[matchIndex], options);
 			}
 
-			// We're having an existing node, but it has since changed position. Update it in-place, but also reposition it
+			// We're potentially having an existing node that has since changed position.
+			// It may also be the case that it is a new node that is identical to the existing one, such as an identical
+			// token. If that is the case, skip this reordering. Otherwise, update it in-place, but also reposition it.
 			else {
 				const existingNode = mutableExistingNodes[matchIndex];
+
+				// If they are matched because there are no way to differentiate identical tokens, return immediately
+				if (isToken(existingNode) && isToken(newNode) && existingNode.kind === newNode.kind) return;
+
 				boundHandler(newNode, existingNode, options);
 
 				// Remove the node from its current position
