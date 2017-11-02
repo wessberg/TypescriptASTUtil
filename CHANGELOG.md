@@ -1,3 +1,12 @@
+<a name="0.0.35"></a>
+## 0.0.35 (2017-11-02)
+
+* 0.0.35 ([77d7fac](https://github.com/wessberg/TypescriptASTUtil/commit/77d7fac))
+* Added fresh .npmignore ([b138ace](https://github.com/wessberg/TypescriptASTUtil/commit/b138ace))
+* Bumped version ([7ee6089](https://github.com/wessberg/TypescriptASTUtil/commit/7ee6089))
+
+
+
 <a name="0.0.34"></a>
 ## 0.0.34 (2017-11-02)
 
