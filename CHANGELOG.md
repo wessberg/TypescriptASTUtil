@@ -1,3 +1,11 @@
+<a name="0.0.32"></a>
+## 0.0.32 (2017-11-02)
+
+* 0.0.32 ([6fdfae3](https://github.com/wessberg/TypescriptASTUtil/commit/6fdfae3))
+* Bumped version ([10d42d5](https://github.com/wessberg/TypescriptASTUtil/commit/10d42d5))
+
+
+
 <a name="0.0.31"></a>
 ## 0.0.31 (2017-11-02)
 
