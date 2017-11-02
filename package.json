@@ -22,7 +22,6 @@
 		"pretest": "npm run clean:compiled && npm run tsc:test",
 		"test": "NODE_ENV=TEST ava",
 		"posttest": "npm run clean:compiled",
-		"prepublishOnly": "NODE_ENV=production npm run validate && NODE_ENV=production npm run build",
 		"precommit": "npm run tslint && exit 0",
 		"prepush": "npm run validate && exit 0",
 		"publish:major": "npm version major && npm run commit:readme && git push --no-verify && npm publish",
