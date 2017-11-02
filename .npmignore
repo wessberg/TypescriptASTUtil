@@ -1,7 +1,8 @@
 .idea
-/node_modules/
+tsconfig.*
+/src/
+/test/
 /compiled/
-/dist/
 /.idea/
 /.cache/
 /.vscode/
@@ -33,4 +34,7 @@ Thumbs.db
 *.p12
 *.crt
 *.csr
-package-lock.json
+/tsconfig.*
+.gitignore
+/typings/
+/tslint.json
