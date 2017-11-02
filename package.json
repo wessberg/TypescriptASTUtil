@@ -17,7 +17,7 @@
 		"build:es2015": "npm run tsc:dist:es2015",
 		"prebuild": "npm run clean",
 		"build": "npm run build:umd & npm run build:es2015",
-		"build:prod": "NODE_ENV=production npm run build:umd && npm run build:es2015",
+		"build:prod": "NODE_ENV=production npm run build:umd && NODE_ENV=production npm run build:es2015",
 		"tslint": "tslint -c tslint.json -p tsconfig.json",
 		"validate": "npm run tslint && npm run test",
 		"pretest": "npm run clean:compiled && npm run tsc:test",
