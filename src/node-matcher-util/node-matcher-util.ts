@@ -1,5 +1,5 @@
 import {INodeMatcherUtil} from "./i-node-matcher-util";
-import {AccessorDeclaration, AmdDependency, ArrayBindingElement, ArrayBindingPattern, ArrayLiteralExpression, ArrayTypeNode, ArrowFunction, AsExpression, AsteriskToken, AtToken, AwaitExpression, AwaitKeywordToken, BinaryExpression, BinaryOperatorToken, BindingElement, BindingName, BindingPattern, Block, BooleanLiteral, BreakStatement, CallExpression, CallSignatureDeclaration, CaseBlock, CaseClause, CaseOrDefaultClause, CatchClause, ClassDeclaration, ClassElement, ClassExpression, ClassLikeDeclaration, ColonToken, ComputedPropertyName, ConciseBody, ConditionalExpression, ConstructorDeclaration, ConstructorTypeNode, ConstructSignatureDeclaration, ContinueStatement, DebuggerStatement, Declaration, DeclarationName, DeclarationStatement, Decorator, DefaultClause, DeleteExpression, DoStatement, DotDotDotToken, ElementAccessExpression, EmptyStatement, EntityName, EnumDeclaration, EnumMember, EqualsGreaterThanToken, ExportAssignment, ExportDeclaration, ExportSpecifier, Expression, ExpressionStatement, ExpressionWithTypeArguments, ExternalModuleReference, FileReference, ForInitializer, ForInStatement, ForOfStatement, ForStatement, FunctionBody, FunctionDeclaration, FunctionExpression, FunctionLikeDeclarationBase, FunctionOrConstructorTypeNode, FunctionTypeNode, GetAccessorDeclaration, HeritageClause, Identifier, IfStatement, ImportClause, ImportDeclaration, ImportEqualsDeclaration, ImportExpression, ImportSpecifier, IndexedAccessTypeNode, IndexSignatureDeclaration, InterfaceDeclaration, IntersectionTypeNode, isAccessor, isArrayBindingPattern, isArrayLiteralExpression, isArrayTypeNode, isArrowFunction, isAsExpression, isAwaitExpression, isBinaryExpression, isBindingElement, isBindingName, isBlock, isBreakStatement, isCallExpression, isCallSignatureDeclaration, isCaseBlock, isCaseClause, isCaseOrDefaultClause, isCatchClause, isClassDeclaration, isClassExpression, isComputedPropertyName, isConditionalExpression, isConstructorDeclaration, isConstructorTypeNode, isConstructSignatureDeclaration, isContinueStatement, isDebuggerStatement, isDecorator, isDefaultClause, isDeleteExpression, isDoStatement, isElementAccessExpression, isEmptyStatement, isEntityName, isEnumDeclaration, isEnumMember, isExportAssignment, isExportDeclaration, isExportSpecifier, isExpressionStatement, isExpressionWithTypeArguments, isExternalModuleReference, isForInStatement, isForOfStatement, isForStatement, isFunctionDeclaration, isFunctionExpression, isFunctionOrConstructorTypeNode, isFunctionTypeNode, isGetAccessorDeclaration, isHeritageClause, isIdentifier, isIfStatement, isImportClause, isImportDeclaration, isImportEqualsDeclaration, isImportSpecifier, isIndexedAccessTypeNode, isIndexSignatureDeclaration, isInterfaceDeclaration, isIntersectionTypeNode, isJSDoc, isJSDocAllType, isJSDocAugmentsTag, isJSDocFunctionType, isJSDocNonNullableType, isJSDocNullableType, isJSDocOptionalType, isJSDocParameterTag, isJSDocPropertyTag, isJSDocReturnTag, isJSDocTemplateTag, isJSDocTypedefTag, isJSDocTypeExpression, isJSDocTypeLiteral, isJSDocTypeTag, isJSDocUnknownType, isJSDocVariadicType, isJsxAttribute, isJsxAttributes, isJsxClosingElement, isJsxElement, isJsxExpression, isJsxOpeningElement, isJsxSelfClosingElement, isJsxSpreadAttribute, isJsxText, isLabeledStatement, isLiteralTypeNode, isMappedTypeNode, isMetaProperty, isMethodDeclaration, isMethodSignature, isMissingDeclaration, isModuleBlock, isModuleDeclaration, isNamedExports, isNamedImports, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNonNullExpression, isNoSubstitutionTemplateLiteral, isNumericLiteral, isObjectBindingPattern, isObjectLiteralElementLike, isObjectLiteralExpression, isOmittedExpression, isParameter, isParenthesizedExpression, isParenthesizedTypeNode, isPostfixUnaryExpression, isPrefixUnaryExpression, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertyName, isPropertySignature, isQualifiedName, isRegularExpressionLiteral, isReturnStatement, isSemicolonClassElement, isSetAccessorDeclaration, isShorthandPropertyAssignment, isSpreadAssignment, isSpreadElement, isStringLiteral, isSwitchStatement, isTaggedTemplateExpression, isTemplateExpression, isTemplateHead, isTemplateLiteral, isTemplateMiddle, isTemplateSpan, isTemplateTail, isThisTypeNode, isThrowStatement, isToken, isTryStatement, isTupleTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeElement, isTypeLiteralNode, isTypeOfExpression, isTypeOperatorNode, isTypeParameterDeclaration, isTypePredicateNode, isTypeQueryNode, isTypeReferenceNode, isUnionTypeNode, isVariableDeclaration, isVariableDeclarationList, isVariableStatement, isVoidExpression, isWhileStatement, isWithStatement, isYieldExpression, IterationStatement, JSDoc, JSDocAllType, JSDocAugmentsTag, JSDocClassTag, JSDocFunctionType, JSDocNamespaceBody, JSDocNamespaceDeclaration, JSDocNonNullableType, JSDocNullableType, JSDocOptionalType, JSDocParameterTag, JSDocPropertyLikeTag, JSDocPropertyTag, JSDocReturnTag, JSDocTag, JSDocTemplateTag, JSDocType, JSDocTypedefTag, JSDocTypeExpression, JSDocTypeLiteral, JSDocTypeTag, JSDocUnknownTag, JSDocUnknownType, JSDocVariadicType, JsxAttribute, JsxAttributes, JsxChild, JsxClosingElement, JsxElement, JsxExpression, JsxOpeningElement, JsxSelfClosingElement, JsxSpreadAttribute, JsxTagNameExpression, JsxText, KeywordTypeNode, LabeledStatement, LeftHandSideExpression, LiteralExpression, LiteralLikeNode, LiteralTypeNode, MappedTypeNode, MemberExpression, MetaProperty, MethodDeclaration, MethodSignature, MissingDeclaration, Modifier, ModuleBlock, ModuleDeclaration, ModuleName, ModuleReference, NamedDeclaration, NamedExports, NamedImportBindings, NamedImports, NamespaceBody, NamespaceDeclaration, NamespaceExportDeclaration, NamespaceImport, NewExpression, Node, NodeArray, NonNullExpression, NoSubstitutionTemplateLiteral, NullLiteral, NumericLiteral, ObjectBindingPattern, ObjectLiteralElement, ObjectLiteralElementLike, ObjectLiteralExpression, ObjectLiteralExpressionBase, OmittedExpression, ParameterDeclaration, ParenthesizedExpression, ParenthesizedTypeNode, PartiallyEmittedExpression, PostfixUnaryExpression, PrefixUnaryExpression, PrimaryExpression, PropertyAccessExpression, PropertyAssignment, PropertyDeclaration, PropertyName, PropertySignature, QualifiedName, QuestionToken, ReadonlyToken, RegularExpressionLiteral, ReturnStatement, SemicolonClassElement, SetAccessorDeclaration, ShorthandPropertyAssignment, SignatureDeclaration, SpreadAssignment, SpreadElement, Statement, StringLiteral, SuperExpression, SwitchStatement, SyntaxKind, TaggedTemplateExpression, TemplateExpression, TemplateHead, TemplateLiteral, TemplateMiddle, TemplateSpan, TemplateTail, ThisExpression, ThisTypeNode, ThrowStatement, Token, TryStatement, TupleTypeNode, TypeAliasDeclaration, TypeAssertion, TypeElement, TypeLiteralNode, TypeNode, TypeOfExpression, TypeOperatorNode, TypeParameterDeclaration, TypePredicateNode, TypeQueryNode, TypeReferenceNode, UnaryExpression, UnionTypeNode, UpdateExpression, VariableDeclaration, VariableDeclarationList, VariableStatement, VoidExpression, WhileStatement, WithStatement, YieldExpression} from "typescript";
+import {AccessorDeclaration, AmdDependency, ArrayBindingElement, ArrayBindingPattern, ArrayLiteralExpression, ArrayTypeNode, ArrowFunction, AsExpression, AsteriskToken, AtToken, AwaitExpression, AwaitKeywordToken, BinaryExpression, BinaryOperatorToken, BindingElement, BindingName, BindingPattern, Block, BooleanLiteral, BreakStatement, CallExpression, CallSignatureDeclaration, CaseBlock, CaseClause, CaseOrDefaultClause, CatchClause, ClassDeclaration, ClassElement, ClassExpression, ClassLikeDeclaration, ColonToken, ComputedPropertyName, ConciseBody, ConditionalExpression, ConstructorDeclaration, ConstructorTypeNode, ConstructSignatureDeclaration, ContinueStatement, DebuggerStatement, Declaration, DeclarationName, DeclarationStatement, Decorator, DefaultClause, DeleteExpression, DoStatement, DotDotDotToken, ElementAccessExpression, EmptyStatement, EntityName, EnumDeclaration, EnumMember, EqualsGreaterThanToken, ExportAssignment, ExportDeclaration, ExportSpecifier, Expression, ExpressionStatement, ExpressionWithTypeArguments, ExternalModuleReference, FileReference, ForInitializer, ForInStatement, ForOfStatement, ForStatement, FunctionBody, FunctionDeclaration, FunctionExpression, FunctionLikeDeclarationBase, FunctionOrConstructorTypeNode, FunctionTypeNode, GetAccessorDeclaration, HeritageClause, Identifier, IfStatement, ImportClause, ImportDeclaration, ImportEqualsDeclaration, ImportExpression, ImportSpecifier, IndexedAccessTypeNode, IndexSignatureDeclaration, InterfaceDeclaration, IntersectionTypeNode, isAccessor, isArrayBindingPattern, isArrayLiteralExpression, isArrayTypeNode, isArrowFunction, isAsExpression, isAwaitExpression, isBinaryExpression, isBindingElement, isBindingName, isBlock, isBreakStatement, isCallExpression, isCallSignatureDeclaration, isCaseBlock, isCaseClause, isCaseOrDefaultClause, isCatchClause, isClassDeclaration, isClassExpression, isComputedPropertyName, isConditionalExpression, isConstructorDeclaration, isConstructorTypeNode, isConstructSignatureDeclaration, isContinueStatement, isDebuggerStatement, isDecorator, isDefaultClause, isDeleteExpression, isDoStatement, isElementAccessExpression, isEmptyStatement, isEntityName, isEnumDeclaration, isEnumMember, isExportAssignment, isExportDeclaration, isExportSpecifier, isExpressionStatement, isExpressionWithTypeArguments, isExternalModuleReference, isForInStatement, isForOfStatement, isForStatement, isFunctionDeclaration, isFunctionExpression, isFunctionOrConstructorTypeNode, isFunctionTypeNode, isGetAccessorDeclaration, isHeritageClause, isIdentifier, isIfStatement, isImportClause, isImportDeclaration, isImportEqualsDeclaration, isImportSpecifier, isIndexedAccessTypeNode, isIndexSignatureDeclaration, isInterfaceDeclaration, isIntersectionTypeNode, isJSDoc, isJSDocAllType, isJSDocAugmentsTag, isJSDocFunctionType, isJSDocNonNullableType, isJSDocNullableType, isJSDocOptionalType, isJSDocParameterTag, isJSDocPropertyTag, isJSDocReturnTag, isJSDocTemplateTag, isJSDocTypedefTag, isJSDocTypeExpression, isJSDocTypeLiteral, isJSDocTypeTag, isJSDocUnknownType, isJSDocVariadicType, isJsxAttribute, isJsxAttributes, isJsxClosingElement, isJsxElement, isJsxExpression, isJsxOpeningElement, isJsxSelfClosingElement, isJsxSpreadAttribute, isJsxText, isLabeledStatement, isLiteralTypeNode, isMappedTypeNode, isMetaProperty, isMethodDeclaration, isMethodSignature, isMissingDeclaration, isModuleBlock, isModuleDeclaration, isNamedExports, isNamedImports, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNonNullExpression, isNoSubstitutionTemplateLiteral, isNumericLiteral, isObjectBindingPattern, isObjectLiteralElementLike, isObjectLiteralExpression, isOmittedExpression, isParameter, isParenthesizedExpression, isParenthesizedTypeNode, isPostfixUnaryExpression, isPrefixUnaryExpression, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertyName, isPropertySignature, isQualifiedName, isRegularExpressionLiteral, isReturnStatement, isSemicolonClassElement, isSetAccessorDeclaration, isShorthandPropertyAssignment, isSpreadAssignment, isSpreadElement, isStringLiteral, isSwitchStatement, isTaggedTemplateExpression, isTemplateExpression, isTemplateHead, isTemplateLiteral, isTemplateMiddle, isTemplateSpan, isTemplateTail, isThisTypeNode, isThrowStatement, isToken, isTryStatement, isTupleTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeElement, isTypeLiteralNode, isTypeOfExpression, isTypeOperatorNode, isTypeParameterDeclaration, isTypePredicateNode, isTypeQueryNode, isTypeReferenceNode, isUnionTypeNode, isVariableDeclaration, isVariableDeclarationList, isVariableStatement, isVoidExpression, isWhileStatement, isWithStatement, isYieldExpression, IterationStatement, JSDoc, JSDocAllType, JSDocAugmentsTag, JSDocClassTag, JSDocFunctionType, JSDocNamespaceBody, JSDocNamespaceDeclaration, JSDocNonNullableType, JSDocNullableType, JSDocOptionalType, JSDocParameterTag, JSDocPropertyLikeTag, JSDocPropertyTag, JSDocReturnTag, JSDocTag, JSDocTemplateTag, JSDocType, JSDocTypedefTag, JSDocTypeExpression, JSDocTypeLiteral, JSDocTypeTag, JSDocUnknownTag, JSDocUnknownType, JSDocVariadicType, JsxAttribute, JsxAttributes, JsxChild, JsxClosingElement, JsxElement, JsxExpression, JsxOpeningElement, JsxSelfClosingElement, JsxSpreadAttribute, JsxTagNameExpression, JsxText, KeywordTypeNode, LabeledStatement, LeftHandSideExpression, LiteralExpression, LiteralLikeNode, LiteralTypeNode, MappedTypeNode, MemberExpression, MetaProperty, MethodDeclaration, MethodSignature, MissingDeclaration, Modifier, ModuleBlock, ModuleDeclaration, ModuleName, ModuleReference, NamedDeclaration, NamedExports, NamedImportBindings, NamedImports, NamespaceBody, NamespaceDeclaration, NamespaceExportDeclaration, NamespaceImport, NewExpression, Node, NodeArray, NonNullExpression, NoSubstitutionTemplateLiteral, NullLiteral, NumericLiteral, ObjectBindingPattern, ObjectLiteralElement, ObjectLiteralElementLike, ObjectLiteralExpression, ObjectLiteralExpressionBase, OmittedExpression, ParameterDeclaration, ParenthesizedExpression, ParenthesizedTypeNode, PartiallyEmittedExpression, PostfixUnaryExpression, PrefixUnaryExpression, PrimaryExpression, PropertyAccessExpression, PropertyAssignment, PropertyDeclaration, PropertyName, PropertySignature, QualifiedName, QuestionToken, ReadonlyToken, RegularExpressionLiteral, ReturnStatement, SemicolonClassElement, SetAccessorDeclaration, ShorthandPropertyAssignment, SignatureDeclarationBase, SpreadAssignment, SpreadElement, Statement, StringLiteral, SuperExpression, SwitchStatement, SyntaxKind, TaggedTemplateExpression, TemplateExpression, TemplateHead, TemplateLiteral, TemplateMiddle, TemplateSpan, TemplateTail, ThisExpression, ThisTypeNode, ThrowStatement, Token, TryStatement, TupleTypeNode, TypeAliasDeclaration, TypeAssertion, TypeElement, TypeLiteralNode, TypeNode, TypeOfExpression, TypeOperatorNode, TypeParameterDeclaration, TypePredicateNode, TypeQueryNode, TypeReferenceNode, UnaryExpression, UnionTypeNode, UpdateExpression, VariableDeclaration, VariableDeclarationList, VariableStatement, VoidExpression, WhileStatement, WithStatement, YieldExpression} from "typescript";
 import {NodeMatcherItem} from "./node-matcher-item";
 import {isAmdDependency} from "../predicate/is-amd-dependency";
 import {isFileReference} from "../predicate/is-file-reference";
@@ -944,7 +944,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		return this.allIsMatched(
 			this.matchJSDocTag(node, matchNode),
-			this.matchNodeWithJSDocTypeExpression(node.typeExpression, matchNode.typeExpression)
+			this.matchNodeWithNode(node.class, matchNode.class)
 		);
 	}
 
@@ -1018,7 +1018,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		return this.allIsMatched(
 			this.matchJSDocType(node, matchNode),
-			this.matchSignatureDeclaration(node, matchNode)
+			this.matchSignatureDeclarationBase(node, matchNode)
 		);
 	}
 
@@ -1175,7 +1175,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		if (!(isCallSignatureDeclaration(node))) return false;
 
 		return this.allIsMatched(
-			this.matchSignatureDeclaration(node, matchNode),
+			this.matchSignatureDeclarationBase(node, matchNode),
 			this.matchTypeElement(node, matchNode)
 		);
 	}
@@ -1191,7 +1191,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		if (!(isConstructSignatureDeclaration(node))) return false;
 
 		return this.allIsMatched(
-			this.matchSignatureDeclaration(node, matchNode),
+			this.matchSignatureDeclarationBase(node, matchNode),
 			this.matchTypeElement(node, matchNode)
 		);
 	}
@@ -1743,7 +1743,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		return this.allIsMatched(
 			this.matchTypeNode(node, matchNode),
-			this.matchSignatureDeclaration(node, matchNode)
+			this.matchSignatureDeclarationBase(node, matchNode)
 		);
 	}
 
@@ -1911,7 +1911,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		if (!(isMethodSignature(node))) return false;
 
 		return this.allIsMatched(
-			this.matchSignatureDeclaration(node, matchNode),
+			this.matchSignatureDeclarationBase(node, matchNode),
 			this.matchTypeElement(node, matchNode),
 			this.matchNodeWithPropertyName(node.name, matchNode.name)
 		);
@@ -1928,7 +1928,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		if (!(isIndexSignatureDeclaration(node))) return false;
 
 		return this.allIsMatched(
-			this.matchSignatureDeclaration(node, matchNode),
+			this.matchSignatureDeclarationBase(node, matchNode),
 			this.matchClassElement(node, matchNode),
 			this.matchTypeElement(node, matchNode)
 		);
@@ -2071,7 +2071,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		return this.allIsMatched(
 			this.matchTypeNode(node, matchNode),
-			this.matchSignatureDeclaration(node, matchNode)
+			this.matchSignatureDeclarationBase(node, matchNode)
 		);
 	}
 
@@ -4130,12 +4130,12 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 	}
 
 	/**
-	 * Matches a SignatureDeclaration
-	 * @param {SignatureDeclaration} node
-	 * @param {SignatureDeclaration} matchNode
+	 * Matches a SignatureDeclarationBase
+	 * @param {SignatureDeclarationBase} node
+	 * @param {SignatureDeclarationBase} matchNode
 	 * @returns {boolean}
 	 */
-	private matchSignatureDeclaration (node: SignatureDeclaration, matchNode: SignatureDeclaration): boolean {
+	private matchSignatureDeclarationBase (node: SignatureDeclarationBase, matchNode: SignatureDeclarationBase): boolean {
 		return this.allIsMatched(
 			this.matchNamedDeclaration(node, matchNode),
 			this.matchAllNodesIfGiven(node.typeParameters, matchNode.typeParameters, this.matchNodeWithTypeParameterDeclaration),
@@ -4275,7 +4275,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 	 */
 	private matchFunctionLikeDeclarationBase (node: FunctionLikeDeclarationBase, matchNode: FunctionLikeDeclarationBase): boolean {
 		return this.allIsMatched(
-			this.matchSignatureDeclaration(node, matchNode),
+			this.matchSignatureDeclarationBase(node, matchNode),
 			this.matchNodeIfGiven(node.asteriskToken, matchNode.asteriskToken, this.matchNodeWithAsteriskToken),
 			this.matchNodeIfGiven(node.questionToken, matchNode.questionToken, this.matchNodeWithQuestionToken),
 			this.matchNodeIfGiven(node.body, matchNode.body, this.matchNodeWithNode)
@@ -4420,7 +4420,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 			this.matchJSDocTag(node, matchNode),
 			this.matchDeclaration(node, matchNode),
 			this.matchNodeWithEntityName(node.name, matchNode.name),
-			this.matchNodeWithJSDocTypeExpression(node.typeExpression, matchNode.typeExpression),
+			this.matchNodeIfGiven(node.typeExpression, matchNode.typeExpression, this.matchNodeWithJSDocTypeExpression),
 			node.isNameFirst === matchNode.isNameFirst,
 			node.isBracketed === matchNode.isBracketed
 		);

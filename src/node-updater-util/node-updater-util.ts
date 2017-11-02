@@ -1,5 +1,5 @@
 import {INodeUpdaterUtil} from "./i-node-updater-util";
-import {AmdDependency, ArrayBindingElement, ArrayBindingPattern, ArrayLiteralExpression, ArrayTypeNode, ArrowFunction, AsExpression, AwaitExpression, BinaryExpression, BindingElement, BindingName, Block, BooleanLiteral, BreakStatement, CallExpression, CallSignatureDeclaration, CaseBlock, CaseClause, CatchClause, ClassDeclaration, ClassElement, ClassExpression, ClassLikeDeclaration, ComputedPropertyName, ConciseBody, ConditionalExpression, ConstructorDeclaration, ConstructorTypeNode, ConstructSignatureDeclaration, ContinueStatement, DebuggerStatement, Declaration, DeclarationName, DeclarationStatement, Decorator, DefaultClause, DeleteExpression, DoStatement, ElementAccessExpression, EmptyStatement, EntityName, EnumDeclaration, EnumMember, ExportAssignment, ExportDeclaration, ExportSpecifier, Expression, ExpressionStatement, ExpressionWithTypeArguments, ExternalModuleReference, FileReference, ForInStatement, ForOfStatement, ForStatement, FunctionBody, FunctionDeclaration, FunctionExpression, FunctionLikeDeclarationBase, FunctionTypeNode, GetAccessorDeclaration, HeritageClause, Identifier, IfStatement, ImportClause, ImportDeclaration, ImportEqualsDeclaration, ImportExpression, ImportSpecifier, IndexedAccessTypeNode, IndexSignatureDeclaration, InterfaceDeclaration, IntersectionTypeNode, isArrayBindingPattern, isArrayLiteralExpression, isArrayTypeNode, isArrowFunction, isAsExpression, isAwaitExpression, isBinaryExpression, isBindingElement, isBlock, isBreakStatement, isCallExpression, isCallSignatureDeclaration, isCaseBlock, isCaseClause, isCatchClause, isClassDeclaration, isClassExpression, isComputedPropertyName, isConditionalExpression, isConstructorDeclaration, isConstructorTypeNode, isConstructSignatureDeclaration, isContinueStatement, isDebuggerStatement, isDecorator, isDefaultClause, isDeleteExpression, isDoStatement, isElementAccessExpression, isEmptyStatement, isEnumDeclaration, isEnumMember, isExportAssignment, isExportDeclaration, isExportSpecifier, isExpressionStatement, isExpressionWithTypeArguments, isExternalModuleReference, isForInStatement, isForOfStatement, isForStatement, isFunctionDeclaration, isFunctionExpression, isFunctionTypeNode, isGetAccessorDeclaration, isHeritageClause, isIdentifier, isIfStatement, isImportClause, isImportDeclaration, isImportEqualsDeclaration, isImportSpecifier, isIndexedAccessTypeNode, isIndexSignatureDeclaration, isInterfaceDeclaration, isIntersectionTypeNode, isJSDoc, isJSDocAllType, isJSDocAugmentsTag, isJSDocFunctionType, isJSDocNonNullableType, isJSDocNullableType, isJSDocOptionalType, isJSDocParameterTag, isJSDocPropertyTag, isJSDocReturnTag, isJSDocTemplateTag, isJSDocTypedefTag, isJSDocTypeExpression, isJSDocTypeLiteral, isJSDocTypeTag, isJSDocUnknownType, isJSDocVariadicType, isJsxAttribute, isJsxAttributes, isJsxClosingElement, isJsxElement, isJsxExpression, isJsxOpeningElement, isJsxSelfClosingElement, isJsxSpreadAttribute, isJsxText, isLabeledStatement, isLiteralTypeNode, isMappedTypeNode, isMetaProperty, isMethodDeclaration, isMethodSignature, isMissingDeclaration, isModifier, isModuleBlock, isModuleDeclaration, isNamedExports, isNamedImports, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNonNullExpression, isNoSubstitutionTemplateLiteral, isNumericLiteral, isObjectBindingPattern, isObjectLiteralExpression, isOmittedExpression, isParameter, isParenthesizedExpression, isParenthesizedTypeNode, isPostfixUnaryExpression, isPrefixUnaryExpression, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isRegularExpressionLiteral, isReturnStatement, isSemicolonClassElement, isSetAccessorDeclaration, isShorthandPropertyAssignment, isSourceFile, isSpreadAssignment, isSpreadElement, isStringLiteral, isSwitchStatement, isTaggedTemplateExpression, isTemplateExpression, isTemplateHead, isTemplateMiddle, isTemplateSpan, isTemplateTail, isThisTypeNode, isThrowStatement, isToken, isTryStatement, isTupleTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeLiteralNode, isTypeOfExpression, isTypeOperatorNode, isTypeParameterDeclaration, isTypePredicateNode, isTypeQueryNode, isTypeReferenceNode, isUnionTypeNode, isVariableDeclaration, isVariableDeclarationList, isVariableStatement, isVoidExpression, isWhileStatement, isWithStatement, isYieldExpression, IterationStatement, JSDoc, JSDocAllType, JSDocAugmentsTag, JSDocClassTag, JSDocFunctionType, JSDocNamespaceDeclaration, JSDocNonNullableType, JSDocNullableType, JSDocOptionalType, JSDocParameterTag, JSDocPropertyLikeTag, JSDocPropertyTag, JSDocReturnTag, JSDocTag, JSDocTemplateTag, JSDocType, JSDocTypedefTag, JSDocTypeExpression, JSDocTypeLiteral, JSDocTypeTag, JSDocUnknownTag, JSDocUnknownType, JSDocVariadicType, JsxAttribute, JsxAttributes, JsxClosingElement, JsxElement, JsxExpression, JsxOpeningElement, JsxSelfClosingElement, JsxSpreadAttribute, JsxText, KeywordTypeNode, LabeledStatement, LeftHandSideExpression, LiteralExpression, LiteralLikeNode, LiteralTypeNode, MappedTypeNode, MemberExpression, MetaProperty, MethodDeclaration, MethodSignature, MissingDeclaration, Modifier, ModuleBlock, ModuleDeclaration, NamedDeclaration, NamedExports, NamedImports, NamespaceDeclaration, NamespaceExportDeclaration, NamespaceImport, NewExpression, Node, NodeArray, NonNullExpression, NoSubstitutionTemplateLiteral, NullLiteral, NumericLiteral, ObjectBindingPattern, ObjectLiteralElement, ObjectLiteralElementLike, ObjectLiteralExpression, ObjectLiteralExpressionBase, OmittedExpression, ParameterDeclaration, ParenthesizedExpression, ParenthesizedTypeNode, PartiallyEmittedExpression, PostfixUnaryExpression, PrefixUnaryExpression, PrimaryExpression, PropertyAccessExpression, PropertyAssignment, PropertyDeclaration, PropertyName, PropertySignature, QualifiedName, RegularExpressionLiteral, ReturnStatement, SemicolonClassElement, SetAccessorDeclaration, ShorthandPropertyAssignment, SignatureDeclaration, SourceFile, SpreadAssignment, SpreadElement, Statement, StringLiteral, SuperExpression, SwitchStatement, Symbol, SyntaxKind, TaggedTemplateExpression, TemplateExpression, TemplateHead, TemplateMiddle, TemplateSpan, TemplateTail, TextRange, ThisExpression, ThisTypeNode, ThrowStatement, Token, TryStatement, TupleTypeNode, TypeAliasDeclaration, TypeAssertion, TypeElement, TypeLiteralNode, TypeNode, TypeOfExpression, TypeOperatorNode, TypeParameterDeclaration, TypePredicateNode, TypeQueryNode, TypeReferenceNode, UnaryExpression, UnionTypeNode, UpdateExpression, VariableDeclaration, VariableDeclarationList, VariableStatement, VoidExpression, WhileStatement, WithStatement, YieldExpression} from "typescript";
+import {AmdDependency, ArrayBindingElement, ArrayBindingPattern, ArrayLiteralExpression, ArrayTypeNode, ArrowFunction, AsExpression, AwaitExpression, BinaryExpression, BindingElement, BindingName, Block, BooleanLiteral, BreakStatement, CallExpression, CallSignatureDeclaration, CaseBlock, CaseClause, CatchClause, ClassDeclaration, ClassElement, ClassExpression, ClassLikeDeclaration, ComputedPropertyName, ConciseBody, ConditionalExpression, ConstructorDeclaration, ConstructorTypeNode, ConstructSignatureDeclaration, ContinueStatement, DebuggerStatement, Declaration, DeclarationName, DeclarationStatement, Decorator, DefaultClause, DeleteExpression, DoStatement, ElementAccessExpression, EmptyStatement, EntityName, EnumDeclaration, EnumMember, ExportAssignment, ExportDeclaration, ExportSpecifier, Expression, ExpressionStatement, ExpressionWithTypeArguments, ExternalModuleReference, FileReference, ForInStatement, ForOfStatement, ForStatement, FunctionBody, FunctionDeclaration, FunctionExpression, FunctionLikeDeclarationBase, FunctionTypeNode, GetAccessorDeclaration, HeritageClause, Identifier, IfStatement, ImportClause, ImportDeclaration, ImportEqualsDeclaration, ImportExpression, ImportSpecifier, IndexedAccessTypeNode, IndexSignatureDeclaration, InterfaceDeclaration, IntersectionTypeNode, isArrayBindingPattern, isArrayLiteralExpression, isArrayTypeNode, isArrowFunction, isAsExpression, isAwaitExpression, isBinaryExpression, isBindingElement, isBlock, isBreakStatement, isCallExpression, isCallSignatureDeclaration, isCaseBlock, isCaseClause, isCatchClause, isClassDeclaration, isClassExpression, isComputedPropertyName, isConditionalExpression, isConstructorDeclaration, isConstructorTypeNode, isConstructSignatureDeclaration, isContinueStatement, isDebuggerStatement, isDecorator, isDefaultClause, isDeleteExpression, isDoStatement, isElementAccessExpression, isEmptyStatement, isEnumDeclaration, isEnumMember, isExportAssignment, isExportDeclaration, isExportSpecifier, isExpressionStatement, isExpressionWithTypeArguments, isExternalModuleReference, isForInStatement, isForOfStatement, isForStatement, isFunctionDeclaration, isFunctionExpression, isFunctionTypeNode, isGetAccessorDeclaration, isHeritageClause, isIdentifier, isIfStatement, isImportClause, isImportDeclaration, isImportEqualsDeclaration, isImportSpecifier, isIndexedAccessTypeNode, isIndexSignatureDeclaration, isInterfaceDeclaration, isIntersectionTypeNode, isJSDoc, isJSDocAllType, isJSDocAugmentsTag, isJSDocFunctionType, isJSDocNonNullableType, isJSDocNullableType, isJSDocOptionalType, isJSDocParameterTag, isJSDocPropertyTag, isJSDocReturnTag, isJSDocTemplateTag, isJSDocTypedefTag, isJSDocTypeExpression, isJSDocTypeLiteral, isJSDocTypeTag, isJSDocUnknownType, isJSDocVariadicType, isJsxAttribute, isJsxAttributes, isJsxClosingElement, isJsxElement, isJsxExpression, isJsxOpeningElement, isJsxSelfClosingElement, isJsxSpreadAttribute, isJsxText, isLabeledStatement, isLiteralTypeNode, isMappedTypeNode, isMetaProperty, isMethodDeclaration, isMethodSignature, isMissingDeclaration, isModifier, isModuleBlock, isModuleDeclaration, isNamedExports, isNamedImports, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNonNullExpression, isNoSubstitutionTemplateLiteral, isNumericLiteral, isObjectBindingPattern, isObjectLiteralExpression, isOmittedExpression, isParameter, isParenthesizedExpression, isParenthesizedTypeNode, isPostfixUnaryExpression, isPrefixUnaryExpression, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isRegularExpressionLiteral, isReturnStatement, isSemicolonClassElement, isSetAccessorDeclaration, isShorthandPropertyAssignment, isSourceFile, isSpreadAssignment, isSpreadElement, isStringLiteral, isSwitchStatement, isTaggedTemplateExpression, isTemplateExpression, isTemplateHead, isTemplateMiddle, isTemplateSpan, isTemplateTail, isThisTypeNode, isThrowStatement, isToken, isTryStatement, isTupleTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeLiteralNode, isTypeOfExpression, isTypeOperatorNode, isTypeParameterDeclaration, isTypePredicateNode, isTypeQueryNode, isTypeReferenceNode, isUnionTypeNode, isVariableDeclaration, isVariableDeclarationList, isVariableStatement, isVoidExpression, isWhileStatement, isWithStatement, isYieldExpression, IterationStatement, JSDoc, JSDocAllType, JSDocAugmentsTag, JSDocClassTag, JSDocFunctionType, JSDocNamespaceDeclaration, JSDocNonNullableType, JSDocNullableType, JSDocOptionalType, JSDocParameterTag, JSDocPropertyLikeTag, JSDocPropertyTag, JSDocReturnTag, JSDocTag, JSDocTemplateTag, JSDocType, JSDocTypedefTag, JSDocTypeExpression, JSDocTypeLiteral, JSDocTypeTag, JSDocUnknownTag, JSDocUnknownType, JSDocVariadicType, JsxAttribute, JsxAttributes, JsxClosingElement, JsxElement, JsxExpression, JsxOpeningElement, JsxSelfClosingElement, JsxSpreadAttribute, JsxText, KeywordTypeNode, LabeledStatement, LeftHandSideExpression, LiteralExpression, LiteralLikeNode, LiteralTypeNode, MappedTypeNode, MemberExpression, MetaProperty, MethodDeclaration, MethodSignature, MissingDeclaration, Modifier, ModuleBlock, ModuleDeclaration, NamedDeclaration, NamedExports, NamedImports, NamespaceDeclaration, NamespaceExportDeclaration, NamespaceImport, NewExpression, Node, NodeArray, NonNullExpression, NoSubstitutionTemplateLiteral, NullLiteral, NumericLiteral, ObjectBindingPattern, ObjectLiteralElement, ObjectLiteralElementLike, ObjectLiteralExpression, ObjectLiteralExpressionBase, OmittedExpression, ParameterDeclaration, ParenthesizedExpression, ParenthesizedTypeNode, PartiallyEmittedExpression, PostfixUnaryExpression, PrefixUnaryExpression, PrimaryExpression, PropertyAccessExpression, PropertyAssignment, PropertyDeclaration, PropertyName, PropertySignature, QualifiedName, RegularExpressionLiteral, ReturnStatement, SemicolonClassElement, SetAccessorDeclaration, ShorthandPropertyAssignment, SignatureDeclarationBase, SourceFile, SpreadAssignment, SpreadElement, Statement, StringLiteral, SuperExpression, SwitchStatement, Symbol, SyntaxKind, TaggedTemplateExpression, TemplateExpression, TemplateHead, TemplateMiddle, TemplateSpan, TemplateTail, TextRange, ThisExpression, ThisTypeNode, ThrowStatement, Token, TryStatement, TupleTypeNode, TypeAliasDeclaration, TypeAssertion, TypeElement, TypeLiteralNode, TypeNode, TypeOfExpression, TypeOperatorNode, TypeParameterDeclaration, TypePredicateNode, TypeQueryNode, TypeReferenceNode, UnaryExpression, UnionTypeNode, UpdateExpression, VariableDeclaration, VariableDeclarationList, VariableStatement, VoidExpression, WhileStatement, WithStatement, YieldExpression} from "typescript";
 import {NodeMatcherItem} from "../node-matcher-util/node-matcher-item";
 import {INodeUpdaterUtilUpdateOptions} from "./i-node-updater-util-update-options";
 import {INodeUpdaterUtilUpdateOptionsDict} from "./i-node-updater-util-update-options-dict";
@@ -30,15 +30,16 @@ import {hasJsDoc, isJSDocClassTag, isJSDocUnknownTag, ITypescriptASTUtil} from "
  * A class that helps with updating (mutating) nodes in-place
  */
 export class NodeUpdaterUtil implements INodeUpdaterUtil {
-	constructor (private nodeMatcherUtil: INodeMatcherUtil,
-							 private astUtil: ITypescriptASTUtil,
-							 private printer: IPrinter) {}
-
 	/**
 	 * A Set of keys that will be preserved when all keys are stripped
 	 * @type {Set<string>}
 	 */
 	private PRESERVE_KEYS_ON_STRIP: Set<string> = new Set(["parent"]);
+
+	constructor (private nodeMatcherUtil: INodeMatcherUtil,
+							 private astUtil: ITypescriptASTUtil,
+							 private printer: IPrinter) {
+	}
 
 	/**
 	 * Updates a Node in-place. This means it will be deep-mutated
@@ -752,8 +753,8 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 			}
 
 			else if (isJSDocAllType(<JSDocAllType><any>newNode) && isJSDocAllType(<JSDocAllType><any>existing)) {
-				return <T><any>this.updateJSDocAllType(<JSDocAllType><any>newNode, <JSDocAllType><any>existing, options);
-			}
+					return <T><any>this.updateJSDocAllType(<JSDocAllType><any>newNode, <JSDocAllType><any>existing, options);
+				}
 		}
 
 		throw new TypeError(`${this.constructor.name} could not update a Node of kind ${SyntaxKind[existing.kind]}: It wasn't handled!`);
@@ -869,8 +870,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	private updateJSDocAugmentsTag (newNode: JSDocAugmentsTag, existing: JSDocAugmentsTag, options: INodeUpdaterUtilUpdateOptions): JSDocAugmentsTag {
 		this.updateJSDocTag(newNode, existing, options);
-
-		existing.typeExpression = this.updateJSDocTypeExpression(newNode.typeExpression, existing.typeExpression, options);
+		existing.class = this.update(newNode.class, existing.class, options);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -935,7 +935,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		this.updateDeclaration(newNode, existing, options);
 
 		existing.name = this.updateEntityName(newNode.name, existing.name, options);
-		existing.typeExpression = this.updateJSDocTypeExpression(newNode.typeExpression, existing.typeExpression, options);
+		existing.typeExpression = this.updateNodeIfGiven(newNode.typeExpression, existing.typeExpression, options, this.updateJSDocTypeExpression);
 		existing.isNameFirst = newNode.isNameFirst;
 		existing.isBracketed = newNode.isBracketed;
 
@@ -982,7 +982,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	private updateJSDocFunctionType (newNode: JSDocFunctionType, existing: JSDocFunctionType, options: INodeUpdaterUtilUpdateOptions): JSDocFunctionType {
 		this.updateJSDocType(newNode, existing, options);
-		this.updateSignatureDeclaration(newNode, existing, options);
+		this.updateSignatureDeclarationBase(newNode, existing, options);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -2497,7 +2497,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	private updateConstructorTypeNode (newNode: ConstructorTypeNode, existing: ConstructorTypeNode, options: INodeUpdaterUtilUpdateOptions): ConstructorTypeNode {
 		this.updateTypeNode(newNode, existing, options);
-		this.updateSignatureDeclaration(newNode, existing, options);
+		this.updateSignatureDeclarationBase(newNode, existing, options);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -2908,7 +2908,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	private updateFunctionTypeNode (newNode: FunctionTypeNode, existing: FunctionTypeNode, options: INodeUpdaterUtilUpdateOptions): FunctionTypeNode {
 		this.updateTypeNode(newNode, existing, options);
-		this.updateSignatureDeclaration(newNode, existing, options);
+		this.updateSignatureDeclarationBase(newNode, existing, options);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -2987,21 +2987,23 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 
 	/**
 	 * Updates AmdDependencies
-	 * @param {AmdDependency[]} newNode
-	 * @param {AmdDependency[]} existing
+	 * @param {ReadonlyArray<AmdDependency>} newNode
+	 * @param {ReadonlyArray<AmdDependency>} existing
 	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {ReadonlyArray<AmdDependency>}
 	 */
-	private updateAmdDependencies (newNode: AmdDependency[], existing: AmdDependency[], options: INodeUpdaterUtilUpdateOptions): AmdDependency[] {
+	private updateAmdDependencies (newNode: ReadonlyArray<AmdDependency>, existing: ReadonlyArray<AmdDependency>, options: INodeUpdaterUtilUpdateOptions): ReadonlyArray<AmdDependency> {
 		return this.updateArray(newNode, existing, options, this.updateAmdDependency);
 	}
 
 	/**
 	 * Updates FileReferences
-	 * @param {FileReference[]} newNode
-	 * @param {FileReference[]} existing
+	 * @param {ReadonlyArray<FileReference>} newNode
+	 * @param {ReadonlyArray<FileReference>} existing
 	 * @param {INodeUpdaterUtilUpdateOptions} options
+	 * @returns {ReadonlyArray<FileReference>}
 	 */
-	private updateFileReferences (newNode: FileReference[], existing: FileReference[], options: INodeUpdaterUtilUpdateOptions): FileReference[] {
+	private updateFileReferences (newNode: ReadonlyArray<FileReference>, existing: ReadonlyArray<FileReference>, options: INodeUpdaterUtilUpdateOptions): ReadonlyArray<FileReference> {
 		return this.updateArray(newNode, existing, options, this.updateFileReference);
 	}
 
@@ -3317,7 +3319,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @returns {MethodSignature}
 	 */
 	private updateMethodSignature (newNode: MethodSignature, existing: MethodSignature, options: INodeUpdaterUtilUpdateOptions): MethodSignature {
-		this.updateSignatureDeclaration(newNode, existing, options);
+		this.updateSignatureDeclarationBase(newNode, existing, options);
 		this.updateTypeElement(newNode, existing, options);
 
 		existing.name = this.updatePropertyName(newNode.name, existing.name, options);
@@ -3326,13 +3328,13 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	}
 
 	/**
-	 * Updates a FunctionLikeDeclarationBase
-	 * @param {FunctionLikeDeclarationBase} newNode
-	 * @param {FunctionLikeDeclarationBase} existing
+	 * Updates a SignatureDeclarationBase
+	 * @param {SignatureDeclarationBase} newNode
+	 * @param {SignatureDeclarationBase} existing
 	 * @param {INodeUpdaterUtilUpdateOptions} options
-	 * @returns {FunctionLikeDeclarationBase}
+	 * @returns {SignatureDeclarationBase}
 	 */
-	private updateSignatureDeclaration (newNode: SignatureDeclaration, existing: SignatureDeclaration, options: INodeUpdaterUtilUpdateOptions): SignatureDeclaration {
+	private updateSignatureDeclarationBase (newNode: SignatureDeclarationBase, existing: SignatureDeclarationBase, options: INodeUpdaterUtilUpdateOptions): SignatureDeclarationBase {
 		this.updateNamedDeclaration(newNode, existing, options);
 
 		existing.name = this.updateNodeIfGiven(newNode.name, existing.name, options, this.updatePropertyName);
@@ -3351,7 +3353,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @returns {FunctionLikeDeclarationBase}
 	 */
 	private updateFunctionLikeDeclarationBase (newNode: FunctionLikeDeclarationBase, existing: FunctionLikeDeclarationBase, options: INodeUpdaterUtilUpdateOptions): FunctionLikeDeclarationBase {
-		this.updateSignatureDeclaration(newNode, existing, options);
+		this.updateSignatureDeclarationBase(newNode, existing, options);
 
 		existing.asteriskToken = this.updateNodeIfGiven(newNode.asteriskToken, existing.asteriskToken, options, this.updateToken);
 		existing.questionToken = this.updateNodeIfGiven(newNode.questionToken, existing.questionToken, options, this.updateToken);
@@ -3692,7 +3694,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @returns {IndexSignatureDeclaration}
 	 */
 	private updateIndexSignatureDeclaration (newNode: IndexSignatureDeclaration, existing: IndexSignatureDeclaration, options: INodeUpdaterUtilUpdateOptions): IndexSignatureDeclaration {
-		this.updateSignatureDeclaration(newNode, existing, options);
+		this.updateSignatureDeclarationBase(newNode, existing, options);
 		this.updateClassElement(newNode, existing, options);
 		this.updateTypeElement(newNode, existing, options);
 
@@ -3720,7 +3722,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @returns {CallSignatureDeclaration}
 	 */
 	private updateCallSignatureDeclaration (newNode: CallSignatureDeclaration, existing: CallSignatureDeclaration, options: INodeUpdaterUtilUpdateOptions): CallSignatureDeclaration {
-		this.updateSignatureDeclaration(newNode, existing, options);
+		this.updateSignatureDeclarationBase(newNode, existing, options);
 		this.updateTypeElement(newNode, existing, options);
 
 		return this.extraTransformStep(newNode, existing, options);
@@ -3734,7 +3736,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @returns {ConstructSignatureDeclaration}
 	 */
 	private updateConstructSignatureDeclaration (newNode: ConstructSignatureDeclaration, existing: ConstructSignatureDeclaration, options: INodeUpdaterUtilUpdateOptions): ConstructSignatureDeclaration {
-		this.updateSignatureDeclaration(newNode, existing, options);
+		this.updateSignatureDeclarationBase(newNode, existing, options);
 		this.updateTypeElement(newNode, existing, options);
 
 		return this.extraTransformStep(newNode, existing, options);
@@ -4078,7 +4080,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @param {(newNode: T, existing: T, options: INodeUpdaterUtilUpdateOptions) => T} handler
 	 * @returns {T[]}
 	 */
-	private updateArray<T extends NodeMatcherItem> (newNodes: T[], existingNodes: T[], options: INodeUpdaterUtilUpdateOptions, handler: (newNode: T, existing: T, options: INodeUpdaterUtilUpdateOptions) => T): T[] {
+	private updateArray<T extends NodeMatcherItem> (newNodes: ReadonlyArray<T>, existingNodes: ReadonlyArray<T>, options: INodeUpdaterUtilUpdateOptions, handler: (newNode: T, existing: T, options: INodeUpdaterUtilUpdateOptions) => T): ReadonlyArray<T> {
 		// Filter out anything that exists within the new nodes but not inside the existing array
 		const existingFiltered = existingNodes.filter(existingPart => this.nodeMatcherUtil.match(existingPart, newNodes) != null);
 		const boundHandler = handler.bind(this);
