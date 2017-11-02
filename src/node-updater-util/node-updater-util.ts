@@ -3839,7 +3839,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		this.updateMemberExpression(newNode, existing, options);
 
 		existing.expression = this.update(newNode.expression, existing.expression, options);
-		existing.argumentExpression = this.updateNodeIfGiven(newNode.expression, existing.expression, options, this.update);
+		existing.argumentExpression = this.updateNodeIfGiven(newNode.argumentExpression, existing.argumentExpression, options, this.update);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
