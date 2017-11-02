@@ -1,3 +1,13 @@
+<a name="0.0.30"></a>
+## 0.0.30 (2017-11-02)
+
+* 0.0.30 ([8ec2b3b](https://github.com/wessberg/TypescriptASTUtil/commit/8ec2b3b))
+* Bumped version ([9c1d4c7](https://github.com/wessberg/TypescriptASTUtil/commit/9c1d4c7))
+* Fixed an issue where ElementAccessExpressions with argument expressions would be falsely updated ([eade15a](https://github.com/wessberg/TypescriptASTUtil/commit/eade15a))
+* Fixed an issue where ElementAccessExpressions with argument expressions would be falsely updated. Bu ([249958f](https://github.com/wessberg/TypescriptASTUtil/commit/249958f))
+
+
+
 <a name="0.0.29"></a>
 ## 0.0.29 (2017-10-29)
 
