@@ -1,4 +1,10 @@
-for (let i = 0; i < 10; i++) {
-	console.log("foo");
-	continue;
+/**
+ * Some docs
+ */
+class Foo {
+	/**
+	 * A property
+	 * @type {Map<any, any>}
+	 */
+	public foo = new Map();
 }

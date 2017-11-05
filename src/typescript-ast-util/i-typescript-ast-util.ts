@@ -2,6 +2,7 @@ import {Node, NodeArray, NodeFlags, SyntaxKind} from "typescript/lib/typescript"
 
 export interface ITypescriptASTUtil {
 	clearPositions <T extends Node> (node: T|NodeArray<T>): T;
+	getTypeNameOfExpression (expression: Node, acceptIdentifierAsTypeName?: boolean): string;
 	takeName (identifier: Node|undefined): string;
 	getRawText (identifier: Node): string;
 	serializeFlag (flag: NodeFlags): string;

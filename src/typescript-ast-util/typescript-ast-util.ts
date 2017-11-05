@@ -1,6 +1,7 @@
-import {createNodeArray, forEachChild, isArrowFunction, isBreakStatement, isCallExpression, isClassDeclaration, isClassLike, isComputedPropertyName, isConstructorDeclaration, isContinueStatement, isDecorator, isElementAccessExpression, isEnumDeclaration, isExportAssignment, isExportSpecifier, isExpressionWithTypeArguments, isExternalModuleReference, isFunctionDeclaration, isFunctionExpression, isIdentifier, isImportClause, isImportEqualsDeclaration, isImportSpecifier, isInterfaceDeclaration, isJSDocParameterTag, isJSDocPropertyTag, isJSDocTypedefTag, isJsxAttribute, isLabeledStatement, isMetaProperty, isMissingDeclaration, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNumericLiteral, isParenthesizedExpression, isParenthesizedTypeNode, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isShorthandPropertyAssignment, isStringLiteral, isThisTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeParameterDeclaration, isTypePredicateNode, isTypeReferenceNode, Node, NodeArray, NodeFlags, SyntaxKind, tokenToString} from "typescript";
+import {createNodeArray, forEachChild, isArrayLiteralExpression, isArrowFunction, isBreakStatement, isCallExpression, isClassDeclaration, isClassLike, isComputedPropertyName, isConstructorDeclaration, isContinueStatement, isDecorator, isElementAccessExpression, isEnumDeclaration, isExportAssignment, isExportSpecifier, isExpressionWithTypeArguments, isExternalModuleReference, isFunctionDeclaration, isFunctionExpression, isIdentifier, isImportClause, isImportEqualsDeclaration, isImportSpecifier, isInterfaceDeclaration, isJSDocParameterTag, isJSDocPropertyTag, isJSDocTypedefTag, isJsxAttribute, isLabeledStatement, isMetaProperty, isMissingDeclaration, isNamespaceExportDeclaration, isNamespaceImport, isNewExpression, isNumericLiteral, isObjectLiteralExpression, isParenthesizedExpression, isParenthesizedTypeNode, isPropertyAccessExpression, isPropertyAssignment, isPropertyDeclaration, isPropertySignature, isQualifiedName, isRegularExpressionLiteral, isShorthandPropertyAssignment, isStringLiteral, isTemplateLiteral, isThisTypeNode, isTypeAliasDeclaration, isTypeAssertion, isTypeParameterDeclaration, isTypePredicateNode, isTypeReferenceNode, Node, NodeArray, NodeFlags, SyntaxKind, tokenToString} from "typescript";
 import {ITypescriptASTUtil} from "./i-typescript-ast-util";
 import {hasTextRange, isNodeArrayOrMutableArrayOfNodes, isTypescriptNode} from "../";
+import {isBooleanLiteral} from "../predicate/is-boolean-literal";
 
 /**
  * A helper class for working with Typescript's AST
@@ -231,5 +232,56 @@ export class TypescriptASTUtil implements ITypescriptASTUtil {
 		const filteredStatements: Node[] = [];
 		this.filterStatements(node => filteredStatements.push(node), statements, kinds, recursive);
 		return createNodeArray(<T[]>filteredStatements);
+	}
+
+	/**
+	 * Attempts to convert an expression to a type name
+	 * @param {Node} expression
+	 * @param {boolean} [acceptIdentifierAsTypeName=false]
+	 * @returns {string}
+	 */
+	public getTypeNameOfExpression (expression: Node, acceptIdentifierAsTypeName: boolean = false): string {
+		if (isStringLiteral(expression) || isTemplateLiteral(expression)) {
+			return "string";
+		}
+
+		if (isNumericLiteral(expression)) {
+			return "number";
+		}
+
+		if (isBooleanLiteral(expression)) {
+			return "boolean";
+		}
+
+		if (isRegularExpressionLiteral(expression)) {
+			return "RegExp";
+		}
+
+		if (isObjectLiteralExpression(expression)) {
+			return "object";
+		}
+
+		if (isArrayLiteralExpression(expression)) {
+			const types = [...new Set(expression.elements.map(element => this.getTypeNameOfExpression(element)))];
+			// If there are multiple types, surround them with parentheses
+			if (types.length > 1) return `(${types.join("|")})[]`;
+			return `${types.join("|")}[]`;
+		}
+
+		if (isArrowFunction(expression) || isFunctionExpression(expression)) {
+			return "function";
+		}
+
+		if (isNewExpression(expression)) {
+			return this.getTypeNameOfExpression(expression.expression, true);
+		}
+
+		if (isIdentifier(expression) && acceptIdentifierAsTypeName) {
+			return expression.text;
+		}
+
+		// Fall back to "any"
+		return "any";
+
 	}
 }
