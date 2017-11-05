@@ -1,3 +1,22 @@
+<a name="0.0.39"></a>
+## 0.0.39 (2017-11-05)
+
+* 0.0.39 ([b1ffe3d](https://github.com/wessberg/TypescriptASTUtil/commit/b1ffe3d))
+* Added a simple method that will attempt to infer the type of an expression ([df96de2](https://github.com/wessberg/TypescriptASTUtil/commit/df96de2))
+* More refinements ([7580b9d](https://github.com/wessberg/TypescriptASTUtil/commit/7580b9d))
+* Refined build scripts ([8f12b12](https://github.com/wessberg/TypescriptASTUtil/commit/8f12b12))
+
+
+
+<a name="0.0.38"></a>
+## 0.0.38 (2017-11-02)
+
+* 0.0.38 ([feffc4e](https://github.com/wessberg/TypescriptASTUtil/commit/feffc4e))
+* Bumped version ([c51b481](https://github.com/wessberg/TypescriptASTUtil/commit/c51b481))
+* Temp ([16c1a33](https://github.com/wessberg/TypescriptASTUtil/commit/16c1a33))
+
+
+
 <a name="0.0.37"></a>
 ## 0.0.37 (2017-11-02)
 
