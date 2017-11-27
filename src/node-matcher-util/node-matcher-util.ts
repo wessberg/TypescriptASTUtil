@@ -3645,7 +3645,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		return this.allIsMatched(
 			this.matchPrimaryExpression(node, matchNode),
 			this.matchNodeWithTemplateHead(node.head, matchNode.head),
-			this.matchAllNodes(node.templateSpans, matchNode.templateSpans, this.matchNodeWithTemplateSpan)
+			this.matchAllNodesInOrder(node.templateSpans, matchNode.templateSpans, this.matchNodeWithTemplateSpan)
 		);
 	}
 
@@ -4015,6 +4015,22 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		// If neither is undefined and all of the elements match, return true
 		return matchNode.every(element => node.some(nodeElement => boundHandler(nodeElement, element)));
+	}
+
+	/**
+	 * Matches all of the given nodes in order
+	 * @param {NodeArray<Node> | ReadonlyArray<Node>} node
+	 * @param {NodeArray<Node>| ReadonlyArray<Node>} matchNode
+	 * @param {Function} handler
+	 * @returns {boolean}
+	 */
+	private matchAllNodesInOrder<T extends Node> (node: NodeArray<T>|ReadonlyArray<T>, matchNode: NodeArray<T>|ReadonlyArray<T>, handler: (node: T, matchNode: T) => boolean): boolean {
+		const boundHandler: (node: T, matchNode: T) => boolean = handler.bind(this);
+		// If neither the new node or the existing one are provided, there is a match
+		if (node == null && matchNode == null) return true;
+
+		// Match all of the elements in the order of the items in the matchNode array
+		return matchNode.every((element, index) => boundHandler(node[index], element));
 	}
 
 	/**
