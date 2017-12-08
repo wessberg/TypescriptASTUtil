@@ -64,7 +64,7 @@ export class Printer implements IPrinter {
 		}
 		else {
 			// Make sure that the type has a SourceFile. If it doesn't, mock it. Otherwise, the printer may fail
-			if (node.getSourceFile() == null) {
+			if (node.getSourceFile == null || node.getSourceFile() == null) {
 				// tslint:disable
 				(<any>node).getSourceFile = () => ({text: ""});
 				// tslint:enable
