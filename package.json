@@ -38,11 +38,11 @@
 		"parser"
 	],
 	"devDependencies": {
-		"@types/node": "^8.0.53",
+		"@types/node": "^8.0.57",
 		"@wessberg/fileloader": "^1.1.4",
 		"@wessberg/moduleutil": "0.0.20",
 		"@wessberg/pathutil": "0.0.7",
-		"@wessberg/ts-config": "0.0.23",
+		"@wessberg/ts-config": "0.0.24",
 		"@wessberg/typescript-language-service": "0.0.32",
 		"@wessberg/typescript-package-reassembler": "0.0.6",
 		"ava": "^0.24.0",
@@ -51,7 +51,7 @@
 		"tslint": "^5.8.0"
 	},
 	"dependencies": {
-		"tslib": "^1.8.0",
+		"tslib": "^1.8.1",
 		"typescript": "^2.6.2"
 	},
 	"main": "./dist/umd/index.js",
