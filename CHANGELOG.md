@@ -1,3 +1,13 @@
+<a name="0.0.41"></a>
+## 0.0.41 (2017-12-08)
+
+* 0.0.41 ([066a85d](https://github.com/wessberg/TypescriptASTUtil/commit/066a85d))
+* Bumped deps. Fixed some issues in the printer ([0a19c5c](https://github.com/wessberg/TypescriptASTUtil/commit/0a19c5c))
+* Bumped deps. Fixed some issues in the printer ([72b5b2c](https://github.com/wessberg/TypescriptASTUtil/commit/72b5b2c))
+* Bumped version ([a9972ec](https://github.com/wessberg/TypescriptASTUtil/commit/a9972ec))
+
+
+
 <a name="0.0.40"></a>
 ## 0.0.40 (2017-11-27)
 
