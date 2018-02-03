@@ -1,3 +1,12 @@
+<a name="0.0.44"></a>
+## <small>0.0.44 (2018-02-03)</small>
+
+* 0.0.44 ([3b133a3](https://github.com/wessberg/TypescriptASTUtil/commit/3b133a3))
+* Bumped deps ([971912e](https://github.com/wessberg/TypescriptASTUtil/commit/971912e))
+* Bumped version ([130b052](https://github.com/wessberg/TypescriptASTUtil/commit/130b052))
+
+
+
 <a name="0.0.43"></a>
 ## <small>0.0.43 (2018-02-03)</small>
 
