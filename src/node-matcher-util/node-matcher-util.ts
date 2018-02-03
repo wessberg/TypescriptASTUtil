@@ -417,7 +417,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		}
 
 		else if (isNoSubstitutionTemplateLiteral(matchNode)) {
-			return this.matchNodeWithNoSubstitutionTemplateLiteral(node, <NoSubstitutionTemplateLiteral> matchNode);
+			return this.matchNodeWithNoSubstitutionTemplateLiteral(node, matchNode);
 		}
 
 		else if (isTemplateHead(matchNode)) {
@@ -1968,7 +1968,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 			this.matchClassElement(node, matchNode),
 			this.matchObjectLiteralElement(node, matchNode),
 			this.matchNodeWithPropertyName(node.name, matchNode.name),
-			this.matchNodeWithFunctionBody(node.body, matchNode.body)
+			this.matchNodeIfGiven(node.body, matchNode.body, this.matchNodeWithFunctionBody)
 		);
 	}
 
@@ -1987,7 +1987,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 			this.matchClassElement(node, matchNode),
 			this.matchObjectLiteralElement(node, matchNode),
 			this.matchNodeWithPropertyName(node.name, matchNode.name),
-			this.matchNodeWithFunctionBody(node.body, matchNode.body)
+			this.matchNodeIfGiven(node.body, matchNode.body, this.matchNodeWithFunctionBody)
 		);
 	}
 

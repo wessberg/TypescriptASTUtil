@@ -34,11 +34,11 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * A Set of keys that will be preserved when all keys are stripped
 	 * @type {Set<string>}
 	 */
-	private PRESERVE_KEYS_ON_STRIP: Set<string> = new Set(["parent"]);
+	private readonly PRESERVE_KEYS_ON_STRIP: Set<string> = new Set(["parent"]);
 
-	constructor (private nodeMatcherUtil: INodeMatcherUtil,
-							 private astUtil: ITypescriptASTUtil,
-							 private printer: IPrinter) {
+	constructor (private readonly nodeMatcherUtil: INodeMatcherUtil,
+							 private readonly astUtil: ITypescriptASTUtil,
+							 private readonly printer: IPrinter) {
 	}
 
 	/**
@@ -2860,7 +2860,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		this.updateObjectLiteralElement(newNode, existing, options);
 
 		existing.name = this.updatePropertyName(newNode.name, existing.name, options);
-		existing.body = this.updateFunctionBody(newNode.body, existing.body, options);
+		existing.body = this.updateNodeIfGiven(newNode.body, existing.body, options, this.updateFunctionBody);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -2894,7 +2894,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		this.updateObjectLiteralElement(newNode, existing, options);
 
 		existing.name = this.updatePropertyName(newNode.name, existing.name, options);
-		existing.body = this.updateFunctionBody(newNode.body, existing.body, options);
+		existing.body = this.updateNodeIfGiven(newNode.body, existing.body, options, this.updateFunctionBody);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
