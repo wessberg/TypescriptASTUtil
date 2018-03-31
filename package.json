@@ -1,6 +1,6 @@
 {
 	"name": "@wessberg/typescript-ast-util",
-	"version": "0.0.44",
+	"version": "0.0.45",
 	"description": "A helper class for working with Typescript's AST",
 	"scripts": {
 		"changelog:generate": "conventional-changelog --outfile CHANGELOG.md --release-count 0",
