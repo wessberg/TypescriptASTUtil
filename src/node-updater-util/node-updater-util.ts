@@ -87,8 +87,8 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @returns {T}
 	 */
 	private setTopLevelParent<T extends Node> (node: T): T {
-		Object.keys(node).forEach((key: keyof T) => {
-			const value = node[key];
+		Object.keys(node).forEach(key => {
+			const value = node[<keyof T>key];
 			if (isTypescriptNode(value) && value.parent == null) {
 				value.parent = node;
 			}
@@ -1740,9 +1740,6 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 */
 	private updateMissingDeclaration (newNode: MissingDeclaration, existing: MissingDeclaration, options: INodeUpdaterUtilUpdateOptions): MissingDeclaration {
 		this.updateDeclarationStatement(newNode, existing, options);
-		this.updateClassElement(newNode, existing, options);
-		this.updateObjectLiteralElement(newNode, existing, options);
-		this.updateTypeElement(newNode, existing, options);
 
 		existing.name = this.updateNodeIfGiven(newNode.name, existing.name, options, this.updateIdentifier);
 
@@ -3862,7 +3859,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		this.updateMemberExpression(newNode, existing, options);
 
 		existing.expression = this.update(newNode.expression, existing.expression, options);
-		existing.argumentExpression = this.updateNodeIfGiven(newNode.argumentExpression, existing.argumentExpression, options, this.update);
+		existing.argumentExpression = this.update(newNode.argumentExpression, existing.argumentExpression, options);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -4193,11 +4190,11 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @returns {T}
 	 */
 	private stripAllKeysOfNode<T extends Node> (node: T): T {
-		Object.keys(node).forEach((key: keyof T) => {
+		Object.keys(node).forEach(key => {
 
 			// Don't strip the keys that are strictly required to be preserved
 			if (!this.PRESERVE_KEYS_ON_STRIP.has(key)) {
-				delete node[key];
+				delete node[<keyof T>key];
 			}
 		});
 		return node;
@@ -4210,11 +4207,11 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	 * @returns {T}
 	 */
 	private addAllKeysOfNode<T extends Node> (newNode: T, existing: T): T {
-		Object.keys(newNode).forEach((key: keyof T) => {
+		Object.keys(newNode).forEach(key => {
 
 			// Don't add the key if the provided node must preserve it
 			if (!this.PRESERVE_KEYS_ON_STRIP.has(key)) {
-				existing[key] = newNode[key];
+				existing[<keyof T>key] = newNode[<keyof T>key];
 			}
 		});
 		return existing;

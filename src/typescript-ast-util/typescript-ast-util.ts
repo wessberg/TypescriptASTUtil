@@ -41,8 +41,8 @@ export class TypescriptASTUtil implements ITypescriptASTUtil {
 			});
 		}
 		else {
-			Object.keys(node).forEach((key: keyof T) => {
-				const value = node[key];
+			Object.keys(node).forEach(key => {
+				const value = node[<keyof T>key];
 				if (isTypescriptNode(value) || isNodeArrayOrMutableArrayOfNodes(value)) {
 					// tslint:disable
 					this.clearPositions(<any>value, seenNodes);

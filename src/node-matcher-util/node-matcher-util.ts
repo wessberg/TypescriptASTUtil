@@ -2706,9 +2706,6 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		return this.allIsMatched(
 			this.matchDeclarationStatement(node, matchNode),
-			this.matchClassElement(node, matchNode),
-			this.matchObjectLiteralElement(node, matchNode),
-			this.matchTypeElement(node, matchNode),
 			this.matchNodeIfGiven(node.name, matchNode.name, this.matchNodeWithIdentifier)
 		);
 	}
