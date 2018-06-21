@@ -1,4 +1,11 @@
-<a name="0.0.45"></a>
+## <small>0.0.46 (2018-06-21)</small>
+
+* 0.0.46 ([72208d7](https://github.com/wessberg/TypescriptASTUtil/commit/72208d7))
+* Bumped deps ([5e05d1a](https://github.com/wessberg/TypescriptASTUtil/commit/5e05d1a))
+* Bumped version ([d14be5b](https://github.com/wessberg/TypescriptASTUtil/commit/d14be5b))
+
+
+
 ## <small>0.0.45 (2018-03-31)</small>
 
 * 0.0.45 ([fa7097f](https://github.com/wessberg/TypescriptASTUtil/commit/fa7097f))
@@ -7,7 +14,6 @@
 
 
 
-<a name="0.0.44"></a>
 ## <small>0.0.44 (2018-02-03)</small>
 
 * 0.0.44 ([3b133a3](https://github.com/wessberg/TypescriptASTUtil/commit/3b133a3))
@@ -16,7 +22,6 @@
 
 
 
-<a name="0.0.43"></a>
 ## <small>0.0.43 (2018-02-03)</small>
 
 * 0.0.43 ([0212588](https://github.com/wessberg/TypescriptASTUtil/commit/0212588))
@@ -25,7 +30,6 @@
 
 
 
-<a name="0.0.42"></a>
 ## <small>0.0.42 (2018-02-03)</small>
 
 * 0.0.42 ([60b4d02](https://github.com/wessberg/TypescriptASTUtil/commit/60b4d02))
@@ -34,7 +38,6 @@
 
 
 
-<a name="0.0.41"></a>
 ## <small>0.0.41 (2017-12-08)</small>
 
 * 0.0.41 ([066a85d](https://github.com/wessberg/TypescriptASTUtil/commit/066a85d))
@@ -44,7 +47,6 @@
 
 
 
-<a name="0.0.40"></a>
 ## <small>0.0.40 (2017-11-27)</small>
 
 * 0.0.40 ([32d78eb](https://github.com/wessberg/TypescriptASTUtil/commit/32d78eb))
@@ -53,7 +55,6 @@
 
 
 
-<a name="0.0.39"></a>
 ## <small>0.0.39 (2017-11-05)</small>
 
 * 0.0.39 ([b1ffe3d](https://github.com/wessberg/TypescriptASTUtil/commit/b1ffe3d))
@@ -63,7 +64,6 @@
 
 
 
-<a name="0.0.38"></a>
 ## <small>0.0.38 (2017-11-02)</small>
 
 * 0.0.38 ([feffc4e](https://github.com/wessberg/TypescriptASTUtil/commit/feffc4e))
@@ -72,7 +72,6 @@
 
 
 
-<a name="0.0.37"></a>
 ## <small>0.0.37 (2017-11-02)</small>
 
 * 0.0.37 ([021c518](https://github.com/wessberg/TypescriptASTUtil/commit/021c518))
@@ -81,7 +80,6 @@
 
 
 
-<a name="0.0.36"></a>
 ## <small>0.0.36 (2017-11-02)</small>
 
 * 0.0.36 ([f12eaff](https://github.com/wessberg/TypescriptASTUtil/commit/f12eaff))
@@ -90,7 +88,6 @@
 
 
 
-<a name="0.0.35"></a>
 ## <small>0.0.35 (2017-11-02)</small>
 
 * 0.0.35 ([77d7fac](https://github.com/wessberg/TypescriptASTUtil/commit/77d7fac))
@@ -99,7 +96,6 @@
 
 
 
-<a name="0.0.34"></a>
 ## <small>0.0.34 (2017-11-02)</small>
 
 * 0.0.34 ([4bf7922](https://github.com/wessberg/TypescriptASTUtil/commit/4bf7922))
@@ -109,7 +105,6 @@
 
 
 
-<a name="0.0.33"></a>
 ## <small>0.0.33 (2017-11-02)</small>
 
 * 0.0.33 ([6bdda58](https://github.com/wessberg/TypescriptASTUtil/commit/6bdda58))
@@ -118,7 +113,6 @@
 
 
 
-<a name="0.0.32"></a>
 ## <small>0.0.32 (2017-11-02)</small>
 
 * 0.0.32 ([6fdfae3](https://github.com/wessberg/TypescriptASTUtil/commit/6fdfae3))
@@ -126,7 +120,6 @@
 
 
 
-<a name="0.0.31"></a>
 ## <small>0.0.31 (2017-11-02)</small>
 
 * 0.0.31 ([22f714d](https://github.com/wessberg/TypescriptASTUtil/commit/22f714d))
@@ -134,7 +127,6 @@
 
 
 
-<a name="0.0.30"></a>
 ## <small>0.0.30 (2017-11-02)</small>
 
 * 0.0.30 ([8ec2b3b](https://github.com/wessberg/TypescriptASTUtil/commit/8ec2b3b))
@@ -144,7 +136,6 @@
 
 
 
-<a name="0.0.29"></a>
 ## <small>0.0.29 (2017-10-29)</small>
 
 * 0.0.29 ([a772a2d](https://github.com/wessberg/TypescriptASTUtil/commit/a772a2d))
@@ -152,7 +143,6 @@
 
 
 
-<a name="0.0.28"></a>
 ## <small>0.0.28 (2017-10-29)</small>
 
 * 0.0.28 ([e48188f](https://github.com/wessberg/TypescriptASTUtil/commit/e48188f))
@@ -160,7 +150,6 @@
 
 
 
-<a name="0.0.27"></a>
 ## <small>0.0.27 (2017-10-29)</small>
 
 * 0.0.27 ([6007197](https://github.com/wessberg/TypescriptASTUtil/commit/6007197))
@@ -169,7 +158,6 @@
 
 
 
-<a name="0.0.26"></a>
 ## <small>0.0.26 (2017-10-22)</small>
 
 * 0.0.26 ([46bfa9f](https://github.com/wessberg/TypescriptASTUtil/commit/46bfa9f))
@@ -178,7 +166,6 @@
 
 
 
-<a name="0.0.25"></a>
 ## <small>0.0.25 (2017-10-18)</small>
 
 * 0.0.25 ([2657d99](https://github.com/wessberg/TypescriptASTUtil/commit/2657d99))
@@ -187,7 +174,6 @@
 
 
 
-<a name="0.0.24"></a>
 ## <small>0.0.24 (2017-10-18)</small>
 
 * 0.0.24 ([4fe762d](https://github.com/wessberg/TypescriptASTUtil/commit/4fe762d))
@@ -196,7 +182,6 @@
 
 
 
-<a name="0.0.23"></a>
 ## <small>0.0.23 (2017-10-18)</small>
 
 * 0.0.23 ([3d4d064](https://github.com/wessberg/TypescriptASTUtil/commit/3d4d064))
@@ -205,7 +190,6 @@
 
 
 
-<a name="0.0.22"></a>
 ## <small>0.0.22 (2017-10-18)</small>
 
 * 0.0.22 ([78d11f5](https://github.com/wessberg/TypescriptASTUtil/commit/78d11f5))
@@ -214,7 +198,6 @@
 
 
 
-<a name="0.0.21"></a>
 ## <small>0.0.21 (2017-10-18)</small>
 
 * 0.0.21 ([6312e6b](https://github.com/wessberg/TypescriptASTUtil/commit/6312e6b))
@@ -225,7 +208,6 @@
 
 
 
-<a name="0.0.20"></a>
 ## <small>0.0.20 (2017-10-15)</small>
 
 * 0.0.20 ([22335be](https://github.com/wessberg/TypescriptASTUtil/commit/22335be))
@@ -234,7 +216,6 @@
 
 
 
-<a name="0.0.19"></a>
 ## <small>0.0.19 (2017-10-15)</small>
 
 * 0.0.19 ([514fa12](https://github.com/wessberg/TypescriptASTUtil/commit/514fa12))
@@ -243,7 +224,6 @@
 
 
 
-<a name="0.0.18"></a>
 ## <small>0.0.18 (2017-10-15)</small>
 
 * 0.0.18 ([99479c0](https://github.com/wessberg/TypescriptASTUtil/commit/99479c0))
@@ -252,7 +232,6 @@
 
 
 
-<a name="0.0.17"></a>
 ## <small>0.0.17 (2017-10-02)</small>
 
 * 0.0.17 ([850aeaf](https://github.com/wessberg/TypescriptASTUtil/commit/850aeaf))
@@ -261,7 +240,6 @@
 
 
 
-<a name="0.0.16"></a>
 ## <small>0.0.16 (2017-10-01)</small>
 
 * 0.0.16 ([21e5af1](https://github.com/wessberg/TypescriptASTUtil/commit/21e5af1))
@@ -270,7 +248,6 @@
 
 
 
-<a name="0.0.15"></a>
 ## <small>0.0.15 (2017-10-01)</small>
 
 * 0.0.15 ([88a6ca3](https://github.com/wessberg/TypescriptASTUtil/commit/88a6ca3))
@@ -279,7 +256,6 @@
 
 
 
-<a name="0.0.14"></a>
 ## <small>0.0.14 (2017-10-01)</small>
 
 * 0.0.14 ([86655db](https://github.com/wessberg/TypescriptASTUtil/commit/86655db))
@@ -288,7 +264,6 @@
 
 
 
-<a name="0.0.13"></a>
 ## <small>0.0.13 (2017-10-01)</small>
 
 * 0.0.13 ([1a55632](https://github.com/wessberg/TypescriptASTUtil/commit/1a55632))
@@ -297,7 +272,6 @@
 
 
 
-<a name="0.0.12"></a>
 ## <small>0.0.12 (2017-10-01)</small>
 
 * 0.0.12 ([493b036](https://github.com/wessberg/TypescriptASTUtil/commit/493b036))
@@ -306,7 +280,6 @@
 
 
 
-<a name="0.0.11"></a>
 ## <small>0.0.11 (2017-10-01)</small>
 
 * 0.0.11 ([61c6e15](https://github.com/wessberg/TypescriptASTUtil/commit/61c6e15))
@@ -315,7 +288,6 @@
 
 
 
-<a name="0.0.10"></a>
 ## <small>0.0.10 (2017-10-01)</small>
 
 * 0.0.10 ([6859161](https://github.com/wessberg/TypescriptASTUtil/commit/6859161))
@@ -324,7 +296,6 @@
 
 
 
-<a name="0.0.9"></a>
 ## <small>0.0.9 (2017-10-01)</small>
 
 * 0.0.9 ([53de4bb](https://github.com/wessberg/TypescriptASTUtil/commit/53de4bb))
@@ -333,7 +304,6 @@
 
 
 
-<a name="0.0.8"></a>
 ## <small>0.0.8 (2017-09-04)</small>
 
 * 0.0.8 ([227ed9d](https://github.com/wessberg/TypescriptASTUtil/commit/227ed9d))
@@ -342,7 +312,6 @@
 
 
 
-<a name="0.0.7"></a>
 ## <small>0.0.7 (2017-08-21)</small>
 
 * 0.0.7 ([e736343](https://github.com/wessberg/TypescriptASTUtil/commit/e736343))
@@ -351,7 +320,6 @@
 
 
 
-<a name="0.0.6"></a>
 ## <small>0.0.6 (2017-08-20)</small>
 
 * 0.0.6 ([b54654d](https://github.com/wessberg/TypescriptASTUtil/commit/b54654d))
@@ -360,7 +328,6 @@
 
 
 
-<a name="0.0.5"></a>
 ## <small>0.0.5 (2017-08-20)</small>
 
 * 0.0.5 ([1cd56b6](https://github.com/wessberg/TypescriptASTUtil/commit/1cd56b6))
@@ -369,7 +336,6 @@
 
 
 
-<a name="0.0.4"></a>
 ## <small>0.0.4 (2017-08-20)</small>
 
 * 0.0.4 ([25ecd98](https://github.com/wessberg/TypescriptASTUtil/commit/25ecd98))
@@ -378,7 +344,6 @@
 
 
 
-<a name="0.0.3"></a>
 ## <small>0.0.3 (2017-08-20)</small>
 
 * 0.0.3 ([ef12b4a](https://github.com/wessberg/TypescriptASTUtil/commit/ef12b4a))
@@ -387,7 +352,6 @@
 
 
 
-<a name="0.0.2"></a>
 ## <small>0.0.2 (2017-08-20)</small>
 
 * 0.0.2 ([7a705d1](https://github.com/wessberg/TypescriptASTUtil/commit/7a705d1))
@@ -396,7 +360,6 @@
 
 
 
-<a name="0.0.1"></a>
 ## <small>0.0.1 (2017-08-20)</small>
 
 * 0.0.1 ([cf9076d](https://github.com/wessberg/TypescriptASTUtil/commit/cf9076d))
