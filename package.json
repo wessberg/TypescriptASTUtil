@@ -38,16 +38,16 @@
 		"parser"
 	],
 	"devDependencies": {
-		"@types/node": "^10.3.4",
+		"@types/node": "^10.5.4",
 		"@wessberg/ts-config": "0.0.27",
 		"ava": "^0.25.0",
 		"conventional-changelog-cli": "^2.0.1",
 		"husky": "latest",
-		"tslint": "^5.10.0"
+		"tslint": "^5.11.0"
 	},
 	"dependencies": {
-		"tslib": "^1.9.2",
-		"typescript": "^2.9.2"
+		"tslib": "^1.9.3",
+		"typescript": "^3.0.1"
 	},
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/es2015/index.js",

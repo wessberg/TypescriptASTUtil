@@ -885,7 +885,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		return this.allIsMatched(
 			this.matchJSDocTag(node, matchNode),
-			this.matchNodeWithJSDocTypeExpression(node.typeExpression, matchNode.typeExpression)
+			this.matchNodeIfGiven(node.typeExpression, matchNode.typeExpression, this.matchNodeWithJSDocTypeExpression)
 		);
 	}
 
@@ -901,7 +901,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		return this.allIsMatched(
 			this.matchJSDocTag(node, matchNode),
-			this.matchNodeWithJSDocTypeExpression(node.typeExpression, matchNode.typeExpression)
+			this.matchNodeIfGiven(node.typeExpression, matchNode.typeExpression, this.matchNodeWithJSDocTypeExpression)
 		);
 	}
 
@@ -2605,7 +2605,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 
 		return this.allIsMatched(
 			this.matchStatement(node, matchNode),
-			this.matchNodeWithExpression(node.expression, matchNode.expression)
+			this.matchNodeIfGiven(node.expression, matchNode.expression, this.matchNodeWithExpression)
 		);
 	}
 
@@ -4191,7 +4191,7 @@ export class NodeMatcherUtil implements INodeMatcherUtil {
 		return this.allIsMatched(
 			this.matchNodeWithModuleDeclaration(node, matchNode),
 			this.matchNodeWithIdentifier(node.name, matchNode.name),
-			this.matchNodeWithJSDocNamespaceBody(node.body, matchNode.body)
+			this.matchNodeIfGiven(node.body, matchNode.body, this.matchNodeWithJSDocNamespaceBody)
 		);
 	}
 
