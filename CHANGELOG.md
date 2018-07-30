@@ -1,3 +1,12 @@
+## <small>0.0.47 (2018-07-30)</small>
+
+* 0.0.47 ([3f1bc24](https://github.com/wessberg/TypescriptASTUtil/commit/3f1bc24))
+* Bumped to Typescript v3.01 support ([e873c00](https://github.com/wessberg/TypescriptASTUtil/commit/e873c00))
+* Bumped to Typescript v3.01 support ([ed66d8b](https://github.com/wessberg/TypescriptASTUtil/commit/ed66d8b))
+* Bumped version ([6aa43c1](https://github.com/wessberg/TypescriptASTUtil/commit/6aa43c1))
+
+
+
 ## <small>0.0.46 (2018-06-21)</small>
 
 * 0.0.46 ([72208d7](https://github.com/wessberg/TypescriptASTUtil/commit/72208d7))
