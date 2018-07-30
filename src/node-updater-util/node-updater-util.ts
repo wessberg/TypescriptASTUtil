@@ -818,7 +818,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	private updateJSDocTypeTag (newNode: JSDocTypeTag, existing: JSDocTypeTag, options: INodeUpdaterUtilUpdateOptions): JSDocTypeTag {
 		this.updateJSDocTag(newNode, existing, options);
 
-		existing.typeExpression = this.updateJSDocTypeExpression(newNode.typeExpression, existing.typeExpression, options);
+		existing.typeExpression = this.updateNodeIfGiven(newNode.typeExpression, existing.typeExpression, options, this.updateJSDocTypeExpression);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -833,7 +833,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	private updateJSDocReturnTag (newNode: JSDocReturnTag, existing: JSDocReturnTag, options: INodeUpdaterUtilUpdateOptions): JSDocReturnTag {
 		this.updateJSDocTag(newNode, existing, options);
 
-		existing.typeExpression = this.updateJSDocTypeExpression(newNode.typeExpression, existing.typeExpression, options);
+		existing.typeExpression = this.updateNodeIfGiven(newNode.typeExpression, existing.typeExpression, options, this.updateJSDocTypeExpression);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -1282,7 +1282,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	private updateExternalModuleReference (newNode: ExternalModuleReference, existing: ExternalModuleReference, options: INodeUpdaterUtilUpdateOptions): ExternalModuleReference {
 		this.updateNode(newNode, existing, options);
 
-		existing.expression = this.updateNodeIfGiven(newNode.expression, existing.expression, options, this.update);
+		existing.expression = this.update(newNode.expression, existing.expression, options);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -1330,7 +1330,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		this.updateModuleDeclaration(newNode, existing, options);
 
 		existing.name = this.updateIdentifier(newNode.name, existing.name, options);
-		existing.body = this.update(newNode.body, existing.body, options);
+		existing.body = this.updateNodeIfGiven(newNode.body, existing.body, options, this.update);
 
 		return existing;
 	}
@@ -1489,7 +1489,7 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 	private updateThrowStatement (newNode: ThrowStatement, existing: ThrowStatement, options: INodeUpdaterUtilUpdateOptions): ThrowStatement {
 		this.updateStatement(newNode, existing, options);
 
-		existing.expression = this.update(newNode.expression, existing.expression, options);
+		existing.expression = this.updateNodeIfGiven(newNode.expression, existing.expression, options, this.update);
 
 		return this.extraTransformStep(newNode, existing, options);
 	}
@@ -4017,8 +4017,8 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		return {
 			flags,
 			escapedName,
-			declarations: declarations == null ? undefined : declarations.map(declaration => this.cloneWithParent(parent, declaration)),
-			valueDeclaration: valueDeclaration == null ? undefined : this.cloneWithParent(parent, valueDeclaration),
+			declarations: declarations.map(declaration => this.cloneWithParent(parent, declaration)),
+			valueDeclaration: this.cloneWithParent(parent, valueDeclaration),
 			members,
 			exports,
 			globalExports,
