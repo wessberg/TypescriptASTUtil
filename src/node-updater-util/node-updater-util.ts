@@ -4017,8 +4017,8 @@ export class NodeUpdaterUtil implements INodeUpdaterUtil {
 		return {
 			flags,
 			escapedName,
-			declarations: declarations.map(declaration => this.cloneWithParent(parent, declaration)),
-			valueDeclaration: this.cloneWithParent(parent, valueDeclaration),
+			declarations: declarations == null ? declarations : declarations.map(declaration => this.cloneWithParent(parent, declaration)),
+			valueDeclaration: valueDeclaration == null ? valueDeclaration : this.cloneWithParent(parent, valueDeclaration),
 			members,
 			exports,
 			globalExports,
