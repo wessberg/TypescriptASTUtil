@@ -1,3 +1,11 @@
+## <small>0.0.48 (2018-07-31)</small>
+
+* 0.0.48 ([85986e5](https://github.com/wessberg/TypescriptASTUtil/commit/85986e5))
+* Bumped version ([35a0b8f](https://github.com/wessberg/TypescriptASTUtil/commit/35a0b8f))
+* Workaround for issue ([546ad95](https://github.com/wessberg/TypescriptASTUtil/commit/546ad95))
+
+
+
 ## <small>0.0.47 (2018-07-30)</small>
 
 * 0.0.47 ([3f1bc24](https://github.com/wessberg/TypescriptASTUtil/commit/3f1bc24))
